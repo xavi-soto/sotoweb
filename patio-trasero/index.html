@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>patio trasero</title>
+    
+   <link rel="icon" href="https://res.cloudinary.com/dbwezmju6/image/upload/v1750391546/icono_wev-01_gllalq.png" type="image/png">
+   <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <meta name="description" content="soto es el sitio donde ocurre todo">
+  
+  <meta property="og:title" content="patio trasero (chingaderas)">
+<meta property="og:description" content="patio trasero, espacio de trabajo experimental.">
+<meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
+<meta property="og:url" content="https://sotosotosoto.compatio-trasero/">
+<meta property="og:type" content="website">
+  
+    <style>
+
+        
+        /* 🌞 Modo claro */
+        html, body {
+            color: #000000 !important;
+            forced-color-adjust: none !important;
+            -webkit-text-fill-color: inherit !important;
+            background-color: #f3f3f3; /* Fondo blanco por defecto */
+        }
+
+        /* 🌙 Modo oscuro (Fondo gris claro en vez de negro) */
+        @media (prefers-color-scheme: dark) {
+            html, body {
+                background-color: #f3f3f3 !important; /* Gris claro en lugar de negro */
+                color: #000000 !important; /* Mantener texto negro */
+            }
+        }    
+
+        /* Estilos generales */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height:70vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            position: relative;
+            padding-top: 83px; /* Espacio en la parte superior */
+            
+              margin-bottom: 13px;
+          /* efecto de aparición */
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+       
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f3f3f3; /* Asegura que tenga el mismo fondo */
+        text-align: center;
+        padding: 7px 0;
+        z-index: 1000; /* Se mantiene por encima de otros elementos */
+    }
+
+
+
+        .footer-image {
+            width: 150px; /* Ajusta el tamaño de la imagen */
+            height: auto;
+            padding-top: 0px;
+            margin-top: 0px;
+            animation: mostrarImagenes 3s ease forwards;
+        }
+
+
+.logo-container {
+      position: fixed;
+      top: 60px;
+      left: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .logo-container img {
+      width: 90px;
+      height: auto;
+    }
+        
+
+
+        .top-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(242, 98, 0); 
+    z-index: 9999;
+    overflow: hidden;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+.top-banner .scroll-text {
+    font-family: "Lexend", sans-serif;
+}
+
+
+.scroll-text {
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: scrollLeft 21s linear infinite;
+    font-weight: bold;
+    font-size: 12px;
+    color: rgb(0, 0, 0); 
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+        .container {
+            width: 45%;
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Galería de imágenes */
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center; /* Centra las imágenes */
+            flex-wrap: wrap;
+            gap: 10px; /* Espaciado uniforme */
+        }
+
+
+        .gallery {
+            display: flex;
+            justify-content: center; /* Asegura que las imágenes estén centradas */
+            flex-wrap: wrap;
+            align-items: center;
+            text-align: center; /* Asegura alineación */
+            gap: 25px; /* Espaciado entre imágenes */
+            margin-bottom: 20px;
+           
+        }
+
+
+
+        .gallery a {
+            display: inline-block;
+            text-align: center;
+        }
+
+        .gallery img {
+            display: block;
+            pointer-events: auto;
+            margin: auto;
+        }
+
+
+        .gallery a:not(:hover) {
+            pointer-events: none;
+        }
+
+        @media (min-width: 769px) {
+            body {
+                padding-bottom: 100px;
+            }
+        }
+
+        .image-1, .image-2, .image-3, .image-4, .image-5, .image-6, .additional-image {
+            transition: opacity 0.3s;
+        }
+
+
+
+
+        .image-1 {
+        position: relative;
+        top: -12.5px; /* Sube la imagen 20px */
+    }
+
+        .image-2 {
+        position: relative;
+        top: 1px; /* Sube la imagen 20px */
+    }
+
+
+        .image-3 {
+        position: relative;
+        top: 0px; /* Sube la imagen 20px */
+    }
+
+
+        .image-4 {
+        position: relative;
+        top: -2.4px; /* Sube la imagen 20px */
+    }
+        .image-5 {
+        position: relative;
+        top: 0px; /* Sube la imagen 20px */
+    }
+
+    .image-6 {
+        position: relative;
+        top: 0px; /* Sube la imagen 20px */
+    }
+
+
+
+   
+
+
+
+        .image-1 { width: 20%; margin: 10px 10px; }
+        .image-2 { width: 33%; margin: 10px 10px; }
+        .image-3 { width: 33%; margin: 10px 10px; }
+        .image-4 { width: 33%; margin: 10px 10px; }
+        .image-5 { width: 33%; margin: 10px 10px; }
+        .image-6 { width: 33%; margin: 10px 10px; }
+        .image-7 { width: 30%; margin: 20px 10px; }
+
+
+        /* Efecto hover */
+        .gallery img:hover {
+            opacity: 0.7;
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+
+
+
+
+        /* 📱 Ajustes para móviles */
+        @media (max-width: 768px) {
+            .container { width: 100%; }
+            body {
+                min-height: 10px; /* Evita espacio extra */
+        overflow-y: auto; /* Asegura que solo haya scroll si es necesario */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 0px !important; 
+        margin-top: 103px !important;
+        padding-bottom: 0px;
+    }
+
+
+
+
+        
+
+            .gallery { 
+        justify-content: center; 
+        gap: 0px; /* Espaciado uniforme */
+        display: flex;
+        flex-direction: column; /* Asegura que las imágenes se apilen */
+        align-items: center; /* Centra las imágenes */
+    }    
+/* Animación de aparición suave */
+
+
+            .gallery a {
+                margin: 12px 0;
+        pointer-events: none; /* Inicialmente deshabilitado */
+    }
+
+    .gallery a.active {
+        pointer-events: auto; /* Habilitado cuando se hace clic */
+    }
+
+              .image-1 { width: 26%;top: -23px; }
+            .image-2 { width: 59%; }
+            .image-3 { width: 64%; }
+            .image-4 { width: 60%; }
+            .image-5 { width: 60%; }
+            .image-6 { width: 60%; }
+            .image-7 { width: 25%; top: 10px; }
+            
+
+
+           
+
+
+        }
+
+
+        /* Eliminar el borde azul al hacer foco en enlaces e imágenes */
+        a:focus, img:focus {
+            outline: none;
+        }
+
+        /* Evitar resaltado al hacer clic en imágenes y enlaces en dispositivos móviles */
+        img, a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+
+
+/* Menú hamburguesa solo en móvil */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 49px;
+  left: 13px;
+  z-index: 1100;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.menu-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  top: 100px;
+  left: 20px;
+   background-color: #e2e2e2f0;
+   border: rgb(118 118, 118) 1px;
+  padding: 10px;
+  z-index: 1100;
+}
+
+.menu-mobile a img {
+  width: 90px;
+  height: auto;
+}
+
+
+
+/* En escritorio se muestra el menú clásico y se oculta el hamburguesa */
+@media (max-width: 768px) {
+  .logo-container {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-mobile {
+    display: none;
+  }
+
+  .menu-mobile.active {
+    display: flex;
+  }
+}
+
+
+
+.menu-toggle,
+.menu-mobile a,
+.menu-mobile a img {
+  -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4);
+}
+
+
+/* Versión tablet */
+  @media (min-width: 481px) and (max-width: 768px) {
+    /* Galería de imágenes */
+    .galeria {
+      grid-template-columns: 1fr; /* Una sola columna */
+      gap: 20px;
+      padding: 10px 5px;
+      margin-top: 0;
+      margin-bottom: 70px;
+    }
+
+    /* Descripción para tablet */
+    .descripcion {
+      padding: 30px 10px;
+      font-size: 14px; /* Un tamaño más grande que en móvil */
+      text-align: justify;
+    }
+
+     .descripcion2 {
+      padding: 30px 10px;
+      font-size: 14px; /* Un tamaño más grande que en móvil */
+      text-align: center;
+    }
+
+
+    /* Modificar las imágenes hover */
+    .imagen-hover {
+      width: 100%;
+    }
+
+    /* Asegurar que el logo no se vea demasiado pequeño */
+    .logo img {
+      max-width: 120px; /* Ajuste del tamaño del logo */
+    }
+
+
+    .menu-toggle {
+      display: block; /* Asegurarse de que el botón hamburguesa se vea */
+      position: fixed;
+      top: 49px;
+      left: 11px;
+      z-index: 1100;
+      background-color: transparent;
+      border: none;
+      font-size: 30px;
+      cursor: pointer;
+      opacity: 0.7; /* Ajustar la opacidad como en la versión móvil */
+    }
+
+    .menu-mobile {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      position: fixed;
+      top: 85px;
+      left: 20px;
+      background-color: rgba(226, 226, 226, 0.95); /* Asegura que la opacidad se mantenga */
+      border: rgb(118, 118, 118) 1px;
+      padding: 10px;
+      z-index: 1100;
+    }
+
+    .menu-mobile.active {
+      display: flex; /* Mostrar el menú cuando esté activo */
+    }
+
+    /* Mostrar el menú hamburguesa en tablet */
+    .menu-toggle {
+      opacity: 0.8; /* Ajuste de opacidad */
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+
+
+
+<!-- Botón hamburguesa solo visible en móvil -->
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<!-- Menú hamburguesa móvil -->
+<div class="menu-mobile" id="mobileMenu">
+  <a href="/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1748218042/1_xnbipu_1_ujpdhb.png" alt="Logo 5">
+  </a>
+   
+  <a href="oficina/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750252281/oficina_menu_nygn40.png" alt="Logo 3">
+  </a>
+  
+  
+</div>
+
+
+
+
+
+
+
+
+  <div class="logo-container">
+    <a href="/">   
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748218042/1_xnbipu_1_ujpdhb.png" alt="Logo 4">
+    </a>
+
+<a href="oficina/">   
+<img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1750252281/oficina_menu_nygn40.png" alt="Logo 3">
+</a>
+
+ 
+</div>
+
+    <!-- Script para deshabilitar clic derecho -->
+    <script>
+        document.addEventListener("contextmenu", function(e) {
+            e.preventDefault();
+        }, false);
+    </script>
+</head>
+<body>
+    <body>
+
+        <a href="https://www.instagram.com/sotosolo_?igsh=MXJha3o2dmVpNHRodA==" target="_blank" class="banner-link">
+            <div class="top-banner">
+              <div class="scroll-text">
+                Haz clic aquí para las últimas novedades y actualizaciones
+              </div>
+            </div>
+          </a>
+          
+
+            
+    <!-- Galería de imágenes -->
+    <div class="container">
+        <div class="gallery">
+            <a href="acerca-de-soto/">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1750351465/patio_wrjjzh.png" alt="Imagen 1" class="image-1">
+            </a>
+            <a href="proyectos-patio-trasero/">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744207439/proyectoss-01_bnfdgd.png" alt="Imagen 2" class="image-2">
+            </a>
+             <!-- <a href="https://xavi-soto.github.io/portafolio/">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1744206924/chingaderas-01_fbaufj.png" alt="Imagen 3" class="image-3">
+            </a> -->
+            <a href="acerca-de-patio-trasero/">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744207780/acerca_dev22-01_lawuz4.png" alt="Imagen 4" class="image-4">
+            </a>
+            <a href="sobre-este-sitio-web/">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1750887867/lo_ultimo_web_tmrjbi.png" alt="Imagen 4" class="image-4">
+            </a>
+           
+    
+        
+    </div>
+        
+      
+        
+    </div>
+</div>
+
+
+    <footer>
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1750388753/derechos_pie_de_pagina-01_re9gh9.png" alt="Imagen de pie de página" class="footer-image">
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll(".gallery a");
+
+            links.forEach(link => {
+                const img = link.querySelector("img");
+
+                img.addEventListener("mouseenter", () => {
+                    link.style.pointerEvents = "auto";
+                });
+
+                img.addEventListener("mouseleave", () => {
+                    link.style.pointerEvents = "none";
+                });
+
+                // Asegurar que al inicio los enlaces no sean clickeables
+                link.style.pointerEvents = "none";
+            });
+        });
+    </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".gallery a");
+    const images = document.querySelectorAll(".gallery img");
+
+    // Solo habilitar los clics en móvil cuando se hace clic en la imagen
+    if (window.innerWidth <= 768) {
+        images.forEach(img => {
+            img.addEventListener("click", function() {
+                const link = img.parentElement; // Obtener el enlace padre
+                link.classList.add("active"); // Activar el enlace al hacer clic en la imagen
+            });
+        });
+    } else {
+        // En escritorio, el comportamiento sigue siendo como antes (hover para habilitar clic)
+        links.forEach(link => {
+            const img = link.querySelector("img");
+
+            img.addEventListener("mouseenter", () => {
+                link.style.pointerEvents = "auto";
+            });
+
+            img.addEventListener("mouseleave", () => {
+                link.style.pointerEvents = "none";
+            });
+
+            // Inicialmente desactivar los enlaces en escritorio
+            link.style.pointerEvents = "none";
+            });
+        }
+
+        // Agregar la animación a las imágenes en móviles
+        images.forEach(img => {
+         // Aplica la animación en móviles
+        });
+    });
+
+
+    function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+  }
+</script>
+
+
+
+</body>
+</html>

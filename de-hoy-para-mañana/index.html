@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>de hoy para mañana</title>
+   <link rel="icon" href="https://res.cloudinary.com/dbwezmju6/image/upload/v1750391546/icono_wev-01_gllalq.png" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <meta name="description" content="soto es el sitio donde ocurre todo">
+  
+  <meta property="og:title" content="de hoy para mañana">
+<meta property="og:description" content="de hoy para mañana, es una exposición que explora lo cotidiano y lo absurdo de la vida diaria, presentando obras que reflejan la complejidad de los actos simples y esenciales.">
+<meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
+<meta property="og:url" content="https://sotosotosoto.com/dehoyparamañanaa.html">
+<meta property="og:type" content="website">
+  
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: rgb(243, 243, 243);
+      text-align: center;
+      /* efecto de aparición */
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+   .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px;
+  padding-top: 100px;
+}
+
+.logo-container {
+  position: fixed;
+  top: 60px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+ .logo-container img {
+      width: 90px;
+      height: auto;
+    }
+
+
+    .descripcion {
+        text-align: justify;
+      padding: 140px;
+      padding-top: 70px;
+      font-size: 14px;
+      color: rgb(51, 51, 51);
+      font-family: "Lexend", sans-serif;
+    }
+
+
+     .descripcion2 {
+      
+      padding: 140px;
+      padding-top: 70px;
+      font-size: 14px;
+      color: #333;
+      font-family: "Lexend", sans-serif;
+    }
+
+
+
+
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f3f3f3; /* Asegura que tenga el mismo fondo */
+        text-align: center;
+        padding: 7px 0;
+        z-index: 1000; /* Se mantiene por encima de otros elementos */
+    }
+
+
+
+        .footer-image {
+            width: 150px; /* Ajusta el tamaño de la imagen */
+            height: auto;
+            padding-top: 0px;
+            margin-top: 0px;
+            animation: mostrarImagenes 3s ease forwards;
+        }
+
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      padding: 20px;
+      padding-top: 0px;
+      padding-bottom: 70px;
+      max-width: 1200px;
+      margin: 0 auto;
+      margin-top: -80px;
+        margin-bottom: -40px;
+    }
+
+    .imagen-hover {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .imagen-hover img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: opacity 0.8s ease;
+    }
+
+    .imagen-hover img.img-hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+
+    .imagen-hover:hover img.img-hover {
+      opacity: 1
+    }
+
+    .imagen-hover:hover img.img-original {
+      opacity: 3;
+    }
+
+    @media (max-width: 768px) {
+      .galeria {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .galeria {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+
+
+
+
+
+
+
+/* NUEVO PARA MOVIL!!!!! APARTIR DE AQUI */
+
+
+    /* Menú hamburguesa solo en móvil */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 49px;
+  left: 13px;
+  z-index: 1100;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.menu-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  top: 100px;
+  left: 20px;
+   background-color: #e2e2e2f0;
+   border: rgb(118 118, 118) 1px;
+  padding: 10px;
+  z-index: 1100;
+}
+
+.menu-mobile a img {
+  width: 90px;
+  height: auto;
+}
+
+
+
+/* En escritorio se muestra el menú clásico y se oculta el hamburguesa */
+@media (max-width: 768px) {
+  .logo-container {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-mobile {
+    display: none;
+  }
+
+  .menu-mobile.active {
+    display: flex;
+  }
+}
+
+
+
+
+/* Versión móvil: textos y galeria */
+
+
+@media (max-width: 480px) {
+
+  .descripcion2 {
+    padding: 30px 25px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+   .descripcion{
+    padding: 30px 5px;
+    font-size: 13px;
+    text-align: justify;
+  }
+
+  .galeria {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 10px 1px;
+    margin-top: 0;
+    margin-bottom: 70px;
+  }
+
+  .imagen-hover {
+    width: 100%;
+  }
+
+  .mover-derecha {
+    transform: none;
+  }
+}
+
+
+
+
+
+
+
+.modal-img {
+    max-width: 90%;
+    max-height: 100%;
+    border: 5px solid rgba(255, 255, 255, 0);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+    transition: all 0.3s ease;
+  }
+
+  /* Versión móvil: imagen más grande cancelada */
+  @media (max-width: 640px) {
+  #modal-img {
+    width: 130vw !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+  }
+}
+
+
+/* Versión móvil: hover fijo */
+
+@media (max-width: 768px) {
+  .imagen-hover img.img-hover {
+    opacity: 1 !important;
+    pointer-events: none;
+  }
+
+  .imagen-hover:hover img.img-hover {
+    opacity: 1 !important;
+  }
+
+  .imagen-hover:hover img.img-original {
+    opacity: 1 !important;
+  }
+}
+
+
+
+a, button, .tus-elementos-clickeables {
+  -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4); /* rojo semitransparente */
+}
+
+
+
+
+/* Versión tablet */
+  @media (min-width: 481px) and (max-width: 768px) {
+    /* Galería de imágenes */
+    .galeria {
+      grid-template-columns: 1fr; /* Una sola columna */
+      gap: 20px;
+      padding: 10px 0px;
+      margin-top: 0;
+      margin-bottom: 70px;
+    }
+
+    /* Descripción para tablet */
+    .descripcion {
+      padding: 30px 0px;
+      font-size: 14px; /* Un tamaño más grande que en móvil */
+      text-align: justify;
+    }
+
+     .descripcion2 {
+      padding: 30px 35px;
+      font-size: 14px; /* Un tamaño más grande que en móvil */
+      text-align: center;
+    }
+
+    /* Modificar las imágenes hover */
+    .imagen-hover {
+      width: 100%;
+    }
+
+    /* Asegurar que el logo no se vea demasiado pequeño */
+    .logo img {
+      max-width: 120px; /* Ajuste del tamaño del logo */
+    }
+
+
+    .menu-toggle {
+      display: block; /* Asegurarse de que el botón hamburguesa se vea */
+      position: fixed;
+      top: 49px;
+      left: 11px;
+      z-index: 1100;
+      background-color: transparent;
+      border: none;
+      font-size: 30px;
+      cursor: pointer;
+      opacity: 0.7; /* Ajustar la opacidad como en la versión móvil */
+    }
+
+    .menu-mobile {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      position: fixed;
+      top: 85px;
+      left: 20px;
+      background-color: rgba(226, 226, 226, 0.95); /* Asegura que la opacidad se mantenga */
+      border: rgb(118, 118, 118) 1px;
+      padding: 10px;
+      z-index: 1100;
+    }
+
+    .menu-mobile.active {
+      display: flex; /* Mostrar el menú cuando esté activo */
+    }
+
+    /* Mostrar el menú hamburguesa en tablet */
+    .menu-toggle {
+      opacity: 0.8; /* Ajuste de opacidad */
+    }
+  }
+
+ 
+  
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+
+<!-- Botón hamburguesa solo visible en móvil -->
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<!-- Menú hamburguesa móvil -->
+<div class="menu-mobile" id="mobileMenu">
+  <a href="/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1748218042/1_xnbipu_1_ujpdhb.png" alt="Logo 5">
+  </a>
+  <a href="proyectos-patio-trasero/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1748212668/proyectos_final2-01_omaef9.png" alt="Logo 1">
+  </a>
+  <a href="acerca-de-patio-trasero/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1744207780/acerca_dev22-01_lawuz4.png" alt="Logo 2">
+  </a>
+  <a href="sobre-este-sitio-web/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1750887867/lo_ultimo_web_tmrjbi.png" alt="Logo 3">
+  </a>
+  <a href="oficina/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750252281/oficina_menu_nygn40.png" alt="Logo 3">
+  </a>
+  
+  
+</div>
+
+
+
+
+
+
+
+
+  <div class="logo-container">
+    <a href="/">   
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748218042/1_xnbipu_1_ujpdhb.png" alt="Logo 4">
+    </a>
+
+    <a href="proyectos-patio-trasero/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748212668/proyectos_final2-01_omaef9.png" alt="Logo 1">
+</a>
+<a href="acerca-de-patio-trasero/">  
+<img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1744207780/acerca_dev22-01_lawuz4.png" alt="Logo 2">
+</a>
+<a href="sobre-este-sitio-web/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1750887867/lo_ultimo_web_tmrjbi.png" alt="Logo 3">
+  </a>
+<a href="oficina/">   
+<img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1750252281/oficina_menu_nygn40.png" alt="Logo 3">
+</a>
+
+
+
+    
+   </div>
+  <div class="logo">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744371967/dehoy_logo_expo_tqmzgt.png" alt="Logo" style="max-width: 150px; height: auto;">
+  
+  </div>
+
+
+
+
+  <div class="descripcion2">
+    <p>
+ 
+
+       <strong>Mixta sobre papel<br>
+       <br>
+      
+        
+      
+      2024 <a href="https://academiaarte21.com/Espacio-Arte21/" target="_blank">Galería Arte XXl </a> Valencia, España<br>
+      2024 <a href="https://www.comunidad.madrid/centros/centro-comarcal-humanidades-sierra-norte" target="_blank">Centro de Humanidades Sierra Norte</a> Madrid, España<br></strong>
+
+
+
+       <div class="descripcion">
+      <p>16 piezas, carboncillo, grafito y hollín sobre papel. </p>
+      <p>Hace algunos años leí un libro llamado <i>Cómo viajar con un salmón de Umberto Eco</i> una recopilación de ensayos que cuentan historias comunes, nada de mundos fantásticos ni grandes epopeyas. Así que de ahí nace esta exposición. Aquí no encontrarás grandilocuentes discursos sobre salvar el mundo o erradicar el hambre. No, esta exhibición es un reflejo de lo simple, de lo común, de las complejidades personales que se enfrentan día a día. es un escaparate de los actos absurdos pero esenciales que dan forma a nuestra existencia, una celebración de la trivialidad que a menudo pasa desapercibida. </p>
+      <p> Comenzaré por hacer esta hoja parte de la obra porque es igual de absurda como importante. Primero, he de decir que intentar narrar un acto cotidiano requiere suma observación y perspicacia para que este no sea aburrido. Prepárense para aburrirse, aunque seré breve. </p>
+      <p>¿Cómo montar una exposición de arte? primero, armemos el elenco: curadores, artistas y críticos. Es como juntar gatos hambrientos en un saco y esperar que salga música en lugar de arañazos. La selección de obras... ¿la clave? hacer creer al público que la manta manchada es una obra de arte conceptual y que el inodoro es una alegoría sobre el consumismo contemporáneo. </p>
+      <p>La disposición espacial es otro cantar. convertir un espacio en galería requiere una habilidad equiparable a la de un mago, hacer que obras que no se soportan se lleven bien. Y qué decir de la logística. montar una exposición es como organizar una boda sin novios, hay que coordinar horarios, transportar obras y tratar de que el artista no se pierda en el camino, embriagado por el éxito anticipado. Por último, los espectadores. ellos son el verdadero espectáculo. Algunos miran con ojos de halcón, otros apenas prestan atención mientras buscan la comida gratis. Pero todos, de una u otra forma, son parte del ritual sagrado del arte: la danza del absurdo, donde lo banal se convierte en sublime y lo sublime, en mera anécdota, como estas piezas. </p>
+      
+      Entonces, ¿cómo montar una exposición de arte? con paciencia, ironía y una buena dosis de cinismo.<p><strong>Texto de sala.</strong></p>
+      </p>
+  </div>
+
+    
+  <div class="galeria">
+    <!-- Repetí esta estructura para las 16 imágenes -->
+ 
+<div class="imagen-hover">
+      <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748688625/d21-01_u9aq5l.png" class="img-original" alt="Imagen 1">
+      <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748693529/dt16-01_gnonkl.png" class="img-hover" alt="Hover Imagen 1">
+    </div>
+
+    <div class="imagen-hover">
+      <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748688625/d22-01_ogeb9z.png" class="img-original" alt="Imagen 2">
+      <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748693529/dt16-01_gnonkl.png" class="img-hover" alt="Hover Imagen 2">
+    </div>
+
+    <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748688624/d20-01_ipuluu.png" class="img-original" alt="Imagen 2">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748693529/dt16-01_gnonkl.png" class="img-hover" alt="Hover Imagen 2">
+      </div>
+
+
+
+
+
+
+
+
+<div class="imagen-hover">
+  <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748688069/d16-01_h1gaps.png" class="img-original" alt="Imagen 1" >
+
+  <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748689812/dt1-01_i6mw65.png" class="img-hover" alt="Hover Imagen 1"  data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749040151/dehoy1-01_hfnod8.png">
+</div>
+
+
+    
+
+    <div class="imagen-hover">
+      <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748694904/d1-01_t5mfwf.png" class="img-original" alt="Imagen 2">
+      <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748692294/dt2-01_usuc6t.png" class="img-hover" alt="Hover Imagen 2" data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749040229/dehoy2-01_nzlgmd.png">
+    </div>
+
+    <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748686896/d9-01_mtxklx.png" class="img-original" alt="Imagen 2">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748692292/dt3-01_bjwh7f.png" class="img-hover" alt="Hover Imagen 2" data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749038302/dehoy3-01_cfygds.png">
+      </div>
+
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748686896/d14-01_nekykk.png" class="img-original" alt="Imagen 2">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748692292/dt4-01_nmvfba.png" class="img-hover" alt="Hover Imagen 2" data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749038402/dehoy5-01_xrr4ty.png">
+      </div>
+
+
+
+
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748686841/d1-01_ddxkxu.png" class="img-original" alt="Imagen 2">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748692289/dt5-01_qr1fib.png" class="img-hover" alt="Hover Imagen 2" data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749038693/dehoy6-01_vhpimt.png">
+      </div>
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748686897/d12-01_e15qzp.png" class="img-original" alt="Imagen 2">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748692287/dt6-01_w64led.png" class="img-hover" alt="Hover Imagen 2" data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749040349/dehoy7-01_wiqvnn.png">
+      </div>
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748686897/d8-01_qt3tis.png" class="img-original" alt="Imagen 2">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748692287/dt7-01_dzigjb.png" class="img-hover" alt="Hover Imagen 2" data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749038794/dehoy8-01_nad3mi.png">
+      </div>
+
+
+
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748686897/d13-01_t38pqt.png" class="img-original" alt="Imagen 2">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748692299/dt7.1-01_lmeih5.png" class="img-hover" alt="Hover Imagen 2"data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749040403/dehoy9-01_sjlt89.png">
+      </div>
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748686900/d11-01_tpgwlh.png" class="img-original" alt="Imagen 2">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748692286/dt8-01_bdscgd.png" class="img-hover" alt="Hover Imagen 2"data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749037597/dehoy10-01_owgjri.png">
+      </div>
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748686898/d2-01_zu7xuj.png" class="img-original" alt="Imagen 2">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748692309/dt9-01_wufnvh.png" class="img-hover" alt="Hover Imagen 2"data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749037692/dehoy11-01_mrryt9.png">
+      </div>
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748686898/d10-01_ifla30.png" class="img-original" alt="Imagen 2">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748692309/dt10-01_npw64l.png" class="img-hover" alt="Hover Imagen 2"data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749037813/dehoy12-01_vlgtog.png">
+      </div>
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748693332/d5-01_xmykzv.png" class="img-original" alt="Imagen 2">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748692308/dt11-01_pckaut.png" class="img-hover" alt="Hover Imagen 2"data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749040467/dehoy13-01_paxxp7.png">
+      </div>
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748686897/d7-01_wncqvl.png" class="img-original" alt="Imagen 2">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748692303/dt12-01_aqnkph.png" class="img-hover" alt="Hover Imagen 2"data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749040526/dehoy4-01_tvzpav.png">
+      </div>
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748686898/d4-01_rq8quc.png" class="img-original" alt="Imagen 2">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748692302/dt13-01_p0gurp.png" class="img-hover" alt="Hover Imagen 2"data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749038058/dehoy14-01_pyanmt.png">
+      </div>
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748686898/d6-01_q3mcqj.png" class="img-original" alt="Imagen 2">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748692300/dt14-01_ved4d2.png" class="img-hover" alt="Hover Imagen 2"data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749038131/dehoy15-01_h4sxwk.png">
+      </div>
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748686898/d3-01_zfhxme.png" class="img-original" alt="Imagen 2">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748692297/dt15-01_jay7hu.png" class="img-hover" alt="Hover Imagen 2"data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749038210/dehoy16-01_xixvmh.png">
+      </div>
+
+  
+
+
+
+      <footer>
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1750388753/derechos_pie_de_pagina-01_re9gh9.png" alt="Imagen de pie de página" class="footer-image">
+    </footer>
+
+
+           
+
+    <!-- Repetí esto hasta Imagen 16 -->
+    <!-- Puedes reemplazar los links de ejemplo por los tuyos -->
+  </div>
+
+
+
+
+<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243);; justify-content:center; align-items:center; cursor:pointer;">
+  <span id="cerrar-modal" style="position:absolute; top:20px; right:30px; color:rgb(0, 0, 0); font-size:40px; cursor:pointer;">&times;</span>
+   <img id="modal-img" src="https://res.cloudinary.com/dbwezmju6/image/upload/v1748892157/dehoy1-01_hfnod8.png" alt="Imagen ampliada" style="max-width:37%; max-height:auto; border: 5px solid rgba(255, 255, 255, 0); box-shadow: 0 0 20px rgba(0, 0, 0, 0);" />
+</div>
+
+<script>
+ document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  const cerrarModal = document.getElementById('cerrar-modal');
+
+  document.querySelectorAll('.img-hover[data-full]').forEach(img => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const imgGrande = img.getAttribute('data-full');
+      modalImg.src = imgGrande;
+      modal.style.display = 'flex';
+    });
+  });
+
+  cerrarModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalImg.src = '';
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      modalImg.src = '';
+    }
+  });
+});
+function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+  }
+
+   document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  }, false);
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

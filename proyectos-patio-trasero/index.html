@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>proyectos del patio trasero</title>
+  <link rel="icon" href="https://res.cloudinary.com/dbwezmju6/image/upload/v1750391546/icono_wev-01_gllalq.png" type="image/png">
+  
+   <meta name="description" content="soto es el sitio donde ocurre todo">
+  
+  <meta property="og:title" content="proyectos del patio trasero">
+<meta property="og:description" content="proyectos experimentales, artísticos y de valor conceptual.">
+<meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
+<meta property="og:url" content="https://sotosotosoto.comproyectos-patio-trasero/">
+<meta property="og:type" content="website">
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 60px;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      /* efecto de aparición */
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+    .logo-container {
+      position: fixed;
+      top: 60px;
+      left: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .logo-container img {
+      width: 90px;
+      height: auto;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f3f3f3;
+      text-align: center;
+      padding: 7px 0;
+      z-index: 1000;
+    }
+
+    .footer-image {
+      width: 150px;
+      height: auto;
+      padding-top: 0px;
+      margin-top: 0px;
+      animation: mostrarImagenes 3s ease forwards;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 20px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .gallery a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 0px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    .gallery a:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+
+
+
+/* Menú hamburguesa solo en móvil */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 49px;
+  left: 13px;
+  z-index: 1100;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.menu-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  top: 100px;
+  left: 20px;
+   background-color: #e2e2e2f0;
+   border: rgb(118 118, 118) 1px;
+  padding: 10px;
+  z-index: 1100;
+}
+
+.menu-mobile a img {
+  width: 90px;
+  height: auto;
+}
+
+
+
+/* En escritorio se muestra el menú clásico y se oculta el hamburguesa */
+@media (max-width: 768px) {
+  .logo-container {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-mobile {
+    display: none;
+  }
+
+  .menu-mobile.active {
+    display: flex;
+  }
+}
+
+
+
+
+a, button, .tus-elementos-clickeables {
+  -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4); /* rojo semitransparente */
+}
+
+
+/* Versión tablet */
+  @media (min-width: 481px) and (max-width: 768px) {
+
+.menu-toggle {
+      display: block; /* Asegurarse de que el botón hamburguesa se vea */
+      position: fixed;
+      top: 49px;
+      left: 11px;
+      z-index: 1100;
+      background-color: transparent;
+      border: none;
+      font-size: 30px;
+      cursor: pointer;
+      opacity: 0.7; /* Ajustar la opacidad como en la versión móvil */
+    }
+
+    .menu-mobile {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      position: fixed;
+      top: 85px;
+      left: 20px;
+      background-color: rgba(226, 226, 226, 0.95); /* Asegura que la opacidad se mantenga */
+      border: rgb(118, 118, 118) 1px;
+      padding: 10px;
+      z-index: 1100;
+    }
+
+    .menu-mobile.active {
+      display: flex; /* Mostrar el menú cuando esté activo */
+    }
+
+    /* Mostrar el menú hamburguesa en tablet */
+    .menu-toggle {
+      opacity: 0.8; /* Ajuste de opacidad */
+    }
+  }
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+
+
+  <!-- Botón hamburguesa solo visible en móvil -->
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<!-- Menú hamburguesa móvil -->
+<div class="menu-mobile" id="mobileMenu">
+  <a href="/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1748218042/1_xnbipu_1_ujpdhb.png" alt="Logo 5">
+  </a>
+  <a href="acerca-de-patio-trasero/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1744207780/acerca_dev22-01_lawuz4.png" alt="Logo 2">
+  </a>
+  <a href="sobre-este-sitio-web/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1750887867/lo_ultimo_web_tmrjbi.png" alt="Logo 3">
+  </a>
+  <a href="oficina/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750252281/oficina_menu_nygn40.png" alt="Logo 3">
+  </a>
+  
+  
+</div>
+
+<!-- Menú clásico en escritorio -->
+<div class="logo-container">
+   <a href="/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748218042/1_xnbipu_1_ujpdhb.png" alt="Logo 5">
+  </a>
+  <a href="acerca-de-patio-trasero/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744207780/acerca_dev22-01_lawuz4.png" alt="Logo 2">
+  </a>
+  <a href="sobre-este-sitio-web/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1750887867/lo_ultimo_web_tmrjbi.png" alt="Logo 3">
+  </a>
+  <a href="oficina/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1750252281/oficina_menu_nygn40.png" alt="Logo 3">
+  </a>
+
+
+</div>
+
+
+
+
+
+  <div class="gallery">
+    <!-- Ejemplo con 3 imágenes, puedes extender con el resto -->
+    <a href="desoido/">
+      <img 
+        src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744280753/0p-01_uvejks.png
+" 
+        data-hover="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749371729/desoido_portada_final-01_uhhy9i.png
+"
+        data-desktop="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744280753/0p-01_uvejks.png
+"
+        data-mobile="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750100597/DESOIDO_MOVIL-01_zqvq9m.png
+"
+        alt="Imagen 1">
+    </a>
+    <a href="de-hoy-para-mañana/">
+      <img 
+        src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744280916/1p-01_ylgv9b.png" 
+        data-hover="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749370952/de_hoy_portada-01_tsezcg.png"
+        data-desktop="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744280916/1p-01_ylgv9b.png"
+        data-mobile="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750100695/de_hoy_MOVIL-01_lmabrf.png"
+        alt="Imagen 2">
+    </a>
+    <a href="chingaderas-en-la-ventana/">
+      <img 
+        src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744281012/00p-01_zrjopt.png" 
+        data-hover="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749370947/chingaderas_portada-01_zl57vg.png"
+        data-desktop="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744281012/00p-01_zrjopt.png"
+        data-mobile="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750107000/CHINGADERAS_MOVIL_NUEVO-01_tqholf.png"
+        alt="Imagen 3">
+    </a>
+
+    <a href="por-que-nos-cuesta-escuchar/">
+      <img 
+        src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744281104/2p-01_mpaydg.png" 
+        data-hover="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749371782/porque_nos_portada-01_fj1fip.png"
+        data-desktop="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744281104/2p-01_mpaydg.png"
+        data-mobile="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750100805/porque_MOVIL-01_y48ako.png"
+        alt="Imagen 4">
+    </a>
+
+    <a href="estudio-de-objetos-no-identificados/">
+      <img 
+        src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744281169/3p-01_drllez.png" 
+        data-hover="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749370983/estudio_portada-01_imsshd.png"
+        data-desktop="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744281169/3p-01_drllez.png"
+        data-mobile="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750100845/objeto_movil-01_x1cblw.png"
+        alt="Imagen 5">
+    </a>
+
+    <a href="espacios-comunes/">
+      <img 
+        src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744281254/4p-01_jcqdby.png" 
+        data-hover="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749370977/espacios_comunes_portada-01_dxho49.png"
+        data-desktop="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744281254/4p-01_jcqdby.png"
+        data-mobile="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750101000/espacios_movil2-01_mbsia7.png"
+        alt="Imagen 6">
+    </a>
+
+
+    <a href="hay-flores-a-domicilio/">
+      <img 
+        src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749382199/flores_portada-01_d0diqo.png" 
+        data-hover="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749370976/hay_flores_portada-01_vxak6u.png"
+        data-desktop="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749382199/flores_portada-01_d0diqo.png"
+        data-mobile="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750101115/flores_movil-01_nfpdch.png"
+        alt="Imagen 7">
+    </a>
+
+
+    <a href="ya-soy-artista/">
+      <img 
+        src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744281413/6p-01_lkvkta.png" 
+        data-hover="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749370969/yasoy_portada-01_vyowah.png"
+        data-desktop="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744281413/6p-01_lkvkta.png"
+        data-mobile="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800//v1751031254/yasoy_movil-01_oqlmyf.png"
+        alt="Imagen 8">
+    </a>
+
+    <a href="inmenso/">
+      <img 
+        src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744281478/7d-01_ljhrsy.png" 
+        data-hover="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749370968/inmenso_portada-01_awxfao.png"
+        data-desktop="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744281478/7d-01_ljhrsy.png"
+        data-mobile="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750101229/inmenso_movil-01_e1m8it.png"
+        alt="Imagen 9">
+    </a>
+
+    <a href="algunas-cosas/">
+      <img 
+        src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744281553/8p-01_jiwhg0.png" 
+        data-hover="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749370967/algunas_portada-01_dijcsq.png"
+        data-desktop="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744281553/8p-01_jiwhg0.png"
+        data-mobile="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750101355/algunas_movil-01_u8orhx.png"
+        alt="Imagen 10">
+    </a>
+
+    <a href="no-solo-es-tiempo/">
+      <img 
+        src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1750941713/9p-01_s7awfu.png" 
+        data-hover="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749370963/no_solo_portada-01_mly4tp.png"
+        data-desktop="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1750941713/9p-01_s7awfu.png"
+        data-mobile="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750941560/no_solo_movil-01_mqmpbb.png"
+        alt="Imagen 11">
+    </a>
+
+    <a href="apariencias/">
+      <img 
+        src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744281701/10p-01_bnnkrp.png" 
+        data-hover="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749370962/apariencias_portada-01_bkso1d.png"
+        data-desktop="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744281701/10p-01_bnnkrp.png"
+        data-mobile="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750101427/apariencia_movil-01_jup8ey.png"
+        alt="Imagen 12">
+    </a>
+
+    <a href="silueta-de-olvido/">
+      <img 
+        src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744282301/11p-01_wfo13d.png" 
+        data-hover="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749370958/siluerta_portada-01_rjlcvd.png"
+        data-desktop="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744282301/11p-01_wfo13d.png"
+        data-mobile="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750101460/silueta_movil-01_egr5il.png"
+        alt="Imagen 13">
+    </a>
+
+
+    <a href="descripcion-de-mi-pais/">
+      <img 
+        src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744281795/ULTIMO_DOSSIER_ILUSTRACION_TERMINADO-44_oqhe0c.png" 
+        data-hover="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749370957/descripcion_portada-01_jqewk2.png"
+        data-desktop="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744281795/ULTIMO_DOSSIER_ILUSTRACION_TERMINADO-44_oqhe0c.png"
+        data-mobile="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750101500/descrip_movil-01_sdfojd.png"
+        alt="Imagen 14">
+    </a>
+
+
+      <a href="sobre-este-sitio-web/">
+      <img 
+        src="https://res.cloudinary.com/dbwezmju6/image/upload/v1750674616/PORTADA_DISE%C3%91O-01_hts0qe.png" 
+        data-hover="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1750591564/estudiochingadera_portada_final-01_nuihy7.png"
+        data-desktop="https://res.cloudinary.com/dbwezmju6/image/upload/v1750674616/PORTADA_DISE%C3%91O-01_hts0qe.png"
+        data-mobile="https://res.cloudinary.com/dbwezmju6/image/upload/v1750674163/estudio_movil-01_c9j5tv.png"
+        alt="Imagen 14">
+    </a>
+     <!--<a href="proyectos-oficina/">
+      <img 
+        src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748220092/PORTADA_DISE%C3%91O-01_hts0qe.png" 
+        data-hover="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749370953/estudiochingadera_portada_final-01_nuihy7.png"
+        data-desktop="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748220092/PORTADA_DISE%C3%91O-01_hts0qe.png"
+        data-mobile="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750101578/estudio_movil-01_c9j5tv.png"
+        alt="Imagen 15">
+    </a>
+-->
+
+
+    <!-- Continúa con el resto... -->
+  </div>
+
+  <footer>
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1750388753/derechos_pie_de_pagina-01_re9gh9.png" alt="Imagen de pie de página" class="footer-image">
+  </footer>
+
+  <script>
+
+
+
+
+     function esEscritorio() {
+    return window.innerWidth > 768;
+  }
+
+  // Solo aplicar el hover si es escritorio
+  if (esEscritorio()) {
+    document.querySelectorAll('.gallery img').forEach(img => {
+      const originalSrc = img.getAttribute('data-desktop'); // Asegura usar el src correcto
+      const hoverSrc = img.getAttribute('data-hover');
+
+      img.addEventListener('mouseenter', () => {
+        if (hoverSrc) img.src = hoverSrc;
+      });
+
+      img.addEventListener('mouseleave', () => {
+        if (originalSrc) img.src = originalSrc;
+      });
+    });
+  }
+
+
+
+    // Reemplazo de imágenes para móvil
+    function actualizarImagenesPorDispositivo() {
+      const esMovil = window.innerWidth <= 768;
+      document.querySelectorAll('.gallery img').forEach(img => {
+        const nuevaSrc = esMovil ? img.getAttribute('data-mobile') : img.getAttribute('data-desktop');
+        if (nuevaSrc) {
+          img.src = nuevaSrc;
+        }
+      });
+    }
+
+    // Ejecutar al cargar y al redimensionar
+    window.addEventListener('load', actualizarImagenesPorDispositivo);
+    window.addEventListener('resize', actualizarImagenesPorDispositivo);
+
+
+
+
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+  }
+
+
+ document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  }, false);
+
+
+  // (El resto de tu script permanece igual)
+</script>
+
+
+  </script>
+</body>
+</html>

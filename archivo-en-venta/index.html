@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>archivo en venta</title>
+   <link rel="icon" href="https://res.cloudinary.com/dbwezmju6/image/upload/v1750391546/icono_wev-01_gllalq.png" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  
+  <meta name="description" content="soto es el sitio donde ocurre todo">
+  
+  <meta property="og:title" content="archivo en venta">
+<meta property="og:description" content="archivo en venta, es un sitio donde se pueden adquirir obras plásticas y reproducciones de soto.">
+<meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
+<meta property="og:url" content="https://sotosotosoto.comarchivo-en-venta/">
+<meta property="og:type" content="website">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      text-align: center;
+      /* efecto de aparición */
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+    .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px;
+  padding-top: 125px;
+}
+
+.logo-container {
+  position: fixed;
+  top: 60px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+ .logo-container img {
+      width: 90px;
+      height: auto;
+    }
+
+.descripcion {
+        text-align: justify;
+      padding: 150px;
+      padding-top: 40px;
+      font-size: 14px;
+      color: #333;
+      font-family: "Lexend", sans-serif;
+       margin-bottom: -140px;
+    }
+
+     .descripcion2 {
+      
+      padding: 140px;
+      padding-top: 62px;
+      font-size: 14px;
+      color: #333;
+      font-family: "Lexend", sans-serif;
+    }
+
+.contenido-ajustado {
+  margin-top: -38px; /* ajusta el número según cuánto quieras subir */
+}
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f3f3f3; /* Asegura que tenga el mismo fondo */
+        text-align: center;
+        padding: 7px 0;
+        z-index: 1000; /* Se mantiene por encima de otros elementos */
+    }
+
+
+
+        .footer-image {
+            width: 150px; /* Ajusta el tamaño de la imagen */
+            height: auto;
+            padding-top: 0px;
+            margin-top: 0px;
+            animation: mostrarImagenes 3s ease forwards;
+        }
+
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      padding: 20px;
+      padding-top: 0px;
+      padding-bottom: 70px;
+      max-width: 1200px;
+      margin: 0 auto;
+      margin-top: -80px;
+    }
+
+    .imagen-hover {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .imagen-hover img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: opacity 0.8s ease;
+    }
+
+    .imagen-hover img.img-hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+
+    .imagen-hover:hover img.img-hover {
+      opacity: 1
+    }
+
+    .imagen-hover:hover img.img-original {
+      opacity: 3;
+    }
+
+    @media (max-width: 768px) {
+      .galeria {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .galeria {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+/* NUEVO PARA MOVIL!!!!! APARTIR DE AQUI */
+
+
+    /* Menú hamburguesa solo en móvil */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 49px;
+  left: 13px;
+  z-index: 1100;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.menu-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  top: 100px;
+  left: 20px;
+   background-color: #e2e2e2f0;
+   border: rgb(118 118, 118) 1px;
+  padding: 10px;
+  z-index: 1100;
+}
+
+.menu-mobile a img {
+  width: 90px;
+  height: auto;
+}
+
+
+
+/* En escritorio se muestra el menú clásico y se oculta el hamburguesa */
+@media (max-width: 768px) {
+  .logo-container {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-mobile {
+    display: none;
+  }
+
+  .menu-mobile.active {
+    display: flex;
+  }
+}
+
+
+
+
+/* Versión móvil: textos y galeria */
+
+
+@media (max-width: 480px) {
+
+  .descripcion2 {
+    padding: 12px 25px;
+    font-size: 13px;
+    text-align: center;
+  }
+  
+  .descripcion3 {
+    padding: 30px 15px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+   .descripcion{
+    padding: 30px 5px;
+    font-size: 13px;
+    text-align: justify;
+    margin-bottom: 39px;
+  }
+
+  .galeria {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 10px 20px;
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
+
+
+  .imagen-hover {
+    width: 20%;
+  }
+
+  .mover-derecha {
+    transform: none;
+  }
+}
+
+
+
+
+
+
+
+.modal-img {
+    max-width: 90%;
+    max-height: 100%;
+    border: 5px solid rgba(255, 255, 255, 0);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+    transition: all 0.3s ease;
+  }
+
+  /* Versión móvil: imagen más grande cancelada */
+  @media (max-width: 640px) {
+  #modal-img {
+    width: 130vw !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+  }
+}
+
+
+/* Versión móvil: hover fijo */
+
+@media (max-width: 768px) {
+  .imagen-hover img.img-hover {
+    opacity: 1 !important;
+    pointer-events: none;
+  }
+
+  .imagen-hover:hover img.img-hover {
+    opacity: 1 !important;
+  }
+
+  .imagen-hover:hover img.img-original {
+    opacity: 1 !important;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .logo-img-unica {
+    max-width: 100px !important;
+  }
+
+  .logo-img-unica2 {
+    max-width: 90px !important;
+  }
+}
+
+
+
+a, button, .tus-elementos-clickeables {
+  -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4); /* rojo semitransparente */
+}
+
+
+
+/* Estilo general (escritorio) */
+.logo-img-unica {
+  max-width: 200px;
+  height: auto;
+}
+
+/* Estilo específico para móvil */
+@media (max-width: 768px) {
+  .logo-img-unica {
+    max-width: 150px !important; /* O el valor que desees */
+    height: auto !important;
+      position: relative;
+    top: -25px; /* Ajusta el valor según cuánto quieras subir */
+  }
+
+
+
+
+.contenido-ajustado {
+  margin-top: -16px; /* ajusta el número según cuánto quieras subir */
+}
+}
+/* Versión tablet */
+  @media (min-width: 481px) and (max-width: 768px) {
+    /* Galería de imágenes */
+    .galeria {
+      grid-template-columns: 1fr; /* Una sola columna */
+      gap: 20px;
+      padding: 10px 5px;
+      margin-top: 0;
+      margin-bottom: 70px;
+    }
+
+    /* Descripción para tablet */
+    .descripcion {
+      padding: 25px 20px;
+      font-size: 14px; /* Un tamaño más grande que en móvil */
+      text-align: justify;
+    }
+
+     .descripcion2 {
+      padding: 28px 20px;
+      font-size: 14px; /* Un tamaño más grande que en móvil */
+      text-align: center;
+      margin-bottom: 185px;
+    }
+
+
+    /* Modificar las imágenes hover */
+    .imagen-hover {
+      width: 100%;
+    }
+
+    /* Asegurar que el logo no se vea demasiado pequeño */
+    .logo img {
+      max-width: 120px; /* Ajuste del tamaño del logo */
+    }
+
+
+    .menu-toggle {
+      display: block; /* Asegurarse de que el botón hamburguesa se vea */
+      position: fixed;
+      top: 49px;
+      left: 11px;
+      z-index: 1100;
+      background-color: transparent;
+      border: none;
+      font-size: 30px;
+      cursor: pointer;
+      opacity: 0.7; /* Ajustar la opacidad como en la versión móvil */
+    }
+
+    .menu-mobile {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      position: fixed;
+      top: 85px;
+      left: 20px;
+      background-color: rgba(226, 226, 226, 0.95); /* Asegura que la opacidad se mantenga */
+      border: rgb(118, 118, 118) 1px;
+      padding: 10px;
+      z-index: 1100;
+    }
+
+    .menu-mobile.active {
+      display: flex; /* Mostrar el menú cuando esté activo */
+    }
+
+    /* Mostrar el menú hamburguesa en tablet */
+    .menu-toggle {
+      opacity: 0.8; /* Ajuste de opacidad */
+    }
+
+  
+  }
+
+
+  </style>
+</head>
+<body>
+
+
+<!-- Botón hamburguesa solo visible en móvil -->
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<!-- Menú hamburguesa móvil -->
+<div class="menu-mobile" id="mobileMenu">
+
+  <a href="/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1748218042/1_xnbipu_1_ujpdhb.png" alt="Logo 5">
+  </a>
+
+   <a href="proyectos-oficina/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1748212668/proyectos_final2-01_omaef9.png" alt="Logo 2">
+  </a>
+  
+ <a href="acerca-de-oficina/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1744207780/acerca_dev22-01_lawuz4.png" alt="Logo 2">
+  </a>
+  <a href="contacto/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1744209347/CONSSS-01_aokd62.png" alt="Logo 4">
+  </a>
+  <a href="patio-trasero/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750259371/patio_menu_mqpfum.png" alt="Logo 5">
+  </a>
+
+
+
+
+</div>
+
+<!-- Menú clásico en escritorio -->
+<div class="logo-container">
+ 
+
+  <a href="/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748218042/1_xnbipu_1_ujpdhb.png" alt="Logo 5">
+     </a>
+
+      <a href="proyectos-oficina/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748212668/proyectos_final2-01_omaef9.png" alt="Logo 2">
+  </a>
+  <a href="acerca-de-oficina/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744207780/acerca_dev22-01_lawuz4.png" alt="Logo 2">
+  </a>
+ 
+  <a href="contacto/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744209347/CONSSS-01_aokd62.png" alt="Logo 4">
+  </a>
+  <a href="patio-trasero/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1750259371/patio_menu_mqpfum.png" alt="Logo 5">
+  </a>
+
+    
+   </div>
+
+    <div class="contenido-ajustado">
+  <div class="logo">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1751016240/archivof_wtvasr.png" alt="Logo" class="logo-img-unica">
+  </div>
+
+
+
+  <div class="descripcion2">
+    <p>
+   <strong><p> La selección en venta se organiza en dos categorías: obra plástica y reproducciones (prints).</p></strong>
+  
+      
+        <div class="descripcion">  
+ Las obras plásticas están disponibles solo mediante contacto directo, ya sea por correo electronico</a>
+    o mensaje directo, en las prints se agregan 2 canales de venta:
+    <a href="https://www.instagram.com/pastoo.verdee?igsh=MTNoMnU5cWFtMHRjMw==" target="_blank"><strong>Pasto Verde</strong></a> en Guadalajara, Méx. (fisico)
+    e <a href="https://www.inprnt.com/gallery/sotosolo_/" target="_blank"><strong>Inprnt</strong></a> (online). Revisa las obras disponibles en cada sección:
+            
+           <br><br>
+<strong><p style="text-align: center;">Obra plástica</p></strong>
+  <div style="text-align: center;">
+
+  <a href="de-hoy-para-mañana/" target="_blank"><strong>De hoy para mañana</strong></a><br><br>
+  <a href="espacios-comunes/" target="_blank"><strong>Espacios comunes</strong></a><br><br>
+
+</div>
+
+
+  <strong><p style="text-align: center;">Prints</p></strong>
+  <div style="text-align: center;">
+  <a href="estudio-de-objetos-no-identificados/" target="_blank"><strong>Estudios de objetos no identificados</strong></a><br><br>
+  <a href="hay-flores-a-domicilio/" target="_blank"><strong>Hay flores a domicilio</strong></a><br><br>
+   <a href="inmenso/" target="_blank"><strong>Inmenso</strong></a><br><br>
+    <a href="algunas-cosas/" target="_blank"><strong>Algunas cosas</strong></a><br><br>
+     <a href="apariencias/" target="_blank"><strong>Apariencias</strong></a><br><br>
+      <a href="descripcion-de-mi-pais/" target="_blank"><strong>Descripción de mi país</strong></a><br><br>
+      
+</div>
+  </div>
+ </div>
+
+
+
+  
+      
+      <footer>
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1750388753/derechos_pie_de_pagina-01_re9gh9.png" alt="Imagen de pie de página" class="footer-image">
+    </footer>
+           
+
+    <!-- Repetí esto hasta Imagen 16 -->
+    <!-- Puedes reemplazar los links de ejemplo por los tuyos -->
+  </div>
+
+
+  
+    <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243);; justify-content:center; align-items:center; cursor:pointer;">
+  <span id="cerrar-modal" style="position:absolute; top:20px; right:30px; color:rgb(0, 0, 0); font-size:40px; cursor:pointer;">&times;</span>
+   <img id="modal-img" src="https://res.cloudinary.com/dbwezmju6/image/upload/v1748892157/dehoy1-01_hfnod8.png" alt="Imagen ampliada" style="max-width:37%; max-height:auto; border: 5px solid rgba(255, 255, 255, 0); box-shadow: 0 0 20px rgba(0, 0, 0, 0);" />
+</div>
+
+<script>
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  const cerrarModal = document.getElementById('cerrar-modal');
+
+  // Solo permitir clic en escritorio
+  if (window.innerWidth > 768) {
+    document.querySelectorAll('.img-original[data-full]').forEach(img => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const imgGrande = img.getAttribute('data-full');
+        modalImg.src = imgGrande;
+        modal.style.display = 'flex';
+      });
+    });
+  }
+
+  cerrarModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalImg.src = '';
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      modalImg.src = '';
+    }
+  });
+});
+
+
+
+function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+  }
+ document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  }, false);
+
+</script>
+
+</body>
+</html>

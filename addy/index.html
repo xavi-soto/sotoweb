@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>addy</title>
+   <link rel="icon" href="https://res.cloudinary.com/dbwezmju6/image/upload/v1750391546/icono_wev-01_gllalq.png" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  
+  <meta name="description" content="soto es el sitio donde ocurre todo">
+  
+  <meta property="og:title" content="addy">
+<meta property="og:description" content="addy, es una marca dedicada a comercializar productos esotéricos. Su catálogo principal incluye veladoras, pero también abarca inciensos, tarots y joyería en oro y plata, ofreciendo artículos que fusionan espiritualidad, energía y estilo.">
+<meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
+<meta property="og:url" content="https://sotosotosoto.com/addy/">
+<meta property="og:type" content="website">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Lexend", sans-serif;
+      background-color: #f3f3f3;
+      /* efecto de aparición */
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+    .logo-container {
+      position: fixed;
+      top: 60px;
+      left: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .logo-container img {
+      width: 90px;
+      height: auto;
+    }
+
+    .full-image {
+      width: 100%;
+      display: block;
+    }
+
+    .full-image2 {
+      width: 100%;
+      display: block;
+        padding-top: 100px;
+    }
+
+
+
+       .full-image3 {
+      width: 100%;
+      display: block;
+margin-top: -5px;
+      padding-bottom: 00px;
+    }
+
+
+footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f3f3f3; /* Asegura que tenga el mismo fondo */
+        text-align: center;
+        padding: 7px 0;
+        z-index: 1000; /* Se mantiene por encima de otros elementos */
+    }
+
+
+
+        .footer-image {
+            width: 150px; /* Ajusta el tamaño de la imagen */
+            height: auto;
+            padding-top: 0px;
+            margin-top: 0px;
+            animation: mostrarImagenes 3s ease forwards;
+        }
+
+
+
+.bloque-texto-imagen {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 54px 80px 70px;
+  gap: 80px;
+  max-width: 1400px;
+  margin: 14px 100px;
+  box-sizing: border-box;
+}
+
+.bloque-texto-imagen .texto {
+  flex: 14.4;
+  font-size: 14px;
+  color: #333;
+  text-align: justify;
+  font-family: "Lexend", sans-serif;
+}
+
+.bloque-texto-imagen .imagen {
+  flex: 26.5;
+  text-align: right;
+}
+
+.bloque-texto-imagen .imagen img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0px;
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+  .bloque-texto-imagen {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .bloque-texto-imagen .imagen {
+    text-align: center;
+  }
+}
+
+.titulo-frase {
+  font-size: 22px; /* O el tamaño que quieras */
+  font-weight: 700;
+  display: block; /* Esto asegura que ocupe su propia línea */
+  text-align: center;
+  margin-bottom: 5px; /* Espacio entre el título y el texto de abajo */
+}
+
+
+
+.texto2 {
+   text-align: justify;
+      padding: 150px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      font-size: 14px;
+      color: rgb(51, 51, 51);
+      font-family: "Lexend", sans-serif;
+    }
+
+
+
+
+
+ /* NUEVO PARA MOVIL!!!!! APARTIR DE AQUI */
+
+
+    /* Menú hamburguesa solo en móvil */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 49px;
+  left: 13px;
+  z-index: 1100;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.menu-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  top: 100px;
+  left: 20px;
+   background-color: #e2e2e2f0;
+   border: rgb(118 118, 118) 1px;
+  padding: 10px;
+  z-index: 1100;
+}
+
+.menu-mobile a img {
+  width: 90px;
+  height: auto;
+}
+
+
+
+/* En escritorio se muestra el menú clásico y se oculta el hamburguesa */
+@media (max-width: 768px) {
+  .logo-container {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-mobile {
+    display: none;
+  }
+
+  .menu-mobile.active {
+    display: flex;
+  }
+}
+
+
+
+
+/* Versión móvil: textos y galeria */
+
+
+@media (max-width: 480px) {
+@media (max-width: 768px) {
+  .bloque-texto-imagen {
+    flex-direction: column;
+    padding: 40px 20px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+
+  .bloque-texto-imagen .texto {
+    font-size: 13px;
+    text-align: justify;
+    padding: 0 10px;
+  }
+
+  .bloque-texto-imagen .imagen {
+    text-align: center;
+  }
+
+  .bloque-texto-imagen .imagen img {
+    width: 95%;
+      padding-top: 20px;
+    max-width: 340px;
+    height: auto;
+    border-radius: 0px;
+  }
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+  .bloque-texto-imagen {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .bloque-texto-imagen .imagen {
+    text-align: center;
+  }
+}
+
+.titulo-frase {
+  font-size: 22px; /* O el tamaño que quieras */
+  font-weight: 700;
+   text-align: center;
+  display: block; /* Esto asegura que ocupe su propia línea */
+  margin-bottom: 5px; /* Espacio entre el título y el texto de abajo */
+}
+
+
+.texto2 {
+   text-align: justify;
+      padding: 150px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      font-size: 14px;
+      color: rgb(51, 51, 51);
+      font-family: "Lexend", sans-serif;
+    }
+
+  
+}
+
+
+
+
+
+
+
+.modal-img {
+    max-width: 90%;
+    max-height: 100%;
+    border: 5px solid rgba(255, 255, 255, 0);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+    transition: all 0.3s ease;
+  }
+
+  /* Versión móvil: imagen más grande cancelada */
+  @media (max-width: 640px) {
+  #modal-img {
+    width: 130vw !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+  }
+}
+
+
+/* Versión móvil: hover fijo */
+
+@media (max-width: 768px) {
+  .imagen-hover img.img-hover {
+    opacity: 1 !important;
+    pointer-events: none;
+  }
+
+  .imagen-hover:hover img.img-hover {
+    opacity: 1 !important;
+  }
+
+  .imagen-hover:hover img.img-original {
+    opacity: 1 !important;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .logo-img-unica {
+    max-width: 200px !important;
+  }
+
+  .logo-img-unica2 {
+    max-width: 100px !important;
+  }
+
+
+
+    .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px;
+  padding-top: 112px;
+}
+
+}
+
+/* Por defecto: oculto en escritorio */
+.top-banner-mobile {
+  display: none;
+}
+
+/* Solo se muestra en móviles */
+@media (max-width: 768px) {
+  .top-banner-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #C08E38; /* Naranja */
+    z-index: 9999;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .scroll-text-mobile {
+    font-family: "Lexend", sans-serif;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: scrollLeftMobile 15s linear infinite;
+    font-weight: bold;
+    font-size: 12px;
+    color: #3C1841;
+  }
+
+  @keyframes scrollLeftMobile {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Ajuste extra para evitar que la cinta tape tu contenido */
+  body {
+    padding-top: 40px !important;
+  }
+}
+
+
+
+.only-desktop {
+  display: block;
+}
+
+.only-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .only-desktop {
+    display: none;
+  }
+
+  .only-mobile {
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+
+a, button, .tus-elementos-clickeables {
+  -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4); /* rojo semitransparente */
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 40px; /* Ajusta el valor según el espacio que necesites */
+  }
+}
+
+
+@media (min-width: 769px) {
+  .bloque-texto-imagen {
+    margin-top: -40px; /* sube el contenido sin afectar el layout móvil */
+  }
+}
+
+
+/* Versión tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+.bloque-texto-imagen {
+    flex-direction: column;
+    text-align: center;
+    padding: 54px 1px;
+    
+  }
+
+  .bloque-texto-imagen .imagen {
+    text-align: center;
+    margin-bottom: -50px; /* Espacio entre la imagen y el texto */
+  }
+}
+
+.titulo-frase {
+  font-size: 22px; /* O el tamaño que quieras */
+  font-weight: 700;
+   text-align: center;
+  display: block; /* Esto asegura que ocupe su propia línea */
+  margin-bottom: 5px; /* Espacio entre el título y el texto de abajo */
+}
+
+
+.texto2 {
+   text-align: justify;
+      padding: 50px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      font-size: 14px;
+      color: rgb(51, 51, 51);
+      font-family: "Lexend", sans-serif;
+    }
+
+  
+/* Versión tablet */
+  @media (min-width: 481px) and (max-width: 768px) {
+
+.menu-toggle {
+      display: block; /* Asegurarse de que el botón hamburguesa se vea */
+      position: fixed;
+      top: 49px;
+      left: 11px;
+      z-index: 1100;
+      background-color: transparent;
+      border: none;
+      font-size: 30px;
+      cursor: pointer;
+      opacity: 0.7; /* Ajustar la opacidad como en la versión móvil */
+    }
+
+    .menu-mobile {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      position: fixed;
+      top: 85px;
+      left: 20px;
+      background-color: rgba(226, 226, 226, 0.95); /* Asegura que la opacidad se mantenga */
+      border: rgb(118, 118, 118) 1px;
+      padding: 10px;
+      z-index: 1100;
+    }
+
+    .menu-mobile.active {
+      display: flex; /* Mostrar el menú cuando esté activo */
+    }
+
+    /* Mostrar el menú hamburguesa en tablet */
+    .menu-toggle {
+      opacity: 0.8; /* Ajuste de opacidad */
+    }
+  }
+
+
+
+
+  </style>
+</head>
+<body>
+
+  
+   <!-- Cinta móvil -->
+<div class="top-banner-mobile">
+  <div class="scroll-text-mobile">
+    Haz zoom con tus dedos para apreciar mejor las imágenes
+  </div>
+</div>
+
+
+
+  
+ <!-- Botón hamburguesa solo visible en móvil -->
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<!-- Menú hamburguesa móvil -->
+<div class="menu-mobile" id="mobileMenu">
+<a href="/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1748218042/1_xnbipu_1_ujpdhb.png" alt="Logo 5">
+  </a>
+  <a href="proyectos-oficina/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1748212668/proyectos_final2-01_omaef9.png" alt="Logo 1">
+</a>
+  
+  <a href="acerca-de-oficina/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1744207780/acerca_dev22-01_lawuz4.png" alt="Logo 2">
+  </a>
+  <a href="archivo-en-venta/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1744208092/ventaaaaa-01_qag3lr.png" alt="Logo 3">
+  </a>
+  <a href="contacto/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1744209347/CONSSS-01_aokd62.png" alt="Logo 4">
+  </a>
+  <a href="patio-trasero/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750259371/patio_menu_mqpfum.png" alt="Logo 5">
+  </a>
+
+
+
+
+
+</div>
+
+<!-- Menú clásico en escritorio -->
+<div class="logo-container">
+  <a href="/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748218042/1_xnbipu_1_ujpdhb.png" alt="Logo 5">
+     </a>
+  <a href="proyectos-oficina/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748212668/proyectos_final2-01_omaef9.png" alt="Logo 1">
+</a>
+
+  
+  <a href="acerca-de-oficina/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744207780/acerca_dev22-01_lawuz4.png" alt="Logo 2">
+  </a>
+  <a href="archivo-en-venta/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744208092/ventaaaaa-01_qag3lr.png" alt="Logo 3">
+  </a>
+  <a href="contacto/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744209347/CONSSS-01_aokd62.png" alt="Logo 4">
+  </a>
+  <a href="patio-trasero/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1750253619/patio_menu_mqpfum.png" alt="Logo 5">
+  </a>
+
+
+  
+</div>
+
+
+
+
+<div class="bloque-texto-imagen">
+  <div class="imagen">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749573340/addy_web4-0_sfocnt.png" alt="Imagen acompañante">
+  </div>
+  
+  <div class="texto">
+    <p><strong class="titulo-frase">Addy esotérica</strong><p style="text-align: center;">(Guadalajara, México)</p><br>
+
+   <p>Es una marca dedicada a comercializar productos esotéricos. Su catálogo principal incluye veladoras, pero también abarca inciensos, tarots y joyería en oro y plata, ofreciendo artículos que fusionan espiritualidad, energía y estilo.</p>
+    <p><i><strong><br>Diseño de identidad gráfica / Papelería / Edición de foto</strong></p></i>
+  </div>
+</div>
+
+
+
+<!-- Imagen 2 para escritori o Y CEL -->
+
+<img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749945234/addy1-01_chtxra.png" alt="Imagen 2 escritorio" class="full-image only-desktop">
+<img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1750078237/addy_movil-01_toafzk.png" alt="Imagen 2 móvil" class="full-image only-mobile">
+
+
+
+  
+
+  
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749957821/ADD_NUEVO6-01_lqh5iw.png" alt="Imagen 2" class="full-image">
+     <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749950693/anillo_ADDY-01_hmzopu.png" alt="Imagen 2" class="full-image">
+     <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749953641/addy_dise%C3%B1o_final-01_gdesrj.png" alt="Imagen 2" class="full-image">
+
+   
+ 
+ 
+
+
+
+
+  <!-- Agregá más imágenes así -->
+
+  <!-- Footer -->
+  <footer>
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1750388753/derechos_pie_de_pagina-01_re9gh9.png" alt="Imagen de pie de página" class="footer-image">
+  </footer>
+
+
+  
+   </div>
+
+
+
+
+
+
+  
+   <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243);; justify-content:center; align-items:center; cursor:pointer;">
+  <span id="cerrar-modal" style="position:absolute; top:20px; right:30px; color:rgb(0, 0, 0); font-size:40px; cursor:pointer;">&times;</span>
+   <img id="modal-img" src="https://res.cloudinary.com/dbwezmju6/image/upload/v1748892157/dehoy1-01_hfnod8.png" alt="Imagen ampliada" style="max-width:37%; max-height:auto; border: 5px solid rgba(255, 255, 255, 0); box-shadow: 0 0 20px rgba(0, 0, 0, 0);" />
+</div>
+
+<script>
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  const cerrarModal = document.getElementById('cerrar-modal');
+
+  // Solo permitir clic en escritorio
+  if (window.innerWidth > 768) {
+    document.querySelectorAll('.img-original[data-full]').forEach(img => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const imgGrande = img.getAttribute('data-full');
+        modalImg.src = imgGrande;
+        modal.style.display = 'flex';
+      });
+    });
+  }
+
+  cerrarModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalImg.src = '';
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      modalImg.src = '';
+    }
+  });
+});
+
+
+
+function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+  }
+
+ document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  }, false);
+
+</script>
+
+
+</body>
+</html>

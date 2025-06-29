@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soto</title>
+    
+   <link rel="icon" href="https://res.cloudinary.com/dbwezmju6/image/upload/v1750415672/icono_wev-01_gllalq.png" type="image/png">
+   <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+ <meta name="description" content="soto es el sitio donde ocurre todo">
+  
+  <meta property="og:title" content="inicio">
+<meta property="og:description" content="inicio de soto, el sitio donde ocurre todo.">
+<meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
+<meta property="og:url" content="https://sotosotosoto.com/">
+<meta property="og:type" content="website">
+  
+    <style>
+        
+        /* 🌞 Modo claro */
+        html, body {
+            color: #000000 !important;
+            forced-color-adjust: none !important;
+            -webkit-text-fill-color: inherit !important;
+            background-color: #f3f3f3; /* Fondo blanco por defecto */
+        }
+
+        /* 🌙 Modo oscuro (Fondo gris claro en vez de negro) */
+        @media (prefers-color-scheme: dark) {
+            html, body {
+                background-color: #f3f3f3 !important; /* Gris claro en lugar de negro */
+                color: #000000 !important; /* Mantener texto negro */
+            }
+        }
+
+        /* Estilos generales */
+        body {
+           display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            position: relative;
+            padding-top: 66.3px; /* Espacio en la parte superior */
+            padding-bottom: 20px;
+            margin-bottom: 11px;
+            
+          /* efecto de aparición */
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+       
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f3f3f3; /* Asegura que tenga el mismo fondo */
+        text-align: center;
+        padding: 7px 0;
+        z-index: 1000; /* Se mantiene por encima de otros elementos */
+    }
+
+
+
+        .footer-image {
+            width: 150px; /* Ajusta el tamaño de la imagen */
+            height: auto;
+            padding-top: 0px;
+            margin-top: 0px;
+            animation: mostrarImagenes 3s ease forwards;
+        }
+
+
+    .logo-container {
+      position: fixed;
+      top: 60px;
+      left: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .logo-container img {
+      width: 90px;
+      height: auto;
+    }
+        
+
+
+        .top-banner {
+      position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(242, 98, 0);
+  z-index: 9999;
+  overflow: hidden; /* ← CORTA LO QUE SE SALE */
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+
+.top-banner .scroll-text {
+    font-family: "Lexend", sans-serif;
+}
+
+
+.scroll-text {
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: scrollLeft 21s linear infinite;
+    font-weight: bold;
+    font-size: 12px;
+    color: rgb(0, 0, 0); 
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+        .container {
+            width: 45%;
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Galería de imágenes */
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center; /* Centra las imágenes */
+            flex-wrap: wrap;
+            gap: 10px; /* Espaciado uniforme */
+        }
+
+
+        .gallery {
+            display: flex;
+            justify-content: center; /* Asegura que las imágenes estén centradas */
+            flex-wrap: wrap;
+            align-items: center;
+            text-align: center; /* Asegura alineación */
+            gap: 25px; /* Espaciado entre imágenes */
+            margin-bottom: -75px;
+        }
+
+
+
+        .gallery a {
+            display: inline-block;
+            text-align: center;
+        }
+
+        .gallery img {
+            display: block;
+            pointer-events: auto;
+            margin: auto;
+        }
+
+
+        .gallery a:not(:hover) {
+            pointer-events: none;
+        }
+
+        @media (min-width: 769px) {
+            body {
+                padding-bottom: 100px;
+            }
+        }
+
+        .image-1, .image-2, .image-3, .image-4, .image-5, .image-6, .additional-image {
+            transition: opacity 0.3s;
+        }
+
+
+
+
+        .image-1 {
+        position: relative;
+        top: -12.2px; /* Sube la imagen 20px */
+    }
+
+        .image-2 {
+        position: relative;
+        top: 0px; /* Sube la imagen 20px */
+    }
+
+
+        .image-3 {
+        position: relative;
+        top: 0px; /* Sube la imagen 20px */
+    }
+
+
+        .image-4 {
+        position: relative;
+        top: 0px; /* Sube la imagen 20px */
+    }
+        .image-5 {
+        position: relative;
+        top: 0px; /* Sube la imagen 20px */
+    }
+
+    .image-6 {
+        position: relative;
+        top: 0px; /* Sube la imagen 20px */
+    }
+
+
+
+   
+
+
+
+        .image-1 { width: 20%; margin: 10px 10px; }
+        .image-2 { width: 36%; margin: 10px 10px; }
+        .image-3 { width: 70%; margin: 10px 10px; }
+        .image-4 { width: 36%; margin: 10px 10px; }
+        .image-5 { width: 70%; margin: 10px 10px; }
+        .image-6 { width: 70%; margin: 10px 10px; }
+        .image-7 { width: 30%; margin: 20px 10px; }
+
+
+        /* Efecto hover */
+        .gallery img:hover {
+            opacity: 0.7;
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+
+
+
+
+        /* 📱 Ajustes para móviles */
+        @media (max-width: 768px) {
+            .container { width: 100%; }
+            body {
+                min-height: 10px; /* Evita espacio extra */
+        overflow-y: auto; /* Asegura que solo haya scroll si es necesario */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 62px !important; 
+        margin-top: 30px !important;
+        padding-bottom: 0px;
+    }
+
+
+
+        
+
+            .gallery { 
+        justify-content: center; 
+        gap: 0px; /* Espaciado uniforme */
+        display: flex;
+        flex-direction: column; /* Asegura que las imágenes se apilen */
+        align-items: center; /* Centra las imágenes */
+    }    
+/* Animación de aparición suave */
+
+            .gallery a {
+                margin: 12px 0;
+        pointer-events: none; /* Inicialmente deshabilitado */
+    }
+
+    .gallery a.active {
+        pointer-events: auto; /* Habilitado cuando se hace clic */
+    }
+
+            .image-1 { width: 26%;top: -23px; }
+            .image-2 { width: 49%; }
+            .image-3 { width: 64%; }
+            .image-4 { width: 49%; }
+            .image-5 { width: 70%; }
+            .image-6 { width: 70%; }
+            .image-7 { width: 25%; top: 10px; }
+            
+
+
+
+        }
+
+
+        /* Eliminar el borde azul al hacer foco en enlaces e imágenes */
+        a:focus, img:focus {
+            outline: none;
+        }
+
+        /* Evitar resaltado al hacer clic en imágenes y enlaces en dispositivos móviles */
+        img, a {
+            -webkit-tap-highlight-color: transparent;
+
+
+
+
+
+        }
+
+
+
+
+        
+    </style>
+
+    <!-- Script para deshabilitar clic derecho -->
+    <script>
+        document.addEventListener("contextmenu", function(e) {
+            e.preventDefault();
+        }, false);
+    </script>
+</head>
+<body>
+    
+
+
+        <a href="https://www.instagram.com/sotosolo_?igsh=MXJha3o2dmVpNHRodA==" target="_blank" class="banner-link">
+            <div class="top-banner">
+              <div class="scroll-text">
+                Haz clic aquí para las últimas novedades y actualizaciones
+              </div>
+            </div>
+          </a>
+          
+
+            
+    <!-- Galería de imágenes -->
+    <div class="container">
+        <div class="gallery">
+            <a href="acerca-de-soto/">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1750265370/Video_sin_t%C3%ADtulo_Hecho_con_Clipchamp_1_sc9hnp.gif" alt="Imagen 1" class="image-1">
+            </a>
+            <a href="oficina/">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1750252281/oficina_menu_nygn40.png" alt="Imagen 2" class="image-2">
+            </a>
+             <!-- <a href="https://xavi-soto.github.io/portafolio/">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1744206924/chingaderas-01_fbaufj.png" alt="Imagen 3" class="image-3">
+            </a> -->
+            <a href="patio-trasero/">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1750259371/patio_menu_mqpfum.png" alt="Imagen 4" class="image-4">
+            </a>
+            
+        
+        
+        
+    </div>
+        
+      
+        
+    </div>
+
+
+    <footer>
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1750388753/derechos_pie_de_pagina-01_re9gh9.png" alt="Imagen de pie de página" class="footer-image">
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll(".gallery a");
+
+            links.forEach(link => {
+                const img = link.querySelector("img");
+
+                img.addEventListener("mouseenter", () => {
+                    link.style.pointerEvents = "auto";
+                });
+
+                img.addEventListener("mouseleave", () => {
+                    link.style.pointerEvents = "none";
+                });
+
+                // Asegurar que al inicio los enlaces no sean clickeables
+                link.style.pointerEvents = "none";
+            });
+        });
+    </script>
+<script>
+     document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".gallery a");
+    const images = document.querySelectorAll(".gallery img");
+
+    // Solo habilitar los clics en móvil cuando se hace clic en la imagen
+    if (window.innerWidth <= 768) {
+        images.forEach(img => {
+            img.addEventListener("click", function() {
+                const link = img.parentElement; // Obtener el enlace padre
+                link.classList.add("active"); // Activar el enlace al hacer clic en la imagen
+            });
+        });
+    } else {
+        // En escritorio, el comportamiento sigue siendo como antes (hover para habilitar clic)
+        links.forEach(link => {
+            const img = link.querySelector("img");
+
+            img.addEventListener("mouseenter", () => {
+                link.style.pointerEvents = "auto";
+            });
+
+            img.addEventListener("mouseleave", () => {
+                link.style.pointerEvents = "none";
+            });
+
+            // Inicialmente desactivar los enlaces en escritorio
+            link.style.pointerEvents = "none";
+            });
+        }
+
+        // Agregar la animación a las imágenes en móviles
+        images.forEach(img => {
+            // Aplica la animación en móviles
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

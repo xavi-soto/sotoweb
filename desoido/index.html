@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>desoído</title>
+   <link rel="icon" href="https://res.cloudinary.com/dbwezmju6/image/upload/v1750391546/icono_wev-01_gllalq.png" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <!-- Descripción del sitio (sí influye en SEO y vista previa en buscadores) -->
+  <meta name="description" content="soto es el sitio donde ocurre todo">
+  
+  <meta property="og:title" content="desoído">
+<meta property="og:description" content="desoído, es una app movil sobre sonidos en extinción.">
+<meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
+<meta property="og:url" content="https://sotosotosoto.com/desoido/">
+<meta property="og:type" content="website">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      text-align: center;
+      /* efecto de aparición */
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+    .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px;
+  padding-top: 100px;
+}
+
+
+.logo-container {
+  position: fixed;
+  top: 60px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+ .logo-container img {
+      width: 90px;
+      height: auto;
+    }
+
+
+    .descripcion {
+        text-align: justify;
+      padding: 150px;
+      padding-top: 50px;
+      font-size: 14px;
+      color: #333;
+      font-family: "Lexend", sans-serif;
+    }
+
+     .descripcion2 {
+      
+      padding: 140px;
+      padding-top: 70px;
+      font-size: 14px;
+      color: #333;
+      font-family: "Lexend", sans-serif;
+    }
+
+
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f3f3f3; /* Asegura que tenga el mismo fondo */
+        text-align: center;
+        padding: 7px 0;
+        z-index: 1000; /* Se mantiene por encima de otros elementos */
+    }
+
+
+
+        .footer-image {
+            width: 150px; /* Ajusta el tamaño de la imagen */
+            height: auto;
+            padding-top: 0px;
+            margin-top: 0px;
+            animation: mostrarImagenes 3s ease forwards;
+        }
+
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 80px 25px; /* 10px entre filas, 25px entre columnas */
+
+      padding: 30px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      max-width: 1200px;
+      margin: 0 auto;
+      margin-top: -80px;
+      margin-bottom: -150px;
+    }
+
+
+    .video-galeria {
+  grid-column-start: 4;
+  grid-row: span 4;
+  position: relative;
+  width: 143%;
+  padding-top: 0%; /* relación vertical */
+  margin-top: -68.5%;
+  margin-left: -45%;
+
+  overflow: hidden;
+}
+
+.video-galeria iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+
+
+
+    .imagen-hover {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .imagen-hover img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: opacity 0.8s ease;
+    }
+
+    .imagen-hover img.img-hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+
+    .imagen-hover:hover img.img-hover {
+      opacity: 1
+    }
+
+    .imagen-hover:hover img.img-original {
+      opacity: 3;
+    }
+
+
+    .mover-derecha {
+  transform: translateX(100px);
+}
+
+
+    @media (max-width: 768px) {
+      .galeria {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .galeria {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+
+
+
+/* NUEVO PARA MOVIL!!!!! APARTIR DE AQUI */
+
+
+    /* Menú hamburguesa solo en móvil */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 49px;
+  left: 13px;
+  z-index: 1100;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.menu-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  top: 100px;
+  left: 20px;
+   background-color: #e2e2e2f0;
+   border: rgb(118 118, 118) 1px;
+  padding: 10px;
+  z-index: 1100;
+}
+
+.menu-mobile a img {
+  width: 90px;
+  height: auto;
+}
+
+
+/* En escritorio se muestra el menú clásico y se oculta el hamburguesa */
+@media (max-width: 768px) {
+  .logo-container {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-mobile {
+    display: none;
+  }
+
+  .menu-mobile.active {
+    display: flex;
+  }
+}
+
+
+
+
+/* Versión móvil: textos y galeria */
+
+
+@media (max-width: 480px) {
+
+  .descripcion2 {
+    padding: 30px 25px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+   .descripcion{
+    padding: 30px 5px;
+    font-size: 13px;
+    text-align: justify;
+  }
+
+  .galeria {
+    grid-template-columns: 1fr;
+    
+    gap: 40px;
+    padding: 10px 1px;
+    margin-top: 0;
+    margin-bottom: 70px;
+  }
+
+
+
+  .video-galeria {
+    grid-column: auto;
+    width: 100%;
+    margin-top: -30px;
+    margin-left: 0;
+    padding-top: 226.25%; /* 16:9 ratio */
+  }
+
+  .video-galeria iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  .imagen-hover {
+    width: 100%;
+  }
+
+  .mover-derecha {
+    transform: none;
+  }
+}
+
+
+
+
+
+
+
+.modal-img {
+    max-width: 90%;
+    max-height: 100%;
+    border: 5px solid rgba(255, 255, 255, 0);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+    transition: all 0.3s ease;
+  }
+
+  /* Versión móvil: imagen más grande cancelada */
+  @media (max-width: 640px) {
+  #modal-img {
+    width: 130vw !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+  }
+}
+
+
+/* Versión móvil: hover fijo */
+
+@media (max-width: 768px) {
+  .imagen-hover img.img-hover {
+    opacity: 1 !important;
+    pointer-events: none;
+  }
+
+  .imagen-hover:hover img.img-hover {
+    opacity: 1 !important;
+  }
+
+  .imagen-hover:hover img.img-original {
+    opacity: 1 !important;
+  }
+}
+
+
+
+a, button, .tus-elementos-clickeables {
+  -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4); /* rojo semitransparente */
+}
+
+/* Versión tablet */
+  @media (min-width: 481px) and (max-width: 768px) {
+    /* Galería de imágenes */
+     .galeria {
+    grid-template-columns: 1fr;
+    
+    gap: 40px;
+    padding: 30px 0px;
+    margin-top: 0;
+    margin-bottom: 0px;
+  }
+
+.mover-derecha {
+    transform: none;
+  }
+
+  .video-galeria {
+    grid-column: auto;
+    width: 100%;
+    margin-top: -50px;
+    margin-left: 0;
+    padding-top: 226.25%; /* 16:9 ratio */
+  }
+
+  .video-galeria iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+    /* Descripción para tablet */
+    .descripcion {
+      padding: 30px 0px;
+      font-size: 14px; /* Un tamaño más grande que en móvil */
+      text-align: justify;
+    }
+
+     .descripcion2 {
+      padding: 30px 35px;
+      font-size: 14px; /* Un tamaño más grande que en móvil */
+      text-align: center;
+    }
+
+    /* Modificar las imágenes hover */
+    .imagen-hover {
+      width: 100%;
+    }
+
+    /* Asegurar que el logo no se vea demasiado pequeño */
+    .logo img {
+      max-width: 120px; /* Ajuste del tamaño del logo */
+    }
+
+
+    .menu-toggle {
+      display: block; /* Asegurarse de que el botón hamburguesa se vea */
+      position: fixed;
+      top: 49px;
+      left: 11px;
+      z-index: 1100;
+      background-color: transparent;
+      border: none;
+      font-size: 30px;
+      cursor: pointer;
+      opacity: 0.7; /* Ajustar la opacidad como en la versión móvil */
+    }
+
+    .menu-mobile {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      position: fixed;
+      top: 85px;
+      left: 20px;
+      background-color: rgba(226, 226, 226, 0.95); /* Asegura que la opacidad se mantenga */
+      border: rgb(118, 118, 118) 1px;
+      padding: 10px;
+      z-index: 1100;
+    }
+
+    .menu-mobile.active {
+      display: flex; /* Mostrar el menú cuando esté activo */
+    }
+
+    /* Mostrar el menú hamburguesa en tablet */
+    .menu-toggle {
+      opacity: 0.8; /* Ajuste de opacidad */
+    }
+  }
+
+
+
+    
+  </style>
+</head>
+<body>
+
+
+<!-- Botón hamburguesa solo visible en móvil -->
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<!-- Menú hamburguesa móvil -->
+<div class="menu-mobile" id="mobileMenu">
+  
+  <a href="/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1748218042/1_xnbipu_1_ujpdhb.png" alt="Logo 5">
+  </a>
+  <a href="proyectos-patio-trasero/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1748212668/proyectos_final2-01_omaef9.png" alt="Logo 1">
+  </a>
+  <a href="acerca-de-patio-trasero/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1744207780/acerca_dev22-01_lawuz4.png" alt="Logo 2">
+  </a>
+  <a href="sobre-este-sitio-web/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1750887867/lo_ultimo_web_tmrjbi.png" alt="Logo 3">
+  </a>
+  <a href="oficina/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1750252281/oficina_menu_nygn40.png" alt="Logo 3">
+  </a>
+  
+  
+</div>
+
+
+
+
+  <div class="logo-container">
+    <a href="/">   
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748218042/1_xnbipu_1_ujpdhb.png" alt="Logo 4">
+    </a>
+    <a href="proyectos-patio-trasero/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1748212668/proyectos_final2-01_omaef9.png" alt="Logo 1">
+</a>
+<a href="acerca-de-patio-trasero/">  
+<img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744207780/acerca_dev22-01_lawuz4.png" alt="Logo 2">
+</a>
+<a href="sobre-este-sitio-web/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1750887867/lo_ultimo_web_tmrjbi.png" alt="Logo 3">
+  </a>
+<a href="oficina/">   
+<img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1750252281/oficina_menu_nygn40.png" alt="Logo 3">
+</a>
+
+
+
+
+    
+   </div>
+  <div class="logo">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744375729/desoido_logo-01_vagq6w.png" alt="Logo" style="max-width: 250px; height: auto;">
+  </div>
+
+
+
+
+ <div class="descripcion2">
+    <p>
+ 
+      <strong>App móvil<br>
+        <br>
+          Consulta el código y documento <a href="https://github.com/xavi-soto/App-Design-Document-Desoidio/wiki" target="_blank"> Github</a><br>
+      
+    
+Próximamente en Google Play Store<br></strong>
+
+ 
+
+  <div class="descripcion">
+    <p>
+      <p>Puzzle Game. Programada con Dart, uso de Ai, Ps y Android Studio. </p>
+      <p>Este proyecto da forma a lo intangible: rescata sonidos que desaparecieron sin dejar huella. No hay grabaciones. No hay archivos. Solo memoria. Lo que sobrevive es lo que la gente recuerda haber escuchado.</p>
+      <p>A partir de entrevistas escritas —un ejercicio pseudoetnográfico— se reconstruyen paisajes sonoros extintos a través de descripciones. El resultado es una experiencia interactiva donde el sonido, la memoria y la identidad se cruzan para abrir una grieta entre pasado y presente.</p>
+      
+      Todo se creó desde cero: programación, diseño, arte. Un cruce entre tecnología, cultura y arte que no busca nostalgia, sino reactivación. No se trata de documentar lo perdido, sino de hacerlo hablar otra vez.</p>
+      </p>
+  </div>
+
+
+
+
+
+  <div class="galeria">
+    <!-- Repetí esta estructura para las 16 imágenes -->
+
+
+<div class="imagen-hover">
+  <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744377609/DESOIDO1-02_mbqj4z.png" class="img-original" alt="Imagen 1" >
+
+  <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749118917/pantalla1-01_dvkytc.png" class="img-hover" alt="Hover Imagen 1"  data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749121268/des0-01_kspwd0.png">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="imagen-hover">
+      <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744377609/DESOIDO2-01_boyt7k.png" class="img-original" alt="Imagen 2">
+      
+<img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749119613/pa2-01_xvpqzl.png" class="img-hover" alt="Hover Imagen 1"  data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749122074/des2-01_n0xftn.png">
+</div>
+
+
+
+
+  
+
+    <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744377609/DESOIDO3-01_vsce0z.png" class="img-original" alt="Imagen 2">
+ <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749119607/pa3-01_btz1kd.png" class="img-hover" alt="Hover Imagen 1"  data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749121981/des1-01_gcns1v.png">
+</div>
+
+
+
+  
+
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749121516/DESOIDO4-01_ebqeul.png" class="img-original" alt="Imagen 2">
+       <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749119603/pa4-01_gfcmgm.png" class="img-hover" alt="Hover Imagen 1"  data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749122158/des3-01_umk4o6.png">
+
+
+      </div>
+
+
+
+
+
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744377609/DESOIDO5-01_ysilg2.png" class="img-original" alt="Imagen 2">
+       <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749119601/pa5-01_j6ihne.png" class="img-hover" alt="Hover Imagen 1"  data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749122239/des4-01_gmbui3.png">
+
+      </div>
+
+
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744377610/DESOIDO6-01_dpoqrp.png" class="img-original" alt="Imagen 2">
+        
+      <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749119598/pa6-01_h25yhf.png" class="img-hover" alt="Hover Imagen 1"  data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749122324/des5-01_h0sew2.png">
+</div>
+
+
+
+
+
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744377610/DESOIDO7-01_dabkzn.png" class="img-original" alt="Imagen 2">
+     <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749119594/pa7-01_zxtsh6.png" class="img-hover" alt="Hover Imagen 1"  data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749122408/des6-01_mvaegs.png">
+
+
+      </div>
+
+
+
+
+
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1744377609/DESOIDO8-01_vwsme2.png" class="img-original" alt="Imagen 2">
+      <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749119593/pa8-01_jrwtw5.png" class="img-hover" alt="Hover Imagen 1"  data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_webp,q_auto/v1749122474/des7-01_og45fs.png">
+
+
+      </div>
+
+
+
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749113882/fin1-01_nvv5lv.png" class="img-original" alt="Imagen 2">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749113879/fin2-01_fuhr7j.png" class="img-hover" alt="Hover Imagen 2">
+      </div>
+      <div class="imagen-hover mover-derecha">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1751024429/nuevo_desoido2_qwugqj.png" class="img-original" alt="Imagen 2">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749113877/fin4-01_fny6d9.png" class="img-hover" alt="Hover Imagen 2">
+      </div>
+
+
+    <div class="video-galeria">
+        <iframe src="https://streamable.com/e/1bmuva?autoplay=1"
+                allow="fullscreen;autoplay"
+                allowfullscreen
+                frameborder="0">
+        </iframe>
+      </div>
+      
+      <div class="imagen-hover">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1751024429/nuevo_desoido1_slppew.png" class="img-original" alt="Imagen 2">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749113889/fin6-01_fzg6uv.png" class="img-hover" alt="Hover Imagen 2">
+      </div>
+      <div class="imagen-hover mover-derecha">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749113887/fin7-01_erc7s8.png" class="img-original" alt="Imagen 2">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1749113884/fin8-01_zr06ek.png" class="img-hover" alt="Hover Imagen 2">
+      </div>
+      
+
+</div>
+
+      <footer>
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1750388753/derechos_pie_de_pagina-01_re9gh9.png" alt="Imagen de pie de página" class="footer-image">
+        
+    </footer>
+
+           
+
+    <!-- Repetí esto hasta Imagen 16 -->
+    <!-- Puedes reemplazar los links de ejemplo por los tuyos -->
+  </div>
+
+  <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243);; justify-content:center; align-items:center; cursor:pointer;">
+  <span id="cerrar-modal" style="position:absolute; top:20px; right:30px; color:rgb(0, 0, 0); font-size:40px; cursor:pointer;">&times;</span>
+   <img id="modal-img" src="https://res.cloudinary.com/dbwezmju6/image/upload/v1748892157/dehoy1-01_hfnod8.png" alt="Imagen ampliada" style="max-width:90%; max-height:103%; border: 5px solid rgba(255, 255, 255, 0); box-shadow: 0 0 20px rgba(0, 0, 0, 0);" />
+</div>
+
+<script>
+ document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  const cerrarModal = document.getElementById('cerrar-modal');
+
+  document.querySelectorAll('.img-hover[data-full]').forEach(img => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const imgGrande = img.getAttribute('data-full');
+      modalImg.src = imgGrande;
+      modal.style.display = 'flex';
+    });
+  });
+
+  cerrarModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalImg.src = '';
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      modalImg.src = '';
+    }
+  });
+});
+
+
+function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+  }
+ document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  }, false);
+
+
+</script>
+
+
+
+
+</body>
+</html>
