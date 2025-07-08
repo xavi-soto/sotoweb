@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>chingaderas en la ventana</title>
+  <title>no solo tiempo</title>
    <link rel="icon" href="https://res.cloudinary.com/dbwezmju6/image/upload/v1750391546/icono_wev-01_gllalq.png" type="image/png">
 
   <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
   <meta name="description" content="soto es el sitio donde ocurre todo">
   
-  <meta property="og:title" content="chingaderas en la ventana">
-<meta property="og:description" content="chingaderas en la ventana, es un homenaje a mi espacio inmediato: el que habito, ignoro y redescubro todos los días.">
+  <meta property="og:title" content="no solo tiempo">
+<meta property="og:description" content="no solo tiempo, intervención en Blanca, España.">
 <meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
-<meta property="og:url" content="https://sotosotosoto.com//chingaderas-en-la-ventana/">
+<meta property="og:url" content="https://sotosotosoto.com//no-solo-tiempo/">
 <meta property="og:type" content="website">
-  
   
   <style>
     body {
@@ -58,9 +57,9 @@
 
 
     .descripcion {
-      text-align: justify;
-      padding: 140px;
-      padding-top: 70px;
+        text-align: justify;
+      padding: 150px;
+      padding-top: 50px;
       font-size: 14px;
       color: #333;
       font-family: "Lexend", sans-serif;
@@ -74,6 +73,21 @@
       color: #333;
       font-family: "Lexend", sans-serif;
     }
+
+
+      .imagen-grande {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 97px 20px;
+}
+
+.imagen-grande img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0px;
+  margin-top: -130px;
+}
 
 
 
@@ -101,7 +115,7 @@
 
     .galeria {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr); /* ← AHORA 3 por fila */
       gap: 15px;
       padding: 20px;
       padding-top: 0px;
@@ -109,7 +123,7 @@
       max-width: 1200px;
       margin: 0 auto;
       margin-top: -80px;
-       margin-bottom: -40px;
+      margin-bottom: -40px;
     }
 
     .imagen-hover {
@@ -119,11 +133,27 @@
     }
 
     .imagen-hover img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: opacity 0.8s ease;
-    }
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: opacity 0.8s ease;
+}
+
+
+
+.imagen-hover {
+  aspect-ratio: 4 / 3; /* Proporción horizontal */
+  overflow: hidden;
+  width: 100%;
+}
+
+.imagen-hover img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
 
     .imagen-hover img.img-hover {
       position: absolute;
@@ -151,14 +181,6 @@
         grid-template-columns: 1fr;
       }
     }
-
-
-
-
-
-
-
-
 
 
 /* NUEVO PARA MOVIL!!!!! APARTIR DE AQUI */
@@ -244,6 +266,15 @@
     margin-bottom: 70px;
   }
 
+  .imagen-grande {
+    
+    gap: 40px;
+    padding: 130px 1px;
+    margin-top: 0;
+    margin-bottom: -100px;
+  }
+
+
 
 
   
@@ -300,14 +331,9 @@
     opacity: 1 !important;
   }
 }
-
-
-
 a, button, .tus-elementos-clickeables {
   -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4); /* rojo semitransparente */
 }
-
-
 
 /* Versión tablet */
   @media (min-width: 481px) and (max-width: 768px) {
@@ -378,10 +404,15 @@ a, button, .tus-elementos-clickeables {
     .menu-toggle {
       opacity: 0.8; /* Ajuste de opacidad */
     }
+
+    .imagen-grande {
+    
+    gap: 40px;
+    padding: 100px 1px;
+    margin-top: 0;
+    margin-bottom: -90px;
   }
-
-
-
+  }
 
 
 
@@ -390,11 +421,13 @@ a, button, .tus-elementos-clickeables {
 <body>
 
 
- <!-- Botón hamburguesa solo visible en móvil -->
+
+  
+<!-- Botón hamburguesa solo visible en móvil -->
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
 <!-- Menú hamburguesa móvil -->
-<div class="menu-mobile" id="mobileMenu"> 
+<div class="menu-mobile" id="mobileMenu">
   <a href="/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751476758/soto_icono_ny0lp9.png" alt="Logo 5">
   </a>
@@ -411,7 +444,7 @@ a, button, .tus-elementos-clickeables {
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751475517/oficina1_xds5wg.png" alt="Logo 3">
   </a>
   
- 
+  
 </div>
 
 
@@ -443,112 +476,191 @@ a, button, .tus-elementos-clickeables {
 
 
 
-    
-   </div>
+    </div>
   <div class="logo">
-    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1751729618/chinageras_logo-01_aznajf.png" alt="Logo" style="max-width: 180px; height: auto;">
+    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1751917578/no_solo_t_mpwopd.png" alt="Logo" style="max-width: 120px; height: auto;">
   </div>
-
-
 
 
 
   <div class="descripcion2">
     <p>
  
+        <strong>Intervención / Pintura<br>
+
+          <br>
+
       
-    <a><Strong>Ilustración digital</a></Strong><br>
+            2020 Proyecto realizado con el apoyo de la <a href="https://sc.jalisco.gob.mx/inicio" target="_blank">Secretaría de Cultura Jalisco</a> México.<br>
+            2020 Residencia artística <a href="https://aadk.es/" target="_blank">AADK, Centro Negra</a> Blanca, España.<br></strong>
+      <div class="descripcion">
+            <p>10 piezas, pintura/mixta sobre tela. </p>
 
-
-
-    
-  <div class="descripcion">
- <p>Imágenes con tratamiento en codigo p5.js.</p>
-      <p>Estas chingaderas son un homenaje a mi espacio inmediato: el que habito, ignoro y redescubro todos los días.</p>
-
-        <p>El proyecto es un guiño a <i>Especies de espacios de Georges Perec,</i> tanto por la forma de abordar lo ordinario como por su estructura visual.</p>
-      <p>Las ilustraciones se trabajaron en vectores y luego se llevaron al código usando p5.js, manipulando cada línea, mostrando la técnica al servicio de la observación: nada más, nada menos.</p>
-      </p>
+      <p>La búsqueda de la memoria que contienen los espacios, a través de la experimentación pictórica, ha llevado a soto cuestionar la idea convencional de representación. El desmonta cada lienzo de su bastidor, lo reduce a su tela y limpia con cada una alguna fachada del casco antiguo de blanca. De este modo, atrapa la textura, las distintas capas de color y otros acontecimientos. Finalmente, la tela vuelve a ser montada en el bastidor. </p>
+        <p> Con este gesto soto no representa la memoria a través de la reproducción pictórica, sino que presenta la materialidad que conforma la piel de estos edificios. Los lugares son testigo del tiempo en ellos se van acumulando la historia, la personal, la social, la política, las superficies son fronteras permeadas de la vida que sucede, y este trabajo da un giro a los canones de representatividad así como da paso a una nueva forma de generar narrativas.</p>
+     
+      <p>Al final se presenta una instalación. Es esta, trae sus recorridos por el casco histórico, así como su materialidad. Los dibujos en el suelo están configurados con una tiza realizada por el con los elementos orgánicos que ha encontrado en su caminar (piedras, tierra, hojas), con las que traza un mapa en el que instala elementos del proceso. De este modo, plantea a los asistentes reproducir su recorrido físico y mental de manera simbólica, una forma de compartir el proceso creativo del artista.  </p><p><strong>Texto de sala.</strong></p>
+       <p> Fotos de <a href="https://www.instagram.com/mariaklara.studio?igsh=NWphNW82Y2hpMDZm" target="_blank">Maria Łuc</a><br> </p>
   </div>
+
+
+
+
+  <div class="imagen-grande">
+  <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1751917802/10ff8794261501.5e7a6ef2821be_dsuif4.jpg" alt="Imagen grande">
+</div>
+
 
   <div class="galeria">
     <!-- Repetí esta estructura para las 16 imágenes -->
-  
-
     <div class="imagen-hover">
   <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751729715/1NUEVO-01_m9zg9z.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751729715/1NUEVO-01_m9zg9z.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751729715/1NUEVO-01_m9zg9z.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751729715/1NUEVO-01_m9zg9z.png"
+    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751917932/no_solo3-01_dagavz.png"
     class="img-original"
     alt="Imagen 1"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751731863/NUEVO4-01_np6wia.png"
+    srcset="
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751917932/no_solo3-01_dagavz.png 600w,
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751917932/no_solo3-01_dagavz.png 1200w,
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751917932/no_solo3-01_dagavz.png 1600w
+    "
+    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1751917932/no_solo3-01_dagavz.png"
   >
 </div>
 
 
+<div class="imagen-hover">
+  <img 
+    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751917970/by_Maria_%C5%81uc_5864_uhzypu.jpg"
+    class="img-original"
+    alt="Imagen 2"
+    srcset="
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751917970/by_Maria_%C5%81uc_5864_uhzypu.jpg 600w,
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751917970/by_Maria_%C5%81uc_5864_uhzypu.jpg 1200w,
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751917970/by_Maria_%C5%81uc_5864_uhzypu.jpg 1600w
+    "
+    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1751917970/by_Maria_%C5%81uc_5864_uhzypu.jpg"
+  >
+</div>
+
+<div class="imagen-hover">
+  <img 
+    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751917996/no_solo6-01_qlyqtc.png"
+    class="img-original"
+    alt="Imagen 2"
+    srcset="
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751917996/no_solo6-01_qlyqtc.png 600w,
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751917996/no_solo6-01_qlyqtc.png 1200w,
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751917996/no_solo6-01_qlyqtc.png 1600w
+    "
+    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1751917996/no_solo6-01_qlyqtc.png"
+  >
+</div>
+
+ 
+     <div class="imagen-hover">
+  <img 
+    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751918036/NO_SOLO_TIEMPO_FINLA-01_fegzap.png"
+    class="img-original"
+    alt="Imagen 2"
+    srcset="
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751918036/NO_SOLO_TIEMPO_FINLA-01_fegzap.png 600w,
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751918036/NO_SOLO_TIEMPO_FINLA-01_fegzap.png 1200w,
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751918036/NO_SOLO_TIEMPO_FINLA-01_fegzap.png 1600w
+    "
+    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1751918036/NO_SOLO_TIEMPO_FINLA-01_fegzap.png"
+  >
+</div>
+
+<div class="imagen-hover">
+  <img 
+    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751918050/by_Maria_%C5%81uc_5865_jlwdrw.jpg"
+    class="img-original"
+    alt="Imagen 2"
+    srcset="
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751918050/by_Maria_%C5%81uc_5865_jlwdrw.jpg 600w,
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751918050/by_Maria_%C5%81uc_5865_jlwdrw.jpg 1200w,
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751918050/by_Maria_%C5%81uc_5865_jlwdrw.jpg 1600w
+    "
+    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1751918050/by_Maria_%C5%81uc_5865_jlwdrw.jpg"
+  >
+</div>
+
+      <div class="imagen-hover">
+  <img 
+    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751918063/no_solo4-01_y81z6p.png"
+    class="img-original"
+    alt="Imagen 2"
+    srcset="
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751918063/no_solo4-01_y81z6p.png 600w,
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751918063/no_solo4-01_y81z6p.png 1200w,
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751918063/no_solo4-01_y81z6p.png 1600w
+    "
+    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1751918063/no_solo4-01_y81z6p.png"
+  >
+</div>
+
+
+<div class="imagen-hover"> 
+  <img 
+    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751921951/by_Maria_%C5%81uc_5861_odp8bb.jpg"
+    class="img-original"
+    alt="Imagen 2"
+    srcset="
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751918086/by_Maria_%C5%81uc_5861_xpddio.jpg 600w,
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751921951/by_Maria_%C5%81uc_5861_odp8bb.jpg 1200w,
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751918086/by_Maria_%C5%81uc_5861_xpddio.jpg 1600w
+    " 
+    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1751918939/by_Maria_%C5%81uc_5861_xpddio.png"
+  >
+</div>
 
   <div class="imagen-hover">
   <img 
+    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751918093/by_Maria_%C5%81uc_5857_z8g0wv.jpg"
+    class="img-original"
+    alt="Imagen 2"
     srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751729721/4NUEBVO-01_sklh91.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751729721/4NUEBVO-01_sklh91.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751729721/4NUEBVO-01_sklh91.png 1600w
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751918093/by_Maria_%C5%81uc_5857_z8g0wv.jpg 600w,
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751918093/by_Maria_%C5%81uc_5857_z8g0wv.jpg 1200w,
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751918093/by_Maria_%C5%81uc_5857_z8g0wv.jpg 1600w
     "
     sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751729715/1NUEVO-01_m9zg9z.png"
-    class="img-original"
-    alt="Imagen 1"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751731868/NUEVO1-01_ksc95h.png"
+    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1751918093/by_Maria_%C5%81uc_5857_z8g0wv.jpg"
   >
 </div>
 
 
-
-
-
-
-  <div class="imagen-hover">
+<div class="imagen-hover">
   <img 
+    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751918099/by_Maria_%C5%81uc_5858_etiad0.jpg"
+    class="img-original"
+    alt="Imagen 2"
     srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751729725/3NUEVO-01_co7vd8.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751729725/3NUEVO-01_co7vd8.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751729725/3NUEVO-01_co7vd8.png 1600w
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751918099/by_Maria_%C5%81uc_5858_etiad0.jpg 600w,
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751918099/by_Maria_%C5%81uc_5858_etiad0.jpg 1200w,
+      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751918099/by_Maria_%C5%81uc_5858_etiad0.jpg 1600w
     "
     sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751729715/1NUEVO-01_m9zg9z.png"
-    class="img-original"
-    alt="Imagen 1"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751731857/NUEVO2-01_uxgqni.png"
+    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1751918099/by_Maria_%C5%81uc_5858_etiad0.jpg"
   >
 </div>
 
 
 
 
-  <div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751729730/2NUEVO-01_hkvvk9.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751729730/2NUEVO-01_hkvvk9.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751729730/2NUEVO-01_hkvvk9.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751729715/1NUEVO-01_m9zg9z.png"
-    class="img-original"
-    alt="Imagen 1"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751731853/NUEVO3-01_kpuv0n.png"
-  >
-</div>
 
+      
 
-     
+      
       <footer>
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1600/v1751476362/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751476362/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
     </footer>
            
 
@@ -556,16 +668,15 @@ a, button, .tus-elementos-clickeables {
     <!-- Puedes reemplazar los links de ejemplo por los tuyos -->
   </div>
 
-  <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243);; justify-content:center; align-items:center; cursor:pointer;">
+
+
+   <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243);; justify-content:center; align-items:center; cursor:pointer;">
   <span id="cerrar-modal" style="position:absolute; top:20px; right:30px; color:rgb(0, 0, 0); font-size:40px; cursor:pointer;">&times;</span>
-   <img id="modal-img" src="https://res.cloudinary.com/dbwezmju6/image/upload/v1748892157/dehoy1-01_hfnod8.png" alt="Imagen ampliada" style="max-width:37%; max-height:auto; border: 5px solid rgba(255, 255, 255, 0); box-shadow: 0 0 20px rgba(0, 0, 0, 0);" />
+  <img id="modal-img" src="https://res.cloudinary.com/dbwezmju6/image/upload/v1748892157/dehoy1-01_hfnod8.png" alt="Imagen ampliada" style="max-width:50%; max-height:100%; border: 5px solid rgba(255, 255, 255, 0); box-shadow: 0 0 20px rgba(0, 0, 0, 0);" />
 </div>
 
 <script>
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
+ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('modal');
   const modalImg = document.getElementById('modal-img');
   const cerrarModal = document.getElementById('cerrar-modal');
@@ -603,14 +714,11 @@ function toggleMenu() {
     menu.classList.toggle('active');
   }
 
+
  document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
   }, false);
 
-
-
 </script>
-
-
 </body>
 </html>
