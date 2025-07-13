@@ -485,6 +485,20 @@ a, button, .tus-elementos-clickeables {
     e.preventDefault();
   }, false);
 
+// Precargar imágenes hover para escritorio
+if (esEscritorio()) {
+  const preloadHoverImages = () => {
+    document.querySelectorAll('.gallery img').forEach(img => {
+      const hoverSrc = img.getAttribute('data-hover');
+      if (hoverSrc) {
+        const preloadedImg = new Image();
+        preloadedImg.src = hoverSrc;
+      }
+    });
+  };
+
+  window.addEventListener('load', preloadHoverImages);
+}
 
   // (El resto de tu script permanece igual)
 </script>
