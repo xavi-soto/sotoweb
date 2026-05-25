@@ -24,7 +24,7 @@
   right: 33px; 
   width: 230px;
   height: 320px;
-  background:#f3f3f3 ;
+  background:#f0ece7 ;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0,0,0,0.2);
   z-index:  100000;
@@ -81,7 +81,7 @@
     position: absolute;
     top: -28px;
     right: 13px;
-    background-color: #f3f3f3;
+    background-color: #f0ece7;
     color: rgb(0, 0, 0);
     /* ...POR ESTAS 4 LÍNEAS */
 width: 35px;  /* Le damos un ancho fijo */

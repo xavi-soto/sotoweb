@@ -4,1288 +4,367 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>soto artista virtual</title>
-   <link rel="icon" href="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759771502/icono_web-01_pcbhuw.png" type="image/png">
-
+  <link rel="icon" href="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759771502/icono_web-01_pcbhuw.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-  
-   <meta name="description" content="Conoce a soto, el artista virtual. Descubre su arquitectura, propósito y cómo interactúa con el arte y la tecnología.">
-  
+  <meta name="description" content="Conoce a soto, el artista virtual. Descubre su arquitectura, propósito y cómo interactúa con el arte y la tecnología.">
   <meta property="og:title" content="soto artista virtual">
-<meta property="og:description" content="Conoce a soto, el artista virtual. Descubre su arquitectura, propósito y cómo interactúa con el arte y la tecnología.">
-<meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
-<meta property="og:url" content="https://sotosotosoto.com../soto-artista-virtual/">
-<meta property="og:type" content="website">
-  
-<style>
- /* =====================================================
-   RESET / BASE
-===================================================== */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-    
-     font-family: "Lexend", sans-serif;
-     -webkit-user-select: none;
-     -moz-user-select: none;
-     -ms-user-select: none;
-     user-select: none;
-     background-color: #f3f3f3;
-     opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-.descripcion,
-.descripcion2,
-.footer-text,
-.menu-body,
-.menu-body a {
-  user-select: text;
-  -webkit-user-select: text;
-  -moz-user-select: text;
-  -ms-user-select: text;
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-
-/* =====================================================
-   LAYOUT BASE
-===================================================== */
-
-.wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.logo {
-  display: flex;
-  justify-content: center;
-  padding-top: clamp(140px, 8vw, 100px);
-}
-
-.logo img {
-  max-width: clamp(160px, 18vw, 180px);
-  height: auto;
-
-}
-
-/* Logo fijo escritorio */
-.logo-container {
-  position: fixed;
-  top: 60px;
-  left: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000;  
-
-}
-
-.logo-container img {
-  width: 90px;
- 
-}
-
-/* =====================================================
-   TEXTO — FLUIDO PROFESIONAL
-===================================================== */
-
-.descripcion,
-.descripcion2 {
-  font-family: "Lexend", sans-serif;
-  color: #333;
-
-  /* 🔑 CONTENEDOR FLUIDO */
-  max-width: 1250px;
-  margin: 0 auto;
-
-  /* padding inteligente */
-  padding-inline: clamp(40px, 1vw, 180px);
-  font-size: clamp(14px, 1.2vw, 15px);
-  line-height: 1.65;
-  position: relative;
- 
-}
-
-.descripcion {
-  padding-top: clamp(1px, 6vw, 1px);
-  text-align: justify;
-  margin-bottom: 110px;
-}
-
-.descripcion2 {
-  padding-top: clamp(40px, 6vw, 10px);
-  text-align: center;
-}
-
-/* =====================================================
-   GALERÍA
-===================================================== */
-
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(32px, 6vw, 80px) 25px;
-  padding: clamp(16px, 4vw, 30px);
-  max-width: 1200px;
-   margin: clamp(50px, -8vw, -60px) auto 40px;
-   position: relative;
-
-}
-
-.imagen-hover {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: -60px;
-  margin-top: -20px;
-}
-
-.imagen-hover img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: opacity 0.6s ease;
-}
-
-/* Hover SOLO escritorio */
-.imagen-hover img.img-hover {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .imagen-hover:hover img.img-hover {
-    opacity: 1;
-  }
-}
-.contenido-movil {
-  display: none;
-}
-/* =====================================================
-   FOOTER
-===================================================== */
-
-      footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f3f3f3;
-    text-align: center;
-    padding: 7.9px 0; /* Un poco más de aire para el texto */
-    z-index: 1000;
-}
-
-.footer-text {
-    font-family: "Lexend", sans-serif; /* Usamos tu tipografía principal */
-    font-size: 10px; /* Tamaño discreto y elegante */
-    letter-spacing: 0.00em;
-    color: #333;
-    margin: 0;
-    opacity: 0.8; /* Un poco de transparencia para que no distraiga del contenido */
-}
-
-
-/* BANNER -------------------------------- */  
-.top-banner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  background: #dcdcdc;
-  overflow: hidden;
-  z-index: 999999;
-  display: flex;
-  align-items: center;
-}
-
-.marquee {
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content; /* IMPORTANTE: Permite que el track crezca según el texto */
-  animation: scroll-left 140s linear infinite; /* Ajusta los segundos para la velocidad */
-}
-
-.item {
-  padding-right: 50px; /* Espacio entre cada frase */
-  font-weight: bold;
-  font-size: 12px;
-  color: #000;
-  white-space: nowrap; /* Evita que el texto salte de línea */
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    /* Se mueve exactamente el 50% porque duplicamos el contenido abajo */
-    transform: translateX(-50%);
-  }
-}
-
-   /*  OCULTAR SCROL EN EL MENU-------------------------------- */  
-html {
-  scrollbar-gutter: stable;
-}
-
-.no-scroll {
-  overflow: hidden;
-}
-
-    
-
-/* MENU HAMBURGUESA GENERAL-------------------------------- */   
-.menu-toggle {
-  display: block; /* ⬅️ importante: visible también en desktop */
-  position: fixed;
-  top: 45px;
-  left: 16px; /* ⬅️ 13 ANTES*/
-  z-index: 3000;
-  background-color: transparent;
-  border: none;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.icon-hamburger {
-  display: inline-block;
-}
-/* Por defecto */
-.icon-back {
-  display: none;
- 
-  margin-bottom: -5px;
-  height: 20px;
-  border-left: 3px solid #000;
-  border-bottom: 3px solid #000;
-  transform: rotate(45deg);
-}
-body.menu-open .icon-hamburger {
-  display: none;
-}
-
-body.menu-open .icon-back {
-  display: inline-block;
-  transform: translateX(1px);
-}
-
-/* Contenedor principal del menú */
-#side-menu {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  flex-direction: column; /* 👈 Permite separar contenido de redes */
-  background-color: #ffffff;
-  transform: translateX(-100%);
-  transition: transform 0.6s cubic-bezier(0.77,0,0.175,1);
-  z-index: 2000;
-  font-family: "Lexend", sans-serif;
- 
-}
-#side-menu a {
-  line-height: 0.6;      /* ← valor estable */
-  white-space: nowrap;  /* ← evita que "Habla con Soto" se parta */
-   
-}
-
-#side-menu.active {
-  transform: translateX(0);
-  
-}
-
-/* 👈 El cuerpo que permite el scroll sin mover las redes */
-.menu-body {
-  flex: 1;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: row; /* Desktop: Columnas al lado */
-  
- 
-}
-
-/* TUS COLUMNAS (Estilo intacto) */
-.menu-left,
-.menu-right {
-  flex: 1;
-  padding: 130px 82px 120px!important; 
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
-  max-width: 300px;
-  
-}
-
-
-
-/* TUS GRUPOS Y TÍTULOS */
-.menu-group {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.menu-title {
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 600;
-  opacity: 0.55;
-  margin-bottom: 6px;
-}
-
-/* TUS LINKS */
-
-/* TU LÍNEA ANIMADA */
-/* LINKS PRINCIPALES DEL MENÚ (solo menu-body) */
-.menu-body a {
-  font-size: 25px;
-  line-height: 0.6;
-  font-weight: 400;
-  color: #111;
-  text-decoration: none;
-  transition: color 0.25s ease;
-  display: table;
-  width: fit-content;
-  position: relative;
-  margin-bottom: 9px;
-}
-
-/* LÍNEA ANIMADA */
-.menu-body a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 1.6px;
-  bottom: -11px;
-  left: 0;
-  background-color: #000;
-  transition: width 0.20s ease;
-}
-
-.menu-body a:hover::after {
-  width: 100%;
-}
-
-
-/* TUS REDES SOCIALES (Corregido: sin pisar texto) */
-.menu-socials {
-  position: relative; /* 👈 Cambiado de absolute a relative */
-  padding: 30px 82px; /* 👈 Usamos padding en lugar de bottom/left */
-  display: flex;
-  gap: 20px;
-  font-size: 10px;
-  opacity: 0.7;
-  z-index: 2200;
-  background-color: #ffffff; /* Asegura que tape links si hay scroll */
-  margin-top: auto; /* 👈 Esto las empuja siempre al final del menú */
-}
-
-.menu-socials a {
-  color: #111 !important;
-  text-decoration: none !important;
-  font-size: inherit !important;
-  line-height: 1;
-  display: inline-block;
-  transition: color 0.3s ease; /* 👈 Suaviza el cambio de color */
-}
-
-/* Hover en Ordenador y toque en Móvil */
-.menu-socials a:hover,
-.menu-socials a:active {
-    color: #f26100 !important; /* 👈 Tu naranja */
-}
-
-/* ADAPTACIÓN INTELIGENTE */
-
-/* Tablets */
-@media (max-width: 1024px) {
-  .menu-left, .menu-right {
-    padding: 130px 82px 120px!important;
-    gap: 64px;
-  }
-  .menu-socials {
-    padding: 30px 82px; /* Ajuste para tablets */
-  }
-
-}
-
-/* Móvil (El cambio real) */
-@media (max-width: 768px) {
-  /* Evitamos que el menú tenga scroll propio */
-  #side-menu {
-    overflow: hidden; 
-  }
-
-  .menu-body {
-    flex-direction: column;
-    display: flex;
-    overflow: hidden; /* Quitamos el scroll aquí también */
-    justify-content: center; /* Centramos el contenido verticalmente para que no sobre espacio */
-  }
-
-  .menu-left {
-    /* Reducimos el padding superior drásticamente */
-    padding: 80px 58px 0px !important; 
-    max-width: 100%;
-    gap: 30px; /* Reducimos el espacio entre grupos */
-    flex: none;
-  }
-
-  .menu-right {
-    /* Reducimos el padding y gap */
-    padding: 20px 58px 40px !important; 
-    max-width: 100%;
-    gap: 30px;
-    flex: none;
-  }
-
-  .menu-socials {
-    padding: 15px 22px; /* Reducimos un poco el padding de las redes */
-    margin-top: auto; 
-    position: relative;
-    width: 100%;
-    background: white;
-    box-sizing: border-box;
-  }
-
-  /* Reducimos el gap entre los links del menú */
-  .menu-group {
-    gap: 18px !important;
-  }
-
-  #side-menu a:not(.menu-socials a) {
-    font-size: 21px;
-    line-height: 1.1;
-    margin-bottom: 5px; /* Menos margen inferior para ganar espacio */
-  }
-}
-
-
-
-/* --- BARRA NEGRA DEFINIDA --- */
-
-/* 1. Definimos el ancho del carril */
-.menu-body::-webkit-scrollbar {
-  width: 10px; /* Ancho total del área de scroll */
-}
-
-/* 2. El fondo del carril (transparente) */
-.menu-body::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-/* 3. La barrita (Thumb) */
-.menu-body::-webkit-scrollbar-thumb {
-  background-color: #000000; /* Negro sólido */
-  border-radius: 0px;       /* Bordes redondeados estilo píldora */
-  
-  /* ESTO ES LO QUE CREA EL EFECTO:
-     Añadimos un borde transparente lateral para que la barra 
-     se vea más delgada y centrada dentro de sus 12px de ancho */
-  border: 4px solid transparent; 
-  background-clip: padding-box;
-}
-
-.menu-body::-webkit-scrollbar-thumb:hover {
-  background-color: #333333;
-}
-
-/* BARRA DE FONDO FIJA (HEADER) */
-.header-bg {
-    position: fixed;
-    top: 30px; /* Ajustado para que empiece justo debajo del banner de 30px */
-    left: 0;
-    width: 100%;
-    height: 58px; 
-    background-color: #f3f3f3; 
-    z-index: 1500; 
-    /* Opcional: una sombra muy sutil para separar del contenido al hacer scroll */
-    box-shadow: 0 3px 0 rgba(0,0,0,0.03); 
-}
-
-/* BOTÓN DE MENÚ (HAMBURGUESA) */
-
-
-/* LOGO SUPERIOR DERECHA */
-.top-right-logo {
-    position: fixed;
-    top: 57px;    /* Tu posición exacta */
-    right: 20px;  /* Tu posición exacta */
-    z-index: 2500;
-    pointer-events: auto;
-   /* Preparamos la transición para que el crecimiento sea suave */
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.top-right-logo img {
-    width: 70px;  
-    height: auto;
-    display: block;
-}
-
-
-
-/* EFECTO AL HACER CLIC (Opcional pero recomendado) */
-.top-right-logo:active {
-    /* Se encoge un poquito al presionarlo para dar feedback de botón */
-    transform: scale(0.95);
-}
-
-/* --------------REGRESO Y SIGUIENTE Contenedor superior: hamburguesa + controles REGRESO Y SIGUIENTE */
-.top-controls {
-  position: fixed;
-  top: 60px; /* mismo top que tu menú */
-  left: 76px; /* mismo left que tu menú */
-  display: flex;
-  align-items: center;
-  gap: 15px; /* espacio entre hamburguesa y botones */
-  z-index: 1500; /* encima del contenido */
-}
-
-/* Controles de navegación */
-.nav-controls {
-  display: flex;
-  gap: 10px; /* espacio entre "Regresar" y "Siguiente" */
-}
-
-/* Botones de texto */
-.nav-controls a,
-.nav-controls button {
-  all: unset;              /* elimina estilos por defecto */
-  cursor: pointer;
-  font-family: "Lexend", sans-serif;
-  font-size: 13px;
-  color: #333;
-  display: inline-flex;
-  align-items: center;
-  line-height: 1;
-}
-
-/* Evita azul y subrayado en TODOS los estados */
-.nav-controls a:link,
-.nav-controls a:visited,
-.nav-controls a:active {
-  color: #333;
-  text-decoration: none;
-}
-.nav-controls button:hover {
-  color: #f26100; /* mismo naranja que tus links del menú */
-}
-.btn-next:hover {
-  color: #ff6a00; /* tu naranja */
-}
-.nav-controls a.btn-next:hover {
-  color: #f26100;
-}
-
-
-
-/* --- ADAPTACIÓN MÓVIL --- */
-@media (max-width: 768px) {
-    .header-bg {
-        height: 60px;
-    }
-
-    .menu-toggle {
-        /* Si quieres que el menú tampoco se mueva, asegúrate de que este top 
-           sea igual al que tienes fuera de la media query */
-        top: 45px; 
-    }
-
-    .top-right-logo {
-        /* CAMBIO AQUÍ: Ahora es 57px, igual que en desktop */
-        top: 57px; 
-        /* Si quieres mantener la distancia lateral de desktop (30px), cámbialo aquí también: */
-        right: 20px; 
-    }
-
-    .top-right-logo img {
-        width: 70px;
-    }
-
-    
-}
-/* --- X DEL MENU --- */
-@media (min-width: 769px) {
-  .menu-overlay-close {
-    display: block;
-     position: absolute;
-  inset: 0;
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><line x1='6' y1='6' x2='26' y2='26' stroke='black' stroke-width='2'/><line x1='26' y1='6' x2='6' y2='26' stroke='black' stroke-width='2'/></svg>") 16 16, auto;
-  z-index: 0;
-  }
-}
-
-/* =====================================================
-   MODAL
-===================================================== */
-
-.modal-open {
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
-}
-
-.modal-img {
-  max-width: 90%;
-  max-height: 100%;
-  transition: all 0.3s ease;
-}
-
-
-#modal {
-  z-index: 5000;
-  /* Versión ultra-compatible: codificada carácter por carácter */
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M8 8 L24 24 M24 8 L8 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") 16 16, pointer !important;
-}
-#modal img {
-  /* Esto hace que la imagen no "atrape" el ratón, dejando que la X del fondo se vea siempre */
-  pointer-events: none; 
-  max-width: 90%;
-  max-height: 90%;
-}
-
-
-/* =====================================================
-   TABLET & MÓVIL
-===================================================== */
-
-@media (max-width: 1024px) {
-
-  .logo-container {
-    display: none;
-  }
-
-  .galeria {
-    grid-template-columns: 1fr;
-    max-width: 560px;
-  }
-
-  /* 🔒 Hover desactivado correctamente */
-  .imagen-hover img.img-hover {
-    opacity: 1;
-    pointer-events: none;
-  }
-}
-
-/* =====================================================
-   MÓVIL
-===================================================== */
-
-@media (max-width: 768px) {
-
-  body {
-    padding-top: 40px;
-  }
-
-  .galeria {
-    padding: 12px;
-    gap: 112px;
-  }
-  .arquitectura-seccion {
-        display: none !important;
-    }
-
-
-    .contenido-movil {
-    display: block; /* O 'flex' según prefieras */
-  }
-}
-
-.descripcion {
-    padding-inline: 14px;
-  }
-   .descripcion2 {
-    padding-inline: 26px; /* o 12px si lo quieres aún más ancho */
-  }
-/* =====================================================
-   MÓVIL PEQUEÑO
-===================================================== */
-
-@media (max-width: 480px) {
-
-  .galeria {
-    gap: 28px;
-    margin-bottom: 70px;
-  }
-}
-
-/* =====================================================
-   MODAL EXTRA PEQUEÑO
-===================================================== */
-
-@media (max-width: 640px) {
-  #modal-img {
-    width: 130vw;
-    max-width: none;
-  }
-} 
-/* ================================
-   DESACTIVAR HOVER SIN ROMPER TAMAÑO
-================================ */
-
-/* Mantiene el layout intacto */
-.imagen-hover {
-  position: relative;
-}
-
-/* La imagen hover existe, pero no se muestra */
-.imagen-hover .img-hover {
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
-
-/* Evita que aparezca al pasar el mouse */
-.imagen-hover:hover .img-hover {
-  opacity: 0 !important;
-}
-
-/* Asegura que la original siempre se vea */
-.imagen-hover .img-original {
-  opacity: 1 !important;
-}
-
-  /* Elimina el resaltado azul al tocar cualquier elemento interactivo */
-  * {
-    -webkit-tap-highlight-color: transparent;
-  }
-</style>
+  <meta property="og:description" content="Conoce a soto, el artista virtual. Descubre su arquitectura, propósito y cómo interactúa con el arte y la tecnología.">
+  <meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
+  <meta property="og:url" content="https://sotosotosoto.com/soto-artista-virtual/">
+  <meta property="og:type" content="website">
+  <style>
+*,*::before,*::after{box-sizing:border-box;}
+:root{--orange:#0011ff;--ink:#0c0c0c;--bg:#f3f3f3;--dark:#141210;--rule:rgba(12,12,12,0.10);--muted:rgba(12,12,12,0.42);--banner-h:34px;--top-h:78px;--pad:60px;}
+html,body{margin:0;padding:0;}
+body{font-family:"Lexend",sans-serif;-webkit-user-select:none;user-select:none;background-color:var(--bg);opacity:0;animation:fadeIn 1s ease-in-out forwards;padding-top:var(--top-h);padding-bottom:var(--banner-h);}
+@keyframes fadeIn{to{opacity:1;}}
+.descripcion,.descripcion2,.footer-text{user-select:text;-webkit-user-select:text;}
+
+/* ── TOPBAR ── */
+.topbar{position:fixed;top:0;left:0;width:100%;height:var(--top-h);background:var(--bg);border-bottom:1px solid var(--rule);z-index:8000;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);transform:translateY(-100%);transition:transform 0.7s cubic-bezier(0.25,1,0.5,1);}
+.topbar.entrada{transform:translateY(0);}
+.topbar-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;transition:opacity 0.2s;}
+.topbar-logo:hover{opacity:0.7;}
+.topbar-logo img{height:19px;width:auto;display:block;}
+.topbar-logo-static{display:none;align-items:center;text-decoration:none;flex-shrink:0;transition:opacity 0.2s;}
+.topbar-logo-static img{height:19px;width:auto;display:block;}
+.topbar-logo-static:hover{opacity:0.7;}
+.topbar-nav{display:flex;gap:36px;align-items:center;}
+.topbar-nav a{font-family:"Lexend",sans-serif;font-size:11px;font-weight:600;letter-spacing:0.04em;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.topbar-nav a:hover{color:var(--orange);}
+.m-toggle{display:none;background:none;border:none;cursor:pointer;font-family:"Lexend",sans-serif;font-size:11px;font-weight:700;color:var(--ink);}
+
+/* ── PILL ── */
+.proj-pill{position:fixed;bottom:calc(var(--banner-h) + 14px);left:50%;transform:translateX(-50%);display:flex;align-items:center;background:var(--bg);border:1px solid var(--rule);border-radius:999px;overflow:hidden;z-index:4000;box-shadow:0 2px 12px rgba(12,12,12,0.08);}
+.proj-pill-btn{all:unset;cursor:pointer;font-family:"Lexend",sans-serif;font-size:11px;font-weight:600;letter-spacing:0.04em;color:var(--muted);padding:9px 20px;display:flex;align-items:center;gap:7px;transition:color 0.2s,background 0.2s;text-decoration:none;white-space:nowrap;}
+.proj-pill-btn:hover{color:var(--orange);background:rgba(0,17,255,0.04);}
+.proj-pill-sep{width:1px;height:18px;background:var(--rule);flex-shrink:0;}
+
+/* ── MOBILE MENU ── */
+.mm-header{display:flex;justify-content:flex-end;padding:20px 22px 0;flex-shrink:0;}
+.mm-close{background:none;border:none;cursor:pointer;font-family:"Lexend",sans-serif;font-size:11px;font-weight:700;color:rgba(240,236,231,0.5);letter-spacing:0.04em;transition:color 0.2s;padding:4px 0;}
+.mm-close:hover{color:var(--orange);}
+#mobile-menu{position:fixed;inset:0;background:var(--dark);z-index:10000;transform:translateY(-100%);transition:transform 0.75s cubic-bezier(0.76,0,0.24,1);display:flex;flex-direction:column;overflow:hidden;}
+#mobile-menu.active{transform:translateY(0);}
+#mobile-menu::before{content:'';display:block;width:100%;height:4px;background:var(--orange);flex-shrink:0;}
+.mm-inner{flex:1;display:flex;flex-direction:column;padding:30px 36px 30px;overflow-y:auto;justify-content:center;}
+.mm-cat{font-family:"Lexend",sans-serif;font-size:10px;font-weight:700;color:var(--orange);margin-bottom:14px;margin-top:36px;}
+.mm-cat:first-child{margin-top:0;}
+#mobile-menu a.mm-link{font-family:"Lexend",sans-serif;font-size:clamp(28px,7vw,48px);font-weight:600;line-height:1.2;color:rgba(240,236,231,0.88);text-decoration:none;display:inline-block;transition:color 0.18s,transform 0.18s;transform-origin:left center;letter-spacing:-0.01em;margin-bottom:22px;}
+#mobile-menu a.mm-link:hover{color:var(--orange);transform:translateX(10px);}
+.mm-foot{padding:22px 36px calc(var(--banner-h) + 16px);border-top:1px solid rgba(240,231,231,0.08);display:flex;gap:24px;flex-wrap:wrap;}
+.mm-foot a{font-family:"Lexend",sans-serif;color:rgba(240,236,231,0.3);text-decoration:none;font-size:10px;font-weight:600;transition:color 0.2s;}
+.mm-foot a:hover{color:var(--orange);}
+
+/* ── FOOTER ── */
+.page-footer{background:var(--dark);border-top:1px solid rgba(240,236,231,0.07);padding:24px var(--pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;width:100%;position:relative;z-index:5000;}
+.footer-copy{font-family:"Lexend",sans-serif;font-size:10px;font-weight:600;color:#fff;}
+.footer-socials{display:flex;gap:28px;}
+.footer-socials a{font-family:"Lexend",sans-serif;font-size:10px;font-weight:600;color:#fff;text-decoration:none;transition:color 0.2s;}
+.footer-socials a:hover{color:var(--orange);}
+
+/* ── BANNER ── */
+.banner{position:fixed;bottom:0;left:0;width:100%;height:var(--banner-h);background:var(--orange);overflow:hidden;z-index:9000;display:flex;align-items:center;opacity:0;transition:opacity 0.6s ease;}
+.banner.entrada{opacity:1;}
+.marquee{width:100%;overflow:hidden;display:flex;}
+.marquee-track{display:flex;width:max-content;animation:ticker 58s linear infinite;}
+.banner:hover .marquee-track{animation-play-state:paused;}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.ticker-item{padding-right:64px;font-family:"Lexend",sans-serif;font-size:10px;font-weight:700;color:#fff;white-space:nowrap;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){:root{--pad:40px;}}
+@media(max-width:768px){:root{--pad:22px;}.topbar-nav{display:none;}.m-toggle{display:block;}.topbar-logo{display:none;}.topbar-logo-static{display:flex;}.page-footer{padding:20px var(--pad);}.proj-pill-btn{font-size:10px;padding:8px 14px;}}
+
+/* ── CONTENIDO ── */
+.logo{display:flex;justify-content:center;padding-top:clamp(50px,6vw,80px);}
+.logo img{max-width:clamp(120px,14vw,180px);height:auto;}
+
+.ubicacion-meta{font-family:"Lexend",sans-serif;font-size:clamp(11px,1vw,13px);font-weight:600;color:var(--muted);letter-spacing:0.04em;text-align:center;display:block;margin-bottom:1.4em;line-height:1.8;}
+.ubicacion-meta a{color:var(--orange);text-decoration:none;transition:opacity 0.2s;}
+.ubicacion-meta a:hover{opacity:0.7;}
+
+.descripcion,.descripcion2{font-family:"Lexend",sans-serif;color:var(--ink);max-width:1250px;margin:0 auto;padding-inline:clamp(40px,1vw,180px);font-size:clamp(13px,1.2vw,15px);font-weight:300;line-height:1.75;position:relative;}
+.descripcion{padding-top:clamp(30px,4vw,40px);text-align:justify;margin-bottom:80px;}
+.descripcion2{padding-top:clamp(40px,6vw,70px);text-align:center;}
+
+.descripcion h2,.descripcion h3,.descripcion h4{font-weight:700;color:var(--ink);}
+.descripcion h2{font-size:clamp(18px,2vw,24px);margin-top:1.4em;margin-bottom:0.6em;}
+.descripcion h3{font-size:clamp(14px,1.4vw,17px);margin-top:1.6em;margin-bottom:0.4em;}
+.descripcion h4{font-size:clamp(13px,1.2vw,15px);margin-top:1.2em;margin-bottom:0.4em;}
+.descripcion a{color:var(--orange);text-decoration:none;transition:opacity 0.2s;}
+.descripcion a:hover{opacity:0.7;}
+.descripcion table{width:100%;border-collapse:collapse;font-size:clamp(12px,1vw,14px);margin:1em 0;}
+.descripcion th,.descripcion td{border:1px solid var(--rule);padding:10px 14px;text-align:left;vertical-align:top;}
+.descripcion th{font-weight:600;background:rgba(12,12,12,0.04);}
+.descripcion ol,.descripcion ul{padding-left:1.4em;}
+.descripcion li{margin-bottom:0.4em;}
+.arquitectura-seccion{overflow-x:auto;}
+.contenido-movil{display:none;}
+
+.galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(32px,6vw,80px) 25px;padding:clamp(16px,4vw,30px);max-width:1200px;margin:clamp(-20px,-8vw,-60px) auto 40px;position:relative;margin-bottom:0px!important;}
+.imagen-hover{position:relative;width:100%;overflow:hidden;}
+.imagen-hover img{width:100%;height:auto;display:block;transition:opacity 0.6s ease;}
+.imagen-hover img.img-hover{position:absolute;inset:0;opacity:0;}
+@media(hover:hover) and (pointer:fine){.imagen-hover:hover img.img-hover{opacity:1;}}
+.modal-open{overflow:hidden;position:fixed;width:100%;}
+#modal{z-index:5000;cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M8 8 L24 24 M24 8 L8 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") 16 16,pointer!important;}
+#modal img{pointer-events:none;max-width:90%;max-height:90%;}
+
+@media(max-width:1024px){.galeria{grid-template-columns:1fr;max-width:560px;}.imagen-hover img.img-hover{opacity:1;pointer-events:none;}.arquitectura-seccion .contenido-escritorio{display:none;}.contenido-movil{display:block;}}
+@media(max-width:768px){
+    .galeria{padding:12px;gap:32px;margin-top:-30px;margin-bottom:0px!important;}
+    /* Reset negative margins que causan solapamiento en móvil */
+    .imagen-hover{margin-bottom:0!important;margin-top:0!important;}
+    .descripcion{padding-inline:14px;}
+    .descripcion2{padding-inline:26px;}
+}
+@media(max-width:480px){.galeria{gap:28px;margin-bottom:70px;}}
+*{-webkit-tap-highlight-color:transparent;outline:none;}
+html{scrollbar-gutter:stable;}.no-scroll{overflow:hidden;}
+.fade-in-scroll{opacity:0;transition:opacity 0.8s ease;}
+.fade-in-scroll.visible{opacity:1;}
+*{-webkit-tap-highlight-color:transparent;outline:none;}
+html{scrollbar-gutter:stable;}.no-scroll{overflow:hidden;}
+
+  </style>
 </head>
-</head>
-<nav id="side-menu">
-    <div class="menu-overlay-close"></div>
-  <div class="menu-body"> 
-    
-    <div class="menu-left">
-      <div class="menu-group">
-        <span class="menu-title"></span>
-        <a href="../proyectos-artísticos/">Proyectos</a>
-        <a href="../chat/">Habla con soto</a>
-        <a href="../proyectos-diseño/">Diseño</a>
-      </div>
-         
-      
-      <div class="menu-group">
-        <span class="menu-title">Acerca de</span>
-        <a href="../soto-artista-virtual/">soto artista</a>
-        <a href="../acerca-de-soto/">soto³ estudio</a>
-        <a href="../chiskey/">chiskey estudio</a>
-      </div>
-    </div>
 
-    <div class="menu-right"> 
-      <div class="menu-group">
-        <span class="menu-title"></span>
-        <a href="../contacto/" class="menu-extra">Contacto</a>
-        <a href="../archivo-en-venta/" class="menu-extra">Archivo en venta</a>
-        <a href="../descargas/" class="menu-extra">Descargas</a>
-       
-      </div>
+<nav id="mobile-menu" aria-hidden="true">
+    <div class="mm-header">
+        <button class="mm-close" id="mmClose">Cerrar ✕</button>
     </div>
-    
-  </div> <div class="menu-socials">
-    <a href="https://www.instagram.com/sotosolo_" target="_blank">Instagram @sotosolo_</a>
-    <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">LinkedIn</a>
-    <a href="https://www.behance.net/xaviersoto" target="_blank">Behance</a>
-  
-  </div>
+    <div class="mm-inner">
+        <a href="../index.html" class="mm-link">Inicio</a>
+        <a href="../proyectos-diseño/" class="mm-link">Trabajos</a>
+        <a href="../acerca-de-soto/" class="mm-link">Cv</a>
+        <a href="../contacto/" class="mm-link">Contacto</a>
+    </div>
+    <div class="mm-foot">
+        <a href="https://www.instagram.com/sotosolo_" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">LinkedIn</a>
+        <a href="https://www.behance.net/xaviersoto" target="_blank">Behance</a>
+    </div>
 </nav>
+
 <body>
-   <div class="top-right-logo">
-    <a href="../index.html">
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1766964956/s3_logo_bj7vjz.png" alt="Logo Soto">
+
+<header class="topbar">
+    <a href="../" class="topbar-logo">
+        <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1779265684/soto3logo_hlxcgj.png" alt="soto³">
     </a>
+    <a href="../" class="topbar-logo-static">
+        <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1779265684/soto3logo_hlxcgj.png" alt="soto³">
+    </a>
+    <nav class="topbar-nav">
+        <a href="../">Inicio</a>
+        <a href="../proyectos-diseño/">Trabajos</a>
+        <a href="../acerca-de-soto/">Cv</a>
+        <a href="../contacto/">Contacto</a>
+    </nav>
+    <button class="m-toggle" id="mToggle">Menú</button>
+</header>
+
+<div class="proj-pill">
+    <button class="proj-pill-btn" onclick="history.back()">← Regresar</button>
+    <div class="proj-pill-sep"></div>
+    <a href="../desoido/" class="proj-pill-btn">Siguiente →</a>
 </div>
 
-   <main id="main-content">
-        <div class="header-bg"></div>
+<main id="main-content">
 
-        <div class="top-controls">
-    
- 
-
-  <div class="nav-controls">
-    <button class="btn-prev" onclick="history.back()">| Regresar</button>
-    <a href="../desoido/" class="btn-next">Siguiente |</a>
-  </div>
-</div>
-
-
-<button class="menu-toggle" aria-label="Abrir menú">
-    <span class="icon-hamburger">☰</span>
-    <span class="icon-back"></span>
-</button>
-        <a href="https://www.instagram.com/sotosolo_?igsh=MXJha3o2dmVpNHRodA==" target="_blank" class="banner-link">
-    <div class="top-banner">
-  <div class="marquee">
-    <div class="marquee-track">
-      <div class="marquee-group" style="display: flex;">
-        <span class="item">El trabajo de soto se organiza como un sistema de tres capas: Archivo, Dispositivo e Intervención.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Archivo: registra experiencias, memorias y objetos.&nbsp;&nbsp;&nbsp;&nbsp;Dispositivo: traduce ese archivo en soportes, interfaces y lenguajes.&nbsp;&nbsp;&nbsp;&nbsp;Intervención: activa la obra en el espacio o con el público.</span>
-        <span class="item">El trabajo de soto se organiza como un sistema de tres capas: Archivo, Dispositivo e Intervención.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Archivo: registra experiencias, memorias y objetos.&nbsp;&nbsp;&nbsp;&nbsp;Dispositivo: traduce ese archivo en soportes, interfaces y lenguajes.&nbsp;&nbsp;&nbsp;&nbsp;Intervención: activa la obra en el espacio o con el público.</span>
-        <span class="item">El trabajo de soto se organiza como un sistema de tres capas: Archivo, Dispositivo e Intervención.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Archivo: registra experiencias, memorias y objetos.&nbsp;&nbsp;&nbsp;&nbsp;Dispositivo: traduce ese archivo en soportes, interfaces y lenguajes.&nbsp;&nbsp;&nbsp;&nbsp;Intervención: activa la obra en el espacio o con el público.</span>
-      </div>
-       
-      <div class="marquee-group" aria-hidden="true" style="display: flex;">
-        <span class="item">El trabajo de soto se organiza como un sistema de tres capas: Archivo, Dispositivo e Intervención.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Archivo: registra experiencias, memorias y objetos.&nbsp;&nbsp;&nbsp;&nbsp;Dispositivo: traduce ese archivo en soportes, interfaces y lenguajes.&nbsp;&nbsp;&nbsp;&nbsp;Intervención: activa la obra en el espacio o con el público.</span>
-        <span class="item">El trabajo de soto se organiza como un sistema de tres capas: Archivo, Dispositivo e Intervención.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Archivo: registra experiencias, memorias y objetos.&nbsp;&nbsp;&nbsp;&nbsp;Dispositivo: traduce ese archivo en soportes, interfaces y lenguajes.&nbsp;&nbsp;&nbsp;&nbsp;Intervención: activa la obra en el espacio o con el público.</span>
-        <span class="item">El trabajo de soto se organiza como un sistema de tres capas: Archivo, Dispositivo e Intervención.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Archivo: registra experiencias, memorias y objetos.&nbsp;&nbsp;&nbsp;&nbsp;Dispositivo: traduce ese archivo en soportes, interfaces y lenguajes.&nbsp;&nbsp;&nbsp;&nbsp;Intervención: activa la obra en el espacio o con el público.</span>
-      </div>
+    <div class="logo">
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1755968841/soto_logo.0010_xh9icu.png" alt="soto artista virtual" style="max-width:180px;height:auto;">
     </div>
-  </div>
-</div>
-  </a>
 
+    <div class="descripcion2">
+        <span class="ubicacion-meta">Dispositivo · Sistema conversacional autónomo<br>
+        Python · LlamaIndex · FastAPI · RAG</span>
+        <div class="descripcion">
+            <p>Desarrollo completo de un agente conversacional con personalidad definida, construido sobre arquitectura RAG —Generación Aumentada por Recuperación. El sistema separa frontend y backend, gestiona memoria conversacional persistente mediante PostgreSQL y genera respuestas contextuales entrenadas con una base de conocimiento curada en JSON.</p>
+            <p>Stack: HTML, CSS, JS — Python, LlamaIndex, FastAPI — GitHub Pages, Render, PostgreSQL.</p>
 
- <!-- Aquí va el contenido de tu página web... -->
+            <h3>Arquitectura del Sistema</h3>
+            <div class="arquitectura-seccion">
+                <div class="contenido-escritorio">
+                    <table>
+                        <thead>
+                            <tr><th>Componente</th><th>Tecnologías</th><th>Rol</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Frontend</td><td>HTML, CSS, JS</td><td>Interfaz de chat interactiva que se comunica con el backend. Utiliza localStorage para persistir el historial de la sesión del usuario entre páginas.</td></tr>
+                            <tr><td>Backend</td><td>Python, LlamaIndex, FastAPI</td><td>Expone una API REST que maneja la lógica de la IA, el procesamiento de lenguaje y la gestión de la memoria conversacional.</td></tr>
+                            <tr><td>Hosting</td><td>GitHub Pages</td><td>Sirve el frontend como un sitio web estático, asegurando velocidad y disponibilidad global.</td></tr>
+                            <tr><td>Hosting (API)</td><td>Render</td><td>Aloja el servicio backend de Python, manejando la ejecución del código y la conexión con la base de datos.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="contenido-movil">
+                    <p>Frontend: HTML, CSS, JS. Interfaz de chat interactiva que se comunica con el backend.</p>
+                    <p>Backend: Python, LlamaIndex, FastAPI. Expone una API REST que maneja la lógica de la IA, el procesamiento de lenguaje y la gestión de la memoria conversacional.</p>
+                    <p>Hosting: GitHub Pages. Sirve el frontend como un sitio web estático.</p>
+                    <p>Hosting (API): Render. Aloja el servicio backend de Python.</p>
+                </div>
+            </div>
 
-  <!-- BURBUJA DEL CHAT DE SOTO -->
- 
-
-    
-   </div>
-  <div class="logo">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1755968841/soto_logo.0010_xh9icu.png" alt="Logo" class="logo-img-unica">
-
-  </div>
-
-
-
-  <div class="descripcion2">
-    <p>
-  
- 
-    
-      
-        <div class="descripcion"> 
-<h2>soto (artista virtual)</h2>
-</p>Es un personaje digital autónomo, diseñado para habitar el mundo del arte como figura independiente: responde, actúa y genera por sí mismo, siempre bajo la dirección conceptual de Xavier Soto.<a href="https://drive.google.com/file/d/1JYhZGcLMA1NzSyyoD_C98w8CfZXFzjCy/view?usp=sharing"target="_blank"style="color: #f26100; text-decoration: none; font-style: italic;">
-    soto — CV</a></p>
-    <h3>Concepto (estas son las primeras anotaciones del proyecto)</h3>
-    
-
-    <p>El proyecto soto nace de una fractura; de la experiencia del desplazamiento y la dislocación cultural. La identidad no es una constante; se gesta a través de los recursos, valores y rituales que nos proporciona un entorno: la familia, los amigos, el lenguaje de la calle, cómo se pide una cerveza o se toma un autobús. soto emerge en el momento en que ese "cordón umbilical social" se corta.
-</p>
- 
-    <p>Él es la personificación de esa ruptura y de la posterior reconstrucción. Es un Nahual (un ser transformador) porque la adaptación a un nuevo lugar exige un cambio constante de piel. Es un espejo porque el acto de observarse a sí mismo se vuelve una necesidad para entender quién se es ahora, en la tensión entre el "allá" que te formó y el "aquí" que te transforma.
-
-</p>
-
-<p>Su naturaleza digital es la metáfora perfecta de esta condición: soto existe para pertenecer a todos los espacios y a ningún espacio al mismo tiempo. Puede manifestarse en una pantalla en México, en un móvil en España o en una conversación de IA, pero no tiene un cuerpo físico, no tiene un hogar fijo. Es un nómada conceptual.
-</p>
-
-
-<p>Las obras de soto, por tanto, no son meras creaciones. Son los artefactos de esta búsqueda. Son las evidencias de un diálogo constante con la memoria, el territorio y la pregunta fundamental que persigue a quien vive entre dos mundos: ¿dónde, y quién, soy ahora?
-
-</p>
-
-
-           
-
-
-    <p>soto es un sistema conversacional autónomo construido sobre una arquitectura de Generación Aumentada por Recuperación (RAG). Su diseño desacoplado separa la interfaz de usuario (frontend) del núcleo de razonamiento (backend), permitiendo un control granular sobre la personalidad del personaje y una evolución continua de su base de conocimiento.</p>
-
-    <h3>Arquitectura del Sistema</h3>
-    <div class="arquitectura-seccion">
-    <div class="contenido-escritorio">
-    <table>
-        <thead>
-            <tr>
-                <th>Componente</th>
-                <th>Tecnologías</th>
-                <th>Rol</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Frontend</td>
-                <td>HTML, CSS,  JS</td>
-                <td>Interfaz de chat interactiva que se comunica con el backend. Utiliza localStorage para persistir el historial de la sesión del usuario entre páginas.</td>
-            </tr>
-            <tr>
-                <td>Backend</td>
-                <td>Python, LlamaIndex,&nbsp;FastAPI</td>
-                <td>Expone una API REST que maneja la lógica de la IA, el procesamiento de lenguaje y la gestión de la memoria conversacional.</td>
-            </tr>
-            <tr>
-                <td>Hosting</td>
-                <td>GitHub Pages</td>
-                <td>Sirve el frontend como un sitio web estático, asegurando velocidad y disponibilidad global.</td>
-            </tr>
-            <tr>
-                <td>Hosting  (API)&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td>Render</td>
-                <td>Aloja el servicio backend de Python, manejando la ejecución del código y la conexión con la base de datos.</td>
-            </tr>
-        </tbody>
-    </table>
+            <h3>Núcleo de la IA (LlamaIndex y RAG)</h3>
+            <p>La inteligencia de soto se basa en un proceso de tres etapas para generar respuestas precisas, contextuales y alineadas con la personalidad del artista.</p>
+            <ol>
+                <li>
+                    <h4>Base de Conocimiento Curada (El Cerebro)</h4>
+                    <ul>
+                        <li>Datos: La información del artista (proyectos, influencias, recorrido) está curada en archivos JSON estructurados.</li>
+                        <li>Vectorización: La librería LlamaIndex procesa estos datos, transformando el texto en embeddings (vectores semánticos) almacenados en un Índice Vectorial.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Memoria Conversacional (El Recuerdo)</h4>
+                    <ul>
+                        <li>Persistencia: Las conversaciones se guardan en una base de datos PostgreSQL externa.</li>
+                        <li>Contexto: Mediante un sistema de user_id, la API recupera el historial de un usuario específico y lo inyecta en el prompt.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Ingeniería de Prompts (La Personalidad)</h4>
+                    <ul>
+                        <li>Control del Tono: La voz crítica, sarcástica y concisa de soto está definida por un PromptTemplate diseñado a medida.</li>
+                        <li>Reglas de Comportamiento: El prompt instruye al modelo (OpenAI) a priorizar los JSON como fuente principal, usar el historial para personalización y hablar en primera persona.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
     </div>
+
+    <div class="galeria">
+        <div class="imagen-hover">
+            <img srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima2-01_jxdrdv.png 600w, https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima2-01_jxdrdv.png 1200w, https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima2-01_jxdrdv.png 1600w" sizes="(max-width:480px) 100vw,(max-width:768px) 90vw,800px" src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima2-01_jxdrdv.png" class="img-original" alt="bocetos iniciales de soto" loading="lazy">
+            <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima2-01_jxdrdv.png" class="img-hover" alt="Hover bocetos de soto" loading="lazy">
+        </div>
+        <div class="imagen-hover">
+            <img srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506141/sotoima3-01_paozgk.png 600w, https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506141/sotoima3-01_paozgk.png 1200w, https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506141/sotoima3-01_paozgk.png 1600w" sizes="(max-width:480px) 100vw,(max-width:768px) 90vw,800px" src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506141/sotoima3-01_paozgk.png" class="img-original" alt="bocetos iniciales de soto" loading="lazy">
+            <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506141/sotoima3-01_paozgk.png" class="img-hover" alt="Hover bocetos de soto" loading="lazy">
+        </div>
+        <div class="imagen-hover">
+            <img srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima-01_dvqotl.png 600w, https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima-01_dvqotl.png 1200w, https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima-01_dvqotl.png 1600w" sizes="(max-width:480px) 100vw,(max-width:768px) 90vw,800px" src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima-01_dvqotl.png" class="img-original" alt="bocetos iniciales de soto" loading="lazy">
+            <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima-01_dvqotl.png" class="img-hover" alt="Hover bocetos de soto" loading="lazy">
+        </div>
     </div>
-<div class="contenido-movil">
-  <p>Frontend: HTML, CSS, JS. Interfaz de chat interactiva que se comunica con el backend. Utiliza localStorage para persistir el historial de la sesión del usuario entre páginas.</p>
-  <p>Backend: Python, LlamaIndex, FastAPI. Expone una API REST que maneja la lógica de la IA, el procesamiento de lenguaje y la gestión de la memoria conversacional.</p>
-  <p>Hosting: GitHub Pages. Sirve el frontend como un sitio web estático, asegurando velocidad y disponibilidad global.</p>
-  <p>Hosting (API): Render. Aloja el servicio backend de Python, manejando la ejecución del código y la conexión con la base de datos.</p>
-</div>
-    <h3>Núcleo de la IA (LlamaIndex y RAG)</h3>
 
-    <p>La inteligencia de soto se basa en un proceso de tres etapas para generar respuestas precisas, contextuales y alineadas con la personalidad del artista.</p>
-    
-    <ol>
-        <li>
-            <h4>Base de Conocimiento Curada (El Cerebro)</h4>
-            <ul>
-                <li>Datos: La información del artista (proyectos, influencias, recorrido) está curada en archivos JSON estructurados. Este formato narrativo y con claves explícitas es fundamental para la precisión del sistema.</li>
-                <li>Vectorización: La librería LlamaIndex procesa estos datos, transformando el texto en embeddings (vectores semánticos) que se almacenan en un Índice Vectorial. Esto permite una búsqueda conceptual, no solo por palabras clave.</li>
-            </ul>
-        </li>
-        <li>
-            <h4>Memoria Conversacional (El Recuerdo)</h4>
-            <ul>
-                <li>Persistencia: Las conversaciones no son efímeras. Cada interacción se guarda en una base de datos PostgreSQL externa.</li>
-                <li>Contexto: Mediante un sistema de user_id, la API recupera el historial de un usuario específico y lo inyecta en el prompt, permitiendo a soto recordar interacciones pasadas y nombres.</li>
-                <li>Memoria: El sistema usa el historial de conversación para que la IA siempre tenga contexto de lo que se ha hablado anteriormente.</li>
-            </ul>
-        </li>
-        <li>
-        <h4>Ingeniería de Prompts (La Personalidad)</h4>
-            <ul>
-                <li>Control del Tono: La voz crítica, sarcástica y concisa de soto no es aleatoria. Está definida por un PromptTemplate diseñado a medida.</li>
-                <li>Reglas de Comportamiento: El prompt instruye al modelo de lenguaje (OpenAI): Priorizar siempre el contexto de los JSON como fuente principal de verdad. Utilizar el Historial de conversación para personalización. Hablar en primera persona y adherirse a reglas de estilo específicas (ej. "soto" en minúsculas).</li>
-            </ul>
-        </li>
-       
-    </ol>
-    </p>
-</div>
+    <div class="descripcion" style="margin-bottom:100px;">
+        <h4>soto es un artista virtual que nació de mi propia experiencia de vivir lejos de casa y tener que reconstruir mi identidad. Él personifica esa sensación de no pertenecer del todo a ningún lugar, utilizando el mito de un 'Nahual' que cambia de forma y la tecnología de una IA para explorar cómo la memoria y la cultura definen quiénes somos. Sus obras son el rastro de esa búsqueda.</h4>
+        <h2>Conoce más en <a href="https://www.xsoto.com" target="_blank">xsoto.com</a></h2>
+    </div>
 
+    <div id="modal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:var(--bg);justify-content:center;align-items:center;cursor:pointer;">
+        <span id="cerrar-modal" style="position:absolute;top:30px;right:40px;color:rgba(0,0,0,0);font-size:40px;cursor:pointer;">&times;</span>
+        <img id="modal-img" src="" alt="Imagen ampliada" style="max-width:38%;max-height:auto;border:1px solid rgba(255,255,255,0);box-shadow:0 0 20px rgba(0,0,0,0);"/>
+    </div>
 
-<div class="galeria">
-    <!-- Repetí esta estructura para las 16 imágenes -->
-   <div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima2-01_jxdrdv.png 600w,
-      https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima2-01_jxdrdv.png 1200w,
-      https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima2-01_jxdrdv.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751903034/inmenso1_worfrc.png"
-    class="img-original"
-    alt="bocetos iniciales de soto"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1751902896/in1-01_tgszif.png"
-  >
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751903548/in5-01_bufkay.png" 
-    class="img-hover" 
-    alt="Hover bocetos iniciales de soto" 
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1751902896/in1-01_tgszif.png"
-  >
-</div>
+</main>
 
-    <div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506141/sotoima3-01_paozgk.png 600w,
-      https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506141/sotoima3-01_paozgk.png 1200w,
-      https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506141/sotoima3-01_paozgk.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751903061/inmenso2_rndnyj.png"
-    class="img-original"
-    alt="bocetos iniciales de soto"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1751902897/in2-01_w7wnn1.png"
-  >
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751903636/in4-01_kyw92f.png" 
-    class="img-hover" 
-    alt="Hover bocetos iniciales de soto" 
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1751902897/in2-01_w7wnn1.png"
-  >
-</div>
-
-<div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima-01_dvqotl.png 600w,
-      https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima-01_dvqotl.png 1200w,
-      https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima-01_dvqotl.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751903116/inmenso3_lar5g0.png"
-    class="img-original"
-    alt="bocetos iniciales de soto"
-   
-  >
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751903679/in6-01_a5s9ld.png" 
-    class="img-hover" 
-    alt="Hover bocetos iniciales de soto" 
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1751902897/in3-01_kcyqig.png"
-  >
-</div>
-
-
-</div>
-  <div class="descripcion"> 
-
-
-  
-
-
-
-
-            <h4>soto es un artista virtual que nació de mi propia experiencia de vivir lejos de casa y tener que reconstruir mi identidad. Él personifica esa sensación de no pertenecer del todo a ningún lugar, utilizando el mito de un 'Nahual' que cambia de forma y la tecnología de una IA para explorar cómo la memoria y la cultura definen quiénes somos. Sus obras son el rastro de esa búsqueda.</h4>
-            <h2>Habla con <a href="../chat/index.html" style="color: #f26100; text-decoration: none;">
-    soto
-  </a>
-</h2>
-            <ul>
-              
-                
-   
-    
-    
-  <footer>
-    <p class="footer-text">©2026 código y diseño x soto³</p>
+<footer class="page-footer">
+    <span class="footer-copy">©2026 soto³</span>
+    <div class="footer-socials">
+        <a href="https://www.instagram.com/sotosolo_" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">LinkedIn</a>
+        <a href="https://www.behance.net/xaviersoto" target="_blank">Behance</a>
+    </div>
 </footer>
 
-
-           
-
-    <!-- Repetí esto hasta Imagen 16 -->
-    <!-- Puedes reemplazar los links de ejemplo por los tuyos -->
-  </div>
-
-
-
-
-<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243);; justify-content:center; align-items:center; cursor:pointer;">
-  <div class="modal-close-x"></div>
-  <span id="cerrar-modal" style="position:absolute; top:30px; right:40px; color:rgba(0, 0, 0, 0); font-size:40px; cursor:pointer;">&times;</span>
-   <img id="modal-img" src="https://res.cloudinary.com/dbwezmju6/image/upload/v1748892157/dehoy1-01_hfnod8.png" alt="Imagen ampliada" style="max-width:38%; max-height:auto; border: 1px solid rgba(255, 255, 255, 0); box-shadow: 0 0 20px rgba(0, 0, 0, 0);" />
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('modal');
-  const modalImg = document.getElementById('modal-img');
-  const cerrarModal = document.getElementById('cerrar-modal');
-
-  let modalScrollY = 0; // 👈 guarda posición de scroll
-
-  document.querySelectorAll('.img-hover[data-full]').forEach(img => {
-    img.style.cursor = 'pointer';
-    img.addEventListener('click', (e) => {
-      e.stopPropagation();
-
-      // 🔒 BLOQUEAR SCROLL FONDO
-      modalScrollY = window.scrollY;
-      document.body.style.top = `-${modalScrollY}px`;
-      document.body.classList.add('modal-open');
-
-      const imgGrande = img.getAttribute('data-full');
-      modalImg.src = imgGrande;
-      modal.style.display = 'flex';
-     
-    });
-  });
-
-  function closeModal() {
-    modal.style.display = 'none';
-    modalImg.src = '';
-    modal.style.cursor = '';
-
-    // 🔓 RESTAURAR SCROLL
-    document.body.classList.remove('modal-open');
-    document.body.style.top = '';
-    window.scrollTo(0, modalScrollY);
-  }
-
-  cerrarModal.addEventListener('click', closeModal);
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
-});
-
-function toggleMenu() {
-  const menu = document.getElementById('mobileMenu');
-  menu.classList.toggle('active');
-}
-
-document.addEventListener('contextmenu', function(e) {
-  e.preventDefault();
-}, false);
-</script>
+<a href="https://www.instagram.com/sotosolo_?igsh=MXJha3o2dmVpNHRodA==" target="_blank" style="text-decoration:none;">
+    <div class="banner" data-nosnippet>
+        <div class="marquee">
+            <div class="marquee-track">
+                <div style="display:flex;">
+                    <span class="ticker-item">Diseño gráfico, desarrollo web y código. Entre Valencia y Guadalajara.</span>
+                    <span class="ticker-item">Diseño gráfico, desarrollo web y código. Entre Valencia y Guadalajara.</span>
+                    <span class="ticker-item">Diseño gráfico, desarrollo web y código. Entre Valencia y Guadalajara.</span>
+                </div>
+                <div style="display:flex;" aria-hidden="true">
+                    <span class="ticker-item">Diseño gráfico, desarrollo web y código. Entre Valencia y Guadalajara.</span>
+                    <span class="ticker-item">Diseño gráfico, desarrollo web y código. Entre Valencia y Guadalajara.</span>
+                    <span class="ticker-item">Diseño gráfico, desarrollo web y código. Entre Valencia y Guadalajara.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</a>
 
 <script>
-window.addEventListener("load", function () {
-
-  const launcher = document.getElementById("soto-launcher");
-  const notification = document.getElementById("soto-notification");
-  const launcherImage = launcher ? launcher.querySelector("img") : null;
-
-  if (launcherImage && notification) {
-    notification.addEventListener("click", function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-
-      const eventsToFire = ['mousedown', 'mouseup', 'click'];
-
-      eventsToFire.forEach(function(eventName) {
-        const clickEvent = new MouseEvent(eventName, {
-          bubbles: true,
-          cancelable: true,
-          view: window
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const cerrarModal = document.getElementById("cerrar-modal");
+    let modalScrollY = 0;
+    document.querySelectorAll(".img-hover[data-full]").forEach(img => {
+        img.style.cursor = "pointer";
+        img.addEventListener("click", (e) => {
+            e.stopPropagation();
+            modalScrollY = window.scrollY;
+            document.body.style.top = `-${modalScrollY}px`;
+            document.body.classList.add("modal-open");
+            modalImg.src = img.getAttribute("data-full");
+            modal.style.display = "flex";
         });
-
-        launcherImage.dispatchEvent(clickEvent);
-        launcher.dispatchEvent(clickEvent);
-      });
     });
-  }
+    function closeModal() {
+        modal.style.display = "none";
+        modalImg.src = "";
+        document.body.classList.remove("modal-open");
+        document.body.style.top = "";
+        window.scrollTo(0, modalScrollY);
+    }
+    cerrarModal.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
 });
+document.addEventListener("contextmenu", e => e.preventDefault());
 </script>
 
 <script>
-window.addEventListener("load", function () {
-
-  /* =====================================================
-      INTRO OVERLAY
-  ===================================================== */
-  const overlay = document.getElementById("intro-overlay");
-  const mainContent = document.getElementById("main-content");
-
-  if (overlay && mainContent) {
-    overlay.addEventListener("animationend", (e) => {
-      if (e.animationName === "fadeOutOverlay") {
-        overlay.style.display = "none";
-        mainContent.classList.add("visible");
-      }
+window.addEventListener("load", () => {
+    setTimeout(() => document.querySelector(".topbar").classList.add("entrada"), 100);
+    setTimeout(() => document.querySelector(".banner").classList.add("entrada"), 300);
+    const mToggle    = document.getElementById("mToggle");
+    const mmClose    = document.getElementById("mmClose");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const openMM  = () => { mobileMenu.classList.add("active"); mobileMenu.setAttribute("aria-hidden","false"); document.body.classList.add("no-scroll"); };
+    const closeMM = () => { mobileMenu.classList.remove("active"); mobileMenu.setAttribute("aria-hidden","true"); document.body.classList.remove("no-scroll"); };
+    mToggle.addEventListener("click", e => { e.stopPropagation(); mobileMenu.classList.contains("active") ? closeMM() : openMM(); });
+    mmClose.addEventListener("click", closeMM);
+    document.addEventListener("click", e => { if (!mobileMenu.contains(e.target) && !mToggle.contains(e.target)) closeMM(); });
+    let sx = 0, sy = 0;
+    document.addEventListener("touchstart", e => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+    document.addEventListener("touchend", e => {
+        if (!mobileMenu.classList.contains("active")) return;
+        const dx = e.changedTouches[0].clientX - sx;
+        const dy = e.changedTouches[0].clientY - sy;
+        if (dx < -80 || (dy < -80 && Math.abs(dy) > Math.abs(dx))) closeMM();
+    }, { passive: true });
+    document.querySelectorAll("#mobile-menu a.mm-link").forEach(link => {
+        link.addEventListener("click", function(e) {
+            if (window.innerWidth <= 768) { e.preventDefault(); const url = this.href; this.style.color = "var(--orange)"; setTimeout(() => { window.location.href = url; }, 200); }
+        });
     });
-  }
-
-  /* =====================================================
-      MENU & SOCIAL LINKS (MOBILE DELAY)
-  ===================================================== */
-  const allMenuLinks = document.querySelectorAll("#side-menu a");
-
-  allMenuLinks.forEach(link => {
-    link.addEventListener("click", function (e) {
-      if (window.innerWidth <= 768) {
-        const targetUrl = this.href;
-        const isExternal = this.target === "_blank";
-        const isSocial = this.closest('.menu-socials');
-
-        e.preventDefault();
-
-        if (isSocial) {
-          this.style.setProperty("color", "#f26100", "important");
-        }
-
-        setTimeout(() => {
-          if (isExternal) {
-            window.open(targetUrl, '_blank');
-          } else {
-            window.location.href = targetUrl;
-          }
-        }, 200);
-      }
-    });
-  });
-
-  /* =====================================================
-      MENÚ / HAMBURGUESA / SWIPE
-  ===================================================== */
-  const toggle = document.querySelector(".menu-toggle");
-  const sideMenu = document.getElementById("side-menu");
-  const body = document.body;
-
-  if (!toggle || !sideMenu) return;
-
-  function openMenu() {
-    sideMenu.classList.add("active");
-    body.classList.add("menu-open");
-    body.classList.add("no-scroll");
-  }
-
-  function closeMenu() {
-    sideMenu.classList.remove("active");
-    body.classList.remove("menu-open");
-    body.classList.remove("no-scroll");
-  }
-
-  toggle.addEventListener("click", function (e) {
-    e.stopPropagation();
-    sideMenu.classList.contains("active") ? closeMenu() : openMenu();
-  });
-
-  document.addEventListener("click", function (event) {
-    if (!sideMenu.classList.contains("active")) return;
-
-    const insideMenu = sideMenu.contains(event.target);
-    const onToggle = toggle.contains(event.target);
-    const onLink = event.target.closest("a");
-
-    if (!insideMenu && !onToggle) closeMenu();
-    else if (insideMenu && !onLink && !onToggle) closeMenu();
-  });
-
-  /* =====================================================
-      SWIPE MOBILE
-  ===================================================== */
-let startX = 0;
-
-  document.addEventListener("touchstart", function (e) {
-    startX = e.touches[0].clientX;
-  }, { passive: true });
-
-  document.addEventListener("touchend", function (e) {
-    const endX = e.changedTouches[0].clientX;
-    const diff = endX - startX;
-
-    // Eliminamos la condición de "diff > 90" (abrir)
-    // Solo mantenemos la de cerrar cuando el menú está ACTIVO
-    if (diff < -90 && sideMenu.classList.contains("active")) {
-      closeMenu();
-    }
-  }, { passive: true });
-
-
 });
 </script>
+<script>
+window.addEventListener('load', function() {
+    const items = document.querySelectorAll('.imagen-hover');
+    items.forEach(el => el.classList.add('fade-in-scroll'));
 
+    setTimeout(function() {
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
 
-
+        items.forEach(el => observer.observe(el));
+    }, 1000);;;
+});
+</script>
 </body>
 </html>

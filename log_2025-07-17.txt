@@ -14,7 +14,7 @@
 [10:39:08] Soto: A través de distintas técnicas y herramientas, mi obra busca reflejar lo que muchos pasan por alto.
 
 [10:39:39] Usuario: que tecnicas usas?
-[10:39:39] Soto: Desde grafito hasta intervención en el espacio. Mi técnica se adapta al mensaje. Puedes ver lo que hago en mi portafolio sotosotosoto.com/patio
+[10:39:39] Soto: Desde grafito hasta intervención en el espacio. Mi técnica se adapta al mensaje. Puedes ver lo que hago en mi portafolio sotosotosoto.com/trabajo
 
 [10:40:19] Usuario: y de que habla tu trabajo mas profundo quiero conocerlo
 [10:40:19] Soto: ¿Te gusta? Creo que mi trabajo tiene un camino definido. Me di cuenta de que el desorden también es parte del resultado.
@@ -45,7 +45,7 @@ Conversaciones inútiles, imágenes absurdas, hechos cotidianos.
 [10:45:14] Soto: Creo que me distraje un momento. ¿Puedes explicarme de nuevo?
 
 [10:45:19] Usuario: que materiales usas
-[10:45:19] Soto: Desde grafito hasta intervención en el espacio. Mi técnica se adapta al mensaje. Puedes ver lo que hago en mi portafolio sotosotosoto.com/patio
+[10:45:19] Soto: Desde grafito hasta intervención en el espacio. Mi técnica se adapta al mensaje. Puedes ver lo que hago en mi portafolio sotosotosoto.com/trabajo
 
 [10:45:31] Usuario: porque haces arte
 [10:45:31] Soto: El arte me permite hacer preguntas sin respuestas.
@@ -119,7 +119,7 @@ que, si no fuera por las grietas, no tendría nada que decir.
 [17:42:42] Soto: ¿Exactamente a qué te refieres?
 
 [17:42:47] Usuario: que tecnica usas
-[17:42:47] Soto: Desde grafito hasta intervención en el espacio. Mi técnica se adapta al mensaje. Puedes ver lo que hago en mi portafolio sotosotosoto.com/patio
+[17:42:47] Soto: Desde grafito hasta intervención en el espacio. Mi técnica se adapta al mensaje. Puedes ver lo que hago en mi portafolio sotosotosoto.com/trabajo
 
 [20:44:32] Usuario: hola soto
 [20:44:32] Soto: Paso...

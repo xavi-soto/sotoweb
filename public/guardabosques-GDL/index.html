@@ -2,1240 +2,286 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>guardabosques</title>
- <link rel="icon" href="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759771502/icono_web-01_pcbhuw.png" type="image/png">
+  <link rel="icon" href="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759771502/icono_web-01_pcbhuw.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-  
-   <meta name="description" content="Institución dedicada a la protección y conservación de áreas verdes, zonas boscosas y el resguardo de especies que habitan en estos ecosistemas.">
-  
+  <meta name="description" content="Institución dedicada a la protección y conservación de áreas verdes, zonas boscosas y el resguardo de especies que habitan en estos ecosistemas.">
   <meta property="og:title" content="guardabosques GDL">
-<meta property="og:description" content="Institución dedicada a la protección y conservación de áreas verdes, zonas boscosas y el resguardo de especies que habitan en estos ecosistemas. Su labor se centra en preservar el equilibrio ambiental de la región, promoviendo acciones de vigilancia, restauración ecológica y educación ambiental.">
-<meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
-<meta property="og:url" content="https://sotosotosoto.com//guardabosques-GDL/">
-<meta property="og:type" content="website">
-  
-  
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>el hogar</title>
-   <link rel="icon" href="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759771502/icono_web-01_pcbhuw.png" type="image/png">
+  <meta property="og:description" content="Institución dedicada a la protección y conservación de áreas verdes, zonas boscosas y el resguardo de especies que habitan en estos ecosistemas.">
+  <meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
+  <meta property="og:url" content="https://sotosotosoto.com//guardabosques-GDL/">
+  <meta property="og:type" content="website">
+  <style>
+*,*::before,*::after{box-sizing:border-box;}
+:root{--orange:#0011ff;--ink:#0c0c0c;--bg:#f3f3f3;--dark:#141210;--rule:rgba(12,12,12,0.10);--muted:rgba(12,12,12,0.42);--banner-h:34px;--top-h:78px;--pad:60px;}
+body{margin:0;font-family:"Lexend",sans-serif;background-color:var(--bg);opacity:0;animation:fadeIn 1s ease-in-out forwards;padding-top:var(--top-h);padding-bottom:var(--banner-h);}
+@keyframes fadeIn{to{opacity:1;}}
 
-  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-   <meta name="description" content="un espacio creado con la filosofía del cuerpo consciente. Su propósito principal es ofrecer prácticas como yoga, hatha yoga y pilates.">
-  
-  <meta property="og:title" content="el hogar">
-<meta property="og:description" content="el hogar, es un espacio creado con la filosofía del cuerpo consciente. Su propósito principal es ofrecer prácticas como yoga, hatha yoga y pilates, complementadas con servicios de masaje y la venta de productos relacionados con la meditación, como lociones, inciensos y aromatizantes.">
-<meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
-<meta property="og:url" content="https://sotosotosoto.com//el-hogar/">
-<meta property="og:type" content="website">
-  
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>monaco</title>
-   <link rel="icon" href="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759771502/icono_web-01_pcbhuw.png" type="image/png">
+/* ── TOPBAR ── */
+.topbar{position:fixed;top:0;left:0;width:100%;height:var(--top-h);background:var(--bg);border-bottom:1px solid var(--rule);z-index:8000;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);transform:translateY(-100%);transition:transform 0.7s cubic-bezier(0.25,1,0.5,1);}
+.topbar.entrada{transform:translateY(0);}
+.topbar-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;transition:opacity 0.2s;}
+.topbar-logo:hover{opacity:0.7;}
+.topbar-logo img{height:19px;width:auto;display:block;}
+/* Logo estático — solo móvil */
+.topbar-logo-static{display:none;align-items:center;text-decoration:none;flex-shrink:0;transition:opacity 0.2s;}
+.topbar-logo-static img{height:19px;width:auto;display:block;}
+.topbar-logo-static:hover{opacity:0.7;}
+.topbar-nav{display:flex;gap:36px;align-items:center;}
+.topbar-nav a{font-family:"Lexend",sans-serif;font-size:11px;font-weight:600;letter-spacing:0.04em;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.topbar-nav a:hover{color:var(--orange);}
+.m-toggle{display:none;background:none;border:none;cursor:pointer;font-family:"Lexend",sans-serif;font-size:11px;font-weight:700;color:var(--ink);}
 
-  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-   <meta name="description" content="marca dedicada a la compra minorista y reventa de artículos de lujo importados.">
-  
-  <meta property="og:title" content="monaco">
-<meta property="og:description" content="monaco, dedicada a la compra minorista y reventa de artículos de lujo importados.">
-<meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
-<meta property="og:url" content="https://sotosotosoto.com//monaco/">
-<meta property="og:type" content="website">
-  
-  
-  
-<style>
-  /* Estilos generales */
-    
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-  /* Estilos generales */
-  body {
-    margin: 0;
-    font-family: "Lexend", sans-serif;
-    background-color: #f3f3f3;
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards;
-     padding-bottom: 68px;
-   
-  }
+/* ── PILL ── */
+.proj-pill{position:fixed;bottom:calc(var(--banner-h) + 14px);left:50%;transform:translateX(-50%);display:flex;align-items:center;background:var(--bg);border:1px solid var(--rule);border-radius:999px;overflow:hidden;z-index:4000;box-shadow:0 2px 12px rgba(12,12,12,0.08);}
+.proj-pill-btn{all:unset;cursor:pointer;font-family:"Lexend",sans-serif;font-size:11px;font-weight:600;letter-spacing:0.04em;color:var(--muted);padding:9px 20px;display:flex;align-items:center;gap:7px;transition:color 0.2s,background 0.2s;text-decoration:none;white-space:nowrap;}
+.proj-pill-btn:hover{color:var(--orange);background:rgba(0,17,255,0.04);}
+.proj-pill-sep{width:1px;height:18px;background:var(--rule);flex-shrink:0;}
 
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
+/* ── MOBILE MENU ── */
+#mobile-menu{position:fixed;inset:0;background:var(--dark);z-index:10000;transform:translateY(-100%);transition:transform 0.75s cubic-bezier(0.76,0,0.24,1);display:flex;flex-direction:column;overflow:hidden;}
+#mobile-menu.active{transform:translateY(0);}
+#mobile-menu::before{content:'';display:block;width:100%;height:4px;background:var(--orange);flex-shrink:0;}
+.mm-header{display:flex;justify-content:flex-end;padding:20px 22px 0;flex-shrink:0;}
+.mm-close{background:none;border:none;cursor:pointer;font-family:"Lexend",sans-serif;font-size:11px;font-weight:700;color:rgba(240,236,231,0.5);letter-spacing:0.04em;transition:color 0.2s;padding:4px 0;}
+.mm-close:hover{color:var(--orange);}
+.mm-inner{flex:1;display:flex;flex-direction:column;padding:30px 36px 30px;overflow-y:auto;justify-content:center;}
+.mm-cat{font-family:"Lexend",sans-serif;font-size:10px;font-weight:700;color:var(--orange);margin-bottom:14px;margin-top:36px;}
+.mm-cat:first-child{margin-top:0;}
+#mobile-menu a.mm-link{font-family:"Lexend",sans-serif;font-size:clamp(28px,7vw,48px);font-weight:600;line-height:1.2;color:rgba(240,236,231,0.88);text-decoration:none;display:inline-block;transition:color 0.18s,transform 0.18s;transform-origin:left center;letter-spacing:-0.01em;margin-bottom:22px;}
+#mobile-menu a.mm-link:hover{color:var(--orange);transform:translateX(10px);}
+.mm-foot{padding:22px 36px calc(var(--banner-h) + 16px);border-top:1px solid rgba(240,231,231,0.08);display:flex;gap:24px;flex-wrap:wrap;}
+.mm-foot a{font-family:"Lexend",sans-serif;color:rgba(240,236,231,0.3);text-decoration:none;font-size:10px;font-weight:600;transition:color 0.2s;}
+.mm-foot a:hover{color:var(--orange);}
 
- 
-  /* --- INICIO: MODIFICACIÓN ESPACIADO IMÁGENES --- */
-  /* Regla unificada para todas las imágenes full-width */
-  .full-image,
-  .full-image2,
-  .full-image3 {
-      display: block; /* Asegura consistencia */
-      width: 100%;    /* Asegura consistencia */
+/* ── FOOTER ── */
+.page-footer{background:var(--dark);border-top:1px solid rgba(240,236,231,0.07);padding:24px var(--pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;width:100%;position:relative;z-index:5000;}
+.footer-copy{font-family:"Lexend",sans-serif;font-size:10px;font-weight:600;color:#fff;}
+.footer-socials{display:flex;gap:28px;}
+.footer-socials a{font-family:"Lexend",sans-serif;font-size:10px;font-weight:600;color:#fff;text-decoration:none;transition:color 0.2s;}
+.footer-socials a:hover{color:var(--orange);}
 
-      /* Reseteamos espacios verticales intrínsecos */
-      margin-top: 0 !important;
-      margin-left: 0;
-      margin-right: 0;
-      padding-top: 0 !important;
-      padding-bottom: 0 !important; /* También reseteamos padding-bottom */
-      padding-left: 0;
-      padding-right: 0;
+/* ── BANNER ── */
+.banner{position:fixed;bottom:0;left:0;width:100%;height:var(--banner-h);background:var(--orange);overflow:hidden;z-index:9000;display:flex;align-items:center;opacity:0;transition:opacity 0.6s ease;}
+.banner.entrada{opacity:1;}
+.marquee{width:100%;overflow:hidden;display:flex;}
+.marquee-track{display:flex;width:max-content;animation:ticker 58s linear infinite;}
+.banner:hover .marquee-track{animation-play-state:paused;}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.ticker-item{padding-right:64px;font-family:"Lexend",sans-serif;font-size:10px;font-weight:700;color:#fff;white-space:nowrap;}
 
-      /* Aplicamos el espacio DESPUÉS de CADA imagen */
-      margin-bottom: 1px !important; /* <-- TU ESPACIADO UNIFORME! AJUSTA 30px */
-  }
-
-  /* Las reglas originales para full-image2 y full-image3 ahora son innecesarias o se ajustan aquí */
-  /* .full-image2 {
-      /* padding-top: 100px; */ /* <-- ELIMINADO */
-  /* }
-
-  .full-image3 {
-      /* margin-top: -25px; */ /* <-- ELIMINADO */
-  /* } /*
-  /* --- FIN: MODIFICACIÓN ESPACIADO IMÁGENES --- */
-     footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f3f3f3;
-    text-align: center;
-    padding: 10px 0; /* Un poco más de aire para el texto */
-    z-index: 1000;
+/* ── RESPONSIVE ── */
+@media(max-width:900px){:root{--pad:40px;}}
+@media(max-width:768px){
+    :root{--pad:22px;}
+    .topbar-nav{display:none;}
+    .m-toggle{display:block;}
+    .topbar-logo{display:none;}
+    .topbar-logo-static{display:flex;}
+    .page-footer{padding:20px var(--pad);}
+    .proj-pill-btn{font-size:10px;padding:8px 14px;}
 }
 
-.footer-text {
-    font-family: "Lexend", sans-serif; /* Usamos tu tipografía principal */
-    font-size: 10px; /* Tamaño discreto y elegante */
-    letter-spacing: 0.00em;
-    color: #333;
-    margin: 0;
-    opacity: 0.8; /* Un poco de transparencia para que no distraiga del contenido */
+/* ── CONTENIDO ── */
+.full-image,.full-image2,.full-image3{display:block;width:100%;margin-top:0!important;margin-left:0;margin-right:0;padding-top:0!important;padding-bottom:0!important;padding-left:0;padding-right:0;margin-bottom:1px!important;}
+.bloque-texto-imagen{display:flex;align-items:center;justify-content:space-between;padding:clamp(50px,6vw,80px) 54px 80px 70px;gap:80px;max-width:1400px;margin:0 100px;box-sizing:border-box;}
+.bloque-texto-imagen .texto{flex:14.4;font-family:"Lexend",sans-serif;font-size:clamp(13px,1.2vw,15px);font-weight:300;line-height:1.75;color:var(--ink);text-align:justify;}
+.bloque-texto-imagen .imagen{flex:26.5;text-align:right;}
+.bloque-texto-imagen .imagen img{max-width:100%;height:auto;}
+.titulo-frase{font-size:22px;font-weight:700;text-align:center;display:block;margin-bottom:5px;}
+.ubicacion{font-size:clamp(11px,1vw,13px);font-weight:600;color:var(--muted);letter-spacing:0.04em;text-align:center;display:block;margin-bottom:1em;}
+.only-desktop{display:block;}.only-mobile{display:none;}
+a,button{-webkit-tap-highlight-color:rgba(117,117,117,0.4);}
+@media(max-width:1024px){.only-desktop{display:none;}.only-mobile{display:block;}}
+@media(max-width:768px){
+    .bloque-texto-imagen{flex-direction:column;text-align:center;padding:24px 22px 32px;margin:0 auto;gap:20px;}
+    .bloque-texto-imagen .texto{font-size:13px;text-align:justify;padding:0 4px;flex-basis:auto;}
+    .bloque-texto-imagen .imagen{text-align:center;flex-basis:auto;margin-bottom:0;}
+    .bloque-texto-imagen .imagen img{width:85%;padding-top:0;max-width:360px;height:auto;}
 }
-
-/* Ajuste para que en tablets el texto también se vea bien */
-@media (min-width: 769px) and (max-width: 1024px) {
-   
+@media(min-width:769px) and (max-width:1200px){
+    .bloque-texto-imagen{flex-direction:column;text-align:center;padding:clamp(50px,6vw,80px) 40px 80px;gap:50px;margin:0 auto;}
+    .bloque-texto-imagen .texto{text-align:justify;font-size:14px;flex:none;}
+    .bloque-texto-imagen .imagen{text-align:center;flex:none;}
+    .bloque-texto-imagen .imagen img{max-width:520px;width:100%;height:auto;}
 }
-
-  .bloque-texto-imagen {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 100px 54px 80px 70px;
-    gap: 80px;
-    max-width: 1400px;
-    margin: 14px 100px;
-    box-sizing: border-box;
-  }
-
-  .bloque-texto-imagen .texto {
-    flex: 14.4;
-    font-size: 14px;
-    color: #333;
-    text-align: justify;
-    font-family: "Lexend", sans-serif;
-  }
-
-  .bloque-texto-imagen .imagen {
-    flex: 26.5;
-    text-align: right;
-  }
-
-  .bloque-texto-imagen .imagen img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 0px;
-  }
-
-  .titulo-frase {
-    font-size: 22px;
-    font-weight: 700;
-    text-align: center;
-    display: block;
-    margin-bottom: 5px;
-  }
-
-  .texto2 {
-    text-align: justify;
-    padding: 150px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    font-size: 14px;
-    color: rgb(51, 51, 51);
-    font-family: "Lexend", sans-serif;
-  }
-
-  .texto3 {
-    text-align: center;
-    padding: 30px;
-    margin-top: -85px; /* Mantiene tu valor */
-    padding-bottom: 24px; /* Mantiene tu valor */
-    font-size: 13px;
-    color: rgb(51, 51, 51);
-    font-family: "Lexend", sans-serif;
-    display: none; /* Oculta como pediste */
-  }
-
-  .texto4 {
-    text-align: center;
-    padding: 30px;
-    margin-top: -40.8px; /* Mantiene tu valor */
-    padding-bottom: 24px; /* Mantiene tu valor */
-    font-size: 12px;
-    color: rgb(51, 51, 51);
-    font-family: "Lexend", sans-serif;
-    display: none; /* Oculta como pediste */
-  }
+*{-webkit-tap-highlight-color:transparent;outline:none;}
+html{scrollbar-gutter:stable;}.no-scroll{overflow:hidden;}
 
 
-  @keyframes scrollLeftMobile {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-  }
 
-  /* Lógica para mostrar/ocultar imágenes */
-  .only-desktop {
-    display: block;
-  }
-  .only-mobile {
-    display: none;
-  }
-
-  /* Estilos generales para elementos clicables */
-  a, button, .tus-elementos-clickeables {
-    -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4);
-  }
-  a:focus, img:focus {
-    outline: none;
-  }
- 
-
-  /* --- INICIO: Media Queries Ordenadas --- */
-
-  /* Aplica a móvil Y tableta */
-  @media (max-width: 1024px) {
-    .only-desktop {
-      display: none;
-    }
-    .only-mobile {
-      display: block;
-    }
-  }
-
-  /* Ajuste margen superior para ESCRITORIO (mayor a 768px) */
-  @media (min-width: 769px) {
-    .bloque-texto-imagen {
-      margin-top: 40px;
-    }
-    body {
-      padding-top: 0 !important; /* Quita padding de banner móvil */
-    }
-  }
-
-  /* --- Bloque consolidado para MÓVIL (hasta 768px) MOVILLLLL--- */
-  @media (max-width: 768px) {
-   
-
-    
-    .logo-container {
-      display: none;
-    }
-
-    
-    /* Bloque texto-imagen */
-    .bloque-texto-imagen {
-      flex-direction: column;
-      text-align: center;
-      padding: 40px 30px;
-      margin: 0 auto;
-      gap: 40px;
-      margin-top: 0;
-    }
-
-
-    .bloque-texto-imagen .texto {
-      font-size: 13px;
-      text-align: justify;
-      padding: 0 10px;
-      flex-basis: auto;
-    }
-
-    .bloque-texto-imagen .imagen {
-      text-align: center;
-      flex-basis: auto;
-      margin-bottom: -30px;
-    }
-
-    .bloque-texto-imagen .imagen img {
-      width: 95%;
-      padding-top: 100px;
-      max-width: 440px;
-      height: auto;
-      border-radius: 0px;
-    }
-
-
-    /* Textos móvil */
-    .texto2 {
-      padding: 30px;
-      padding-top: 0px;
-      padding-bottom: 0px;
-      font-size: 13px;
-      text-align: justify;
-    }
-    .texto3 { /* Mantiene estilos pero display:none ya lo oculta */
-      text-align: center;
-      padding: 30px;
-      margin-top: -14px;
-      padding-bottom: 1px;
-      font-size: 1px;
-    }
-    .texto4 { /* Mantiene estilos pero display:none ya lo oculta */
-      text-align: center;
-      padding: 30px;
-      margin-top: -40px;
-      padding-bottom: 24px;
-      font-size: 12px;
-    }
-
-    /* Estilos específicos que solo estaban en 481-768 */
-    .galeria {
-      grid-template-columns: 1fr;
-      gap: 20px;
-      padding: 10px 5px;
-      margin-top: 0;
-      margin-bottom: 70px;
-    }
-    .descripcion {
-      padding: 30px 10px;
-      font-size: 14px;
-      text-align: justify;
-    }
-    .descripcion2 {
-      padding: 30px 10px;
-      font-size: 14px;
-      text-align: center;
-    }
-    .imagen-hover {
-      width: 100%;
-    }
-    .logo img { /* Afecta a img dentro de .logo */
-      max-width: 120px;
-    }
-  }
-
- /* TABLETTT/
-
-   
-    
-  }
-
-
-/* BANNER -------------------------------- */  
-.top-banner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  background: #dcdcdc;
-  overflow: hidden;
-  z-index: 999999;
-  display: flex;
-  align-items: center;
+.fade-in-scroll {
+  opacity: 0;
+  transition: opacity 1s ease;
 }
-
-.marquee {
-  width: 100%;
-  overflow: hidden;
-  display: flex;
+.fade-in-scroll.visible {
+  opacity: 1;
 }
-
-.marquee-track {
-  display: flex;
-  width: max-content; /* IMPORTANTE: Permite que el track crezca según el texto */
-  animation: scroll-left 60s linear infinite; /* Ajusta los segundos para la velocidad */
-}
-
-.item {
-  padding-right: 50px; /* Espacio entre cada frase */
-  font-weight: bold;
-  font-size: 12px;
-  color: #000;
-  white-space: nowrap; /* Evita que el texto salte de línea */
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    /* Se mueve exactamente el 50% porque duplicamos el contenido abajo */
-    transform: translateX(-50%);
-  }
-}
-
-   /*  OCULTAR SCROL EN EL MENU-------------------------------- */  
-html {
-  scrollbar-gutter: stable;
-}
-
-.no-scroll {
-  overflow: hidden;
-}
-
-
-
-/* MENU HAMBURGUESA GENERAL-------------------------------- */   
-.menu-toggle {
-  display: block; /* ⬅️ importante: visible también en desktop */
-  position: fixed;
-  top: 45px;
-  left: 16px; /* ⬅️ 13 ANTES*/
-  z-index: 3000;
-  background-color: transparent;
-  border: none;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.icon-hamburger {
-  display: inline-block;
-}
-/* Por defecto */
-.icon-back {
-  display: none;
- 
-  margin-bottom: -5px;
-  height: 20px;
-  border-left: 3px solid #000;
-  border-bottom: 3px solid #000;
-  transform: rotate(45deg);
-}
-body.menu-open .icon-hamburger {
-  display: none;
-}
-
-body.menu-open .icon-back {
-  display: inline-block;
-  transform: translateX(1px);
-}
-
-/* Contenedor principal del menú */
-#side-menu {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  flex-direction: column; /* 👈 Permite separar contenido de redes */
-  background-color: #ffffff;
-  transform: translateX(-100%);
-  transition: transform 0.6s cubic-bezier(0.77,0,0.175,1);
-  z-index: 2000;
-  font-family: "Lexend", sans-serif;
- 
-}
-#side-menu a {
-  line-height: 0.6;      /* ← valor estable */
-  white-space: nowrap;  /* ← evita que "Habla con Soto" se parta */
-   
-}
-
-#side-menu.active {
-  transform: translateX(0);
-  
-}
-
-/* 👈 El cuerpo que permite el scroll sin mover las redes */
-.menu-body {
-  flex: 1;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: row; /* Desktop: Columnas al lado */
-}
-
-/* TUS COLUMNAS (Estilo intacto) */
-.menu-left,
-.menu-right {
-  flex: 1;
-  padding: 130px 82px 120px!important; 
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
-  max-width: 300px;
-}
-
-
-
-/* TUS GRUPOS Y TÍTULOS */
-.menu-group {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.menu-title {
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 600;
-  opacity: 0.55;
-  margin-bottom: 6px;
-}
-
-/* TUS LINKS */
-
-/* TU LÍNEA ANIMADA */
-/* LINKS PRINCIPALES DEL MENÚ (solo menu-body) */
-.menu-body a {
-  font-size: 25px;
-  line-height: 0.6;
-  font-weight: 400;
-  color: #111;
-  text-decoration: none;
-  transition: color 0.25s ease;
-  display: table;
-  width: fit-content;
-  position: relative;
-  margin-bottom: 9px;
-}
-
-/* LÍNEA ANIMADA */
-.menu-body a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 1.6px;
-  bottom: -11px;
-  left: 0;
-  background-color: #000;
-  transition: width 0.20s ease;
-}
-
-.menu-body a:hover::after {
-  width: 100%;
-}
-
-
-/* TUS REDES SOCIALES (Corregido: sin pisar texto) */
-.menu-socials {
-  position: relative; /* 👈 Cambiado de absolute a relative */
-  padding: 30px 82px; /* 👈 Usamos padding en lugar de bottom/left */
-  display: flex;
-  gap: 20px;
-  font-size: 10px;
-  opacity: 0.7;
-  z-index: 2200;
-  background-color: #ffffff; /* Asegura que tape links si hay scroll */
-  margin-top: auto; /* 👈 Esto las empuja siempre al final del menú */
-}
-
-.menu-socials a {
-  color: #111 !important;
-  text-decoration: none !important;
-  font-size: inherit !important;
-  line-height: 1;
-  display: inline-block;
-  transition: color 0.3s ease; /* 👈 Suaviza el cambio de color */
-}
-
-/* Hover en Ordenador y toque en Móvil */
-.menu-socials a:hover,
-.menu-socials a:active {
-    color: #f26100 !important; /* 👈 Tu naranja */
-}
-
-/* ADAPTACIÓN INTELIGENTE */
-
-/* Tablets */
-@media (max-width: 1024px) {
-  .menu-left, .menu-right {
-    padding: 130px 82px 120px!important;
-    gap: 64px;
-  }
-  .menu-socials {
-    padding: 30px 82px; /* Ajuste para tablets */
-  }
-
-}
-
-/* Móvil (El cambio real) */
-@media (max-width: 768px) {
-  /* Evitamos que el menú tenga scroll propio */
-  #side-menu {
-    overflow: hidden; 
-  }
-
-  .menu-body {
-    flex-direction: column;
-    display: flex;
-    overflow: hidden; /* Quitamos el scroll aquí también */
-    justify-content: center; /* Centramos el contenido verticalmente para que no sobre espacio */
-  }
-
-  .menu-left {
-    /* Reducimos el padding superior drásticamente */
-    padding: 80px 58px 0px !important; 
-    max-width: 100%;
-    gap: 30px; /* Reducimos el espacio entre grupos */
-    flex: none;
-  }
-
-  .menu-right {
-    /* Reducimos el padding y gap */
-    padding: 20px 58px 40px !important; 
-    max-width: 100%;
-    gap: 30px;
-    flex: none;
-  }
-
-  .menu-socials {
-    padding: 15px 22px; /* Reducimos un poco el padding de las redes */
-    margin-top: auto; 
-    position: relative;
-    width: 100%;
-    background: white;
-    box-sizing: border-box;
-  }
-
-  /* Reducimos el gap entre los links del menú */
-  .menu-group {
-    gap: 18px !important;
-  }
-
-  #side-menu a:not(.menu-socials a) {
-    font-size: 21px;
-    line-height: 1.1;
-    margin-bottom: 5px; /* Menos margen inferior para ganar espacio */
-  }
-}
-
-
-
-/* --- BARRA NEGRA DEFINIDA --- */
-
-/* 1. Definimos el ancho del carril */
-.menu-body::-webkit-scrollbar {
-  width: 10px; /* Ancho total del área de scroll */
-}
-
-/* 2. El fondo del carril (transparente) */
-.menu-body::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-/* 3. La barrita (Thumb) */
-.menu-body::-webkit-scrollbar-thumb {
-  background-color: #000000; /* Negro sólido */
-  border-radius: 0px;       /* Bordes redondeados estilo píldora */
-  
-  /* ESTO ES LO QUE CREA EL EFECTO:
-     Añadimos un borde transparente lateral para que la barra 
-     se vea más delgada y centrada dentro de sus 12px de ancho */
-  border: 4px solid transparent; 
-  background-clip: padding-box;
-}
-
-.menu-body::-webkit-scrollbar-thumb:hover {
-  background-color: #333333;
-}
-
-/* BARRA DE FONDO FIJA (HEADER) */
-.header-bg {
-    position: fixed;
-    top: 30px; /* Ajustado para que empiece justo debajo del banner de 30px */
-    left: 0;
-    width: 100%;
-    height: 58px; 
-    background-color: #f3f3f3; 
-    z-index: 1500; 
-    /* Opcional: una sombra muy sutil para separar del contenido al hacer scroll */
-    box-shadow: 0 3px 0 rgba(0,0,0,0.03); 
-}
-
-/* BOTÓN DE MENÚ (HAMBURGUESA) */
-
-
-/* LOGO SUPERIOR DERECHA */
-.top-right-logo {
-    position: fixed;
-    top: 57px;    /* Tu posición exacta */
-    right: 20px;  /* Tu posición exacta */
-    z-index: 2500;
-    pointer-events: auto;
-   /* Preparamos la transición para que el crecimiento sea suave */
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.top-right-logo img {
-    width: 70px;  
-    height: auto;
-    display: block;
-}
-
-
-
-/* EFECTO AL HACER CLIC (Opcional pero recomendado) */
-.top-right-logo:active {
-    /* Se encoge un poquito al presionarlo para dar feedback de botón */
-    transform: scale(0.95);
-}
-
-/* --------------REGRESO Y SIGUIENTE Contenedor superior: hamburguesa + controles REGRESO Y SIGUIENTE */
-.top-controls {
-  position: fixed;
-  top: 60px; /* mismo top que tu menú */
-  left: 76px; /* mismo left que tu menú */
-  display: flex;
-  align-items: center;
-  gap: 15px; /* espacio entre hamburguesa y botones */
-  z-index: 1500; /* encima del contenido */
-}
-
-/* Controles de navegación */
-.nav-controls {
-  display: flex;
-  gap: 10px; /* espacio entre "Regresar" y "Siguiente" */
-}
-
-/* Botones de texto */
-.nav-controls a,
-.nav-controls button {
-  all: unset;              /* elimina estilos por defecto */
-  cursor: pointer;
-  font-family: "Lexend", sans-serif;
-  font-size: 13px;
-  color: #333;
-  display: inline-flex;
-  align-items: center;
-  line-height: 1;
-}
-
-/* Evita azul y subrayado en TODOS los estados */
-.nav-controls a:link,
-.nav-controls a:visited,
-.nav-controls a:active {
-  color: #333;
-  text-decoration: none;
-}
-.nav-controls button:hover {
-  color: #f26100; /* mismo naranja que tus links del menú */
-}
-.btn-next:hover {
-  color: #ff6a00; /* tu naranja */
-}
-.nav-controls a.btn-next:hover {
-  color: #f26100;
-}
-
-
-
-/* --- ADAPTACIÓN MÓVIL --- */
-@media (max-width: 768px) {
-    .header-bg {
-        height: 60px;
-    }
-
-    .menu-toggle {
-        /* Si quieres que el menú tampoco se mueva, asegúrate de que este top 
-           sea igual al que tienes fuera de la media query */
-        top: 45px; 
-    }
-
-    .top-right-logo {
-        /* CAMBIO AQUÍ: Ahora es 57px, igual que en desktop */
-        top: 57px; 
-        /* Si quieres mantener la distancia lateral de desktop (30px), cámbialo aquí también: */
-        right: 20px; 
-    }
-
-    .top-right-logo img {
-        width: 70px;
-    }
-
-    
-}
-/* --- X DEL MENU --- */
-@media (min-width: 769px) {
-  .menu-overlay-close {
-    display: block;
-     position: absolute;
-  inset: 0;
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><line x1='6' y1='6' x2='26' y2='26' stroke='black' stroke-width='2'/><line x1='26' y1='6' x2='6' y2='26' stroke='black' stroke-width='2'/></svg>") 16 16, auto;
-  z-index: 0;
-  }
-}
-
-
-/* === RANGO INTERMEDIO: tablets grandes / laptops pequeñas === */
-@media (min-width: 769px) and (max-width: 1200px) {
-  .bloque-texto-imagen {
-    flex-direction: column;
-    text-align: center;
-    padding: 140px 40px;
-    gap: 50px;
-    margin: 0 auto;
-  }
-
-  .bloque-texto-imagen .texto {
-    text-align: justify;
-    font-size: 14px;
-    flex: none;
-  }
-
-  .bloque-texto-imagen .imagen {
-    text-align: center;
-    flex: none;
-  }
-
-  .bloque-texto-imagen .imagen img {
-    max-width: 520px;
-    width: 100%;
-    height: auto;
-  }
-}
-  /* Elimina el resaltado azul al tocar cualquier elemento interactivo */
-  * {
-    -webkit-tap-highlight-color: transparent;
-  }
-
-
-/* 1. Por defecto, ocultamos el banner de móvil */
-.mobile-banner {
-  display: none !important;
-}
-
-/* 2. Cuando la pantalla sea menor a 768px (Móvil) */
-@media (max-width: 768px) {
-  /* Ocultamos el de ordenador */
-  .desktop-banner {
-    display: none !important;
-  }
-
-  /* Mostramos el de móvil y cambiamos el color */
-  .mobile-banner {
-    display: flex !important;
-    background-color: #CFAE80; /* <--- Cambia este color al que quieras */
-  }
-  
-  /* Cambiamos el color del texto del móvil si es necesario */
-  .mobile-banner .item {
-    color: #5F5035; 
-  }
-}
-</style>
+.fade-in-scroll{opacity:0;transition:opacity 0.8s ease;}
+.fade-in-scroll.visible{opacity:1;}
+*{-webkit-tap-highlight-color:transparent;outline:none;}
+html{scrollbar-gutter:stable;}.no-scroll{overflow:hidden;}
+
+  </style>
 </head>
 
-
-<nav id="side-menu">
-    <div class="menu-overlay-close"></div>
-  <div class="menu-body"> 
-    
-    <div class="menu-left">
-      <div class="menu-group">
-        <span class="menu-title"></span>
-        <a href="../proyectos-artísticos/">Proyectos</a>
-        <a href="../chat/">Habla con soto</a>
-        <a href="../proyectos-diseño/">Diseño</a>
-      </div>
-         
-      
-      <div class="menu-group">
-        <span class="menu-title">Acerca de</span>
-        <a href="../soto-artista-virtual/">soto artista</a>
-        <a href="../acerca-de-soto/">soto³ estudio</a>
-        <a href="../chiskey/">chiskey estudio</a>
-      </div>
+<nav id="mobile-menu" aria-hidden="true">
+    <div class="mm-header">
+        <button class="mm-close" id="mmClose">Cerrar ✕</button>
     </div>
-
-    <div class="menu-right"> 
-      <div class="menu-group">
-        <span class="menu-title"></span>
-        <a href="../contacto/" class="menu-extra">Contacto</a>
-        <a href="../archivo-en-venta/" class="menu-extra">Archivo en venta</a>
-        <a href="../descargas/" class="menu-extra">Descargas</a>
-       
-      </div>
+    <div class="mm-inner">
+                <a href="../index.html" class="mm-link">Inicio</a>
+        <a href="../proyectos-diseño/" class="mm-link">Trabajos</a>
+        <a href="../acerca-de-soto/" class="mm-link">Cv</a>
+        <a href="../contacto/"       class="mm-link">Contacto</a>
     </div>
-    
-  </div> <div class="menu-socials">
-    <a href="https://www.instagram.com/sotosolo_" target="_blank">Instagram @sotosolo_</a>
-    <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">LinkedIn</a>
-    <a href="https://www.behance.net/xaviersoto" target="_blank">Behance</a>
-  
-  </div>
+    <div class="mm-foot">
+        <a href="https://www.instagram.com/sotosolo_" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">LinkedIn</a>
+        <a href="https://www.behance.net/xaviersoto" target="_blank">Behance</a>
+    </div>
 </nav>
+
 <body>
 
-  <div class="top-right-logo">
-    <a href="../index.html">
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1766964956/s3_logo_bj7vjz.png" alt="Logo Soto">
+<header class="topbar">
+    <a href="../" class="topbar-logo">
+        <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1779265684/soto3logo_hlxcgj.png" alt="soto³">
     </a>
+    <a href="../" class="topbar-logo-static">
+        <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1779265684/soto3logo_hlxcgj.png" alt="soto³">
+    </a>
+    <nav class="topbar-nav">
+        <a href="../">Inicio</a>
+        <a href="../proyectos-diseño/">Trabajos</a>
+        <a href="../acerca-de-soto/">CV</a>
+        <a href="../contacto/">Contacto</a>
+    </nav>
+    <button class="m-toggle" id="mToggle">Menú</button>
+</header>
+
+<div class="proj-pill">
+    <button class="proj-pill-btn" onclick="history.back()">← Regresar</button>
+    <div class="proj-pill-sep"></div>
+    <a href="../monaco/" class="proj-pill-btn">Siguiente →</a>
 </div>
 
-   <main id="main-content">
-        <div class="header-bg"></div>
+<main id="main-content">
 
-        <div class="top-controls">
-    
- 
-
-  <div class="nav-controls">
-    <button class="btn-prev" onclick="history.back()">| Regresar</button>
-    <a href="../colectivo-habitantes/" class="btn-next">Siguiente |</a>
-  </div>
-</div>
-
-
-<button class="menu-toggle" aria-label="Abrir menú">
-    <span class="icon-hamburger">☰</span>
-    <span class="icon-back"></span>
-</button>
-      
-    <div class="top-banner">
-  <div class="marquee">
-    <div class="marquee-track">
-      <div class="marquee-group" style="display: flex;">
-        <span class="item">En diseño se trabaja desde la creación de logotipos hasta el desarrollo integral de identidades visuales y sitios web.</span>
-        <span class="item">En diseño se trabaja desde la creación de logotipos hasta el desarrollo integral de identidades visuales y sitios web.</span>
-        <span class="item">En diseño se trabaja desde la creación de logotipos hasta el desarrollo integral de identidades visuales y sitios web.</span>
-      </div>
-       
-      <div class="marquee-group" aria-hidden="true" style="display: flex;">
-        <span class="item">En diseño se trabaja desde la creación de logotipos hasta el desarrollo integral de identidades visuales y sitios web.</span>
-        <span class="item">En diseño se trabaja desde la creación de logotipos hasta el desarrollo integral de identidades visuales y sitios web.</span>
-        <span class="item">En diseño se trabaja desde la creación de logotipos hasta el desarrollo integral de identidades visuales y sitios web.</span>
-        
-      </div>
+    <div class="bloque-texto-imagen">
+        <div class="imagen">
+            <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546014/DilEvu0VAAAeFJX_1_a0pvu4.jpg" alt="proyecto de diseño guardabosques GDL, trabajo soto">
+        </div>
+        <div class="texto">
+            <strong class="titulo-frase">Guardabosques GDL</strong>
+            <span class="ubicacion">Guadalajara, México</span>
+            <p>Es una institución dedicada a la protección y conservación de áreas verdes, zonas boscosas y el resguardo de especies que habitan en estos ecosistemas. Su labor se centra en preservar el equilibrio ambiental de la región, promoviendo acciones de vigilancia, restauración ecológica y educación ambiental.</p>
+            <p>En este trabajo se colabora con Tactical Force, empresa que trabaja en coordinación con los cuerpos de guardabosques de Guadalajara y la policía local.</p>
+            <p><i><strong>Rediseño de logo / Cartelería</strong></i></p>
+        </div>
     </div>
-  </div>
-</div>
 
-<div class="top-banner mobile-banner">
-  <div class="marquee">
-    <div class="marquee-track">
-      <div class="marquee-group" style="display: flex;">
-        <span class="item">HEX #CFAE80 #5F5035 #807B3C</span>
-        <span class="item">Amplía la imagen con tus dedos para ver los detalles 🤏🔍 </span>
-        <span class="item">HEX #CFAE80 #5F5035 #807B3C</span>
-      </div>
-      <div class="marquee-group" aria-hidden="true" style="display: flex;">
-        <span class="item">Amplía la imagen con tus dedos para ver los detalles 🤏🔍 </span>
-        <span class="item">HEX #CFAE80 #5F5035 #807B3C</span>
-        <span class="item">Amplía la imagen con tus dedos para ver los detalles 🤏🔍 </span>
-      </div>
-       <span class="item">HEX #CFAE80 #5F5035 #807B3C</span>
-        <span class="item">Amplía la imagen con tus dedos para ver los detalles 🤏🔍 </span>
-        <span class="item">HEX #CFAE80 #5F5035 #807B3C</span>
-      </div>
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546152/guardabosqueportada-01_reb8hh.png" alt="proyecto de diseño guardabosques GDL, trabajo soto" class="full-image only-desktop" srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546152/guardabosqueportada-01_reb8hh.png 800w, https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546152/guardabosqueportada-01_reb8hh.png 1200w, https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546152/guardabosqueportada-01_reb8hh.png 1600w, https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546152/guardabosqueportada-01_reb8hh.png 2000w" sizes="(min-width:769px) 100vw, 1200px"/>
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546239/guarda_movil-01_avtihf.png" alt="proyecto de diseño guardabosques GDL, trabajo soto" class="full-image only-mobile" srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546239/guarda_movil-01_avtihf.png 400w, https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546239/guarda_movil-01_avtihf.png 600w, https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546239/guarda_movil-01_avtihf.png 800w" sizes="(max-width:768px) 100vw"/>
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546281/GUARDABOSQUE_LOGOFINAL-01_c7ekhh.png" alt="proyecto de diseño guardabosques GDL, trabajo soto" class="full-image" srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546281/GUARDABOSQUE_LOGOFINAL-01_c7ekhh.png 600w, https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546281/GUARDABOSQUE_LOGOFINAL-01_c7ekhh.png 1000w, https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546281/GUARDABOSQUE_LOGOFINAL-01_c7ekhh.png 1600w, https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546281/GUARDABOSQUE_LOGOFINAL-01_c7ekhh.png 2000w" sizes="(max-width:768px) 100vw, 1200px"/>
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759488028/balistica_guardabosques_xrqecb.png" alt="proyecto de diseño guardabosques GDL, trabajo soto" class="full-image3" srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759488028/balistica_guardabosques_xrqecb.png 600w, https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759488028/balistica_guardabosques_xrqecb.png 1000w, https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759488028/balistica_guardabosques_xrqecb.png 1600w, https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759488028/balistica_guardabosques_xrqecb.png 2000w" sizes="(max-width:768px) 100vw, 1200px"/>
+
+</main>
+
+<footer class="page-footer">
+    <span class="footer-copy">©2026 soto³</span>
+    <div class="footer-socials">
+        <a href="https://www.instagram.com/sotosolo_" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">LinkedIn</a>
+        <a href="https://www.behance.net/xaviersoto" target="_blank">Behance</a>
     </div>
-  </div>
-</div>
-  </a>
-
-
-
-
-  
-<div class="bloque-texto-imagen">
-  <div class="imagen">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546014/DilEvu0VAAAeFJX_1_a0pvu4.jpg" alt="proyecto de diseño guardabosques GDL, oficina soto">
-  </div>
-  
-  <div class="texto">
-    <p><strong class="titulo-frase">Guardabosques GDL</strong><p style="text-align: center;">(Guadalajara, México)</p><br>
-   <p>Es una institución dedicada a la protección y conservación de áreas verdes, zonas boscosas y el resguardo de especies que habitan en estos ecosistemas. Su labor se centra en preservar el equilibrio ambiental de la región, promoviendo acciones de vigilancia, restauración ecológica y educación ambiental.</p>
-   <p>En este trabajo se colabora con Tactical Force, empresa que trabaja en coordinación con los cuerpos de guardabosques de Guadalajara y la policía local.</p>
-    <p><i><strong><br>Rediseño de logo / Cartelería</strong></p></i>
-  </div>
-</div>
-
-
-<!-- Imagen 2 para escritori o Y CEL -->
-
-<!-- Versión escritorio -->
-<img 
-  src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546152/guardabosqueportada-01_reb8hh.png" 
-  alt="proyecto de diseño guardabosques GDL, oficina soto" 
-  class="full-image only-desktop"
-  srcset="
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546152/guardabosqueportada-01_reb8hh.png 800w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546152/guardabosqueportada-01_reb8hh.png 1200w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546152/guardabosqueportada-01_reb8hh.png 1600w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546152/guardabosqueportada-01_reb8hh.png 2000w
-  "
-  sizes="(min-width: 769px) 100vw, 1200px"
-/>
-
-<!-- Versión móvil -->
-<img 
-  src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546239/guarda_movil-01_avtihf.png" 
-  alt="proyecto de diseño guardabosques GDL, oficina soto" 
-  class="full-image only-mobile"
-  srcset="
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546239/guarda_movil-01_avtihf.png 400w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546239/guarda_movil-01_avtihf.png 600w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546239/guarda_movil-01_avtihf.png 800w
-  "
-  sizes="(max-width: 768px) 100vw"
-/>
-
-  
-
- <img 
-  src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546281/GUARDABOSQUE_LOGOFINAL-01_c7ekhh.png" 
-  alt="proyecto de diseño guardabosques GDL, oficina soto" 
-  class="full-image"
-  srcset="
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546281/GUARDABOSQUE_LOGOFINAL-01_c7ekhh.png 600w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546281/GUARDABOSQUE_LOGOFINAL-01_c7ekhh.png 1000w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546281/GUARDABOSQUE_LOGOFINAL-01_c7ekhh.png 1600w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751546281/GUARDABOSQUE_LOGOFINAL-01_c7ekhh.png 2000w
-  "
-  sizes="(max-width: 768px) 100vw, 1200px"
-/>
-
-
-        <img 
-  src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759488028/balistica_guardabosques_xrqecb.png" 
-  alt="proyecto de diseño guardabosques GDL, oficina soto" 
-  class="full-image3"
-  srcset="
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759488028/balistica_guardabosques_xrqecb.png 600w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759488028/balistica_guardabosques_xrqecb.png 1000w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759488028/balistica_guardabosques_xrqecb.png 1600w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759488028/balistica_guardabosques_xrqecb.png 2000w
-  "
-  sizes="(max-width: 768px) 100vw, 1200px"
-/>
-
- 
-  <!-- Footer -->
-  <footer>
-    <p class="footer-text">©2026 código y diseño x soto³</p>
 </footer>
 
+    <div class="banner" data-nosnippet>
+        <div class="marquee">
+            <div class="marquee-track">
+                <div style="display:flex;">
+                    <span class="ticker-item">Amplía con tus dedos para ver los detalles</span>
+                    <span class="ticker-item">Amplía con tus dedos para ver los detalles</span>
+                    <span class="ticker-item">Amplía con tus dedos para ver los detalles</span>
+                </div>
+                <div style="display:flex;" aria-hidden="true">
+                    <span class="ticker-item">Amplía con tus dedos para ver los detalles</span>
+                    <span class="ticker-item">Amplía con tus dedos para ver los detalles</span>
+                    <span class="ticker-item">Amplía con tus dedos para ver los detalles</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</a>
 
+<script>
+window.addEventListener('load', () => {
+    setTimeout(() => document.querySelector('.topbar').classList.add('entrada'), 100);
+    setTimeout(() => document.querySelector('.banner').classList.add('entrada'), 300);
 
-   </div>
+    const mToggle    = document.getElementById('mToggle');
+    const mmClose    = document.getElementById('mmClose');
+    const mobileMenu = document.getElementById('mobile-menu');
 
+    const openMM  = () => {
+        mobileMenu.classList.add('active');
+        mobileMenu.setAttribute('aria-hidden','false');
+        document.body.classList.add('no-scroll');
+    };
+    const closeMM = () => {
+        mobileMenu.classList.remove('active');
+        mobileMenu.setAttribute('aria-hidden','true');
+        document.body.classList.remove('no-scroll');
+    };
 
+    mToggle.addEventListener('click', e => { e.stopPropagation(); mobileMenu.classList.contains('active') ? closeMM() : openMM(); });
+    mmClose.addEventListener('click', closeMM);
+    document.addEventListener('click', e => { if (!mobileMenu.contains(e.target) && !mToggle.contains(e.target)) closeMM(); });
 
+    let sx = 0, sy = 0;
+    document.addEventListener('touchstart', e => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+    document.addEventListener('touchend', e => {
+        if (!mobileMenu.classList.contains('active')) return;
+        const dx = e.changedTouches[0].clientX - sx;
+        const dy = e.changedTouches[0].clientY - sy;
+        if (dx < -80 || (dy < -80 && Math.abs(dy) > Math.abs(dx))) closeMM();
+    }, { passive: true });
 
+    document.querySelectorAll('#mobile-menu a.mm-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const url = this.href;
+                this.style.color = 'var(--orange)';
+                setTimeout(() => { window.location.href = url; }, 200);
+            }
+        });
+    });
+});
+document.addEventListener('contextmenu', e => e.preventDefault());
+</script>
 
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('modal');
-  const modalImg = document.getElementById('modal-img');
-  const cerrarModal = document.getElementById('cerrar-modal');
+window.addEventListener('load', function() {
+    const items = document.querySelectorAll('.full-image, .bloque-texto-imagen');
+    items.forEach(el => el.classList.add('fade-in-scroll'));
 
-  let modalScrollY = 0; // 👈 guarda posición de scroll
+    setTimeout(function() {
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
 
-  document.querySelectorAll('.img-original[data-full]').forEach(img => {
-
-    // 🔹 Por defecto en desktop, poner cursor pointer
-    if (window.innerWidth > 1024) {
-      img.style.cursor = 'pointer';
-    } else {
-      img.style.cursor = 'default'; // 🔹 en móvil no se ve que sea clickeable
-    }
-
-    img.addEventListener('click', (e) => {
-
-      // 🔴 NO abrir modal en móvil
-      if (window.innerWidth <= 1024) return;
-
-      e.stopPropagation();
-
-      // 🔒 BLOQUEAR SCROLL FONDO
-      modalScrollY = window.scrollY;
-      document.body.style.top = `-${modalScrollY}px`;
-      document.body.classList.add('modal-open');
-
-      const imgGrande = img.getAttribute('data-full');
-      modalImg.src = imgGrande;
-      modal.style.display = 'flex';
-    });
-  });
-
-  function closeModal() {
-    modal.style.display = 'none';
-    modalImg.src = '';
-    modal.style.cursor = '';
-
-    // 🔓 RESTAURAR SCROLL
-    document.body.classList.remove('modal-open');
-    document.body.style.top = '';
-    window.scrollTo(0, modalScrollY);
-  }
-
-  cerrarModal.addEventListener('click', closeModal);
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
+        items.forEach(el => observer.observe(el));
+    }, 1050);
 });
-
-// ==============================================
-// MENU / LAUNCHER / INTRO OVERLAY / SWIPE
-// ==============================================
-window.addEventListener("load", function () {
-
-  // ======================
-  // LAUNCHER
-  // ======================
-  const launcher = document.getElementById("soto-launcher");
-  const notification = document.getElementById("soto-notification");
-  const launcherImage = launcher ? launcher.querySelector("img") : null;
-
-  if (launcherImage && notification) {
-    notification.addEventListener("click", function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-
-      const eventsToFire = ['mousedown', 'mouseup', 'click'];
-
-      eventsToFire.forEach(function(eventName) {
-        const clickEvent = new MouseEvent(eventName, {
-          bubbles: true,
-          cancelable: true,
-          view: window
-        });
-
-        launcherImage.dispatchEvent(clickEvent);
-        launcher.dispatchEvent(clickEvent);
-      });
-    });
-  }
-
-  // ======================
-  // INTRO OVERLAY
-  // ======================
-  const overlay = document.getElementById("intro-overlay");
-  const mainContent = document.getElementById("main-content");
-
-  if (overlay && mainContent) {
-    overlay.addEventListener("animationend", (e) => {
-      if (e.animationName === "fadeOutOverlay") {
-        overlay.style.display = "none";
-        mainContent.classList.add("visible");
-      }
-    });
-  }
-
-  // ======================
-  // MENU MOBILE LINKS
-  // ======================
-  const allMenuLinks = document.querySelectorAll("#side-menu a");
-
-  allMenuLinks.forEach(link => {
-    link.addEventListener("click", function (e) {
-      if (window.innerWidth <= 768) {
-        const targetUrl = this.href;
-        const isExternal = this.target === "_blank";
-        const isSocial = this.closest('.menu-socials');
-
-        e.preventDefault();
-
-        if (isSocial) {
-          this.style.setProperty("color", "#f26100", "important");
-        }
-
-        setTimeout(() => {
-          if (isExternal) {
-            window.open(targetUrl, '_blank');
-          } else {
-            window.location.href = targetUrl;
-          }
-        }, 200);
-      }
-    });
-  });
-
-  // ======================
-  // MENU / HAMBURGUESA / SWIPE
-  // ======================
-  const toggle = document.querySelector(".menu-toggle");
-  const sideMenu = document.getElementById("side-menu");
-  const body = document.body;
-
-  if (!toggle || !sideMenu) return;
-
-  function openMenu() {
-    sideMenu.classList.add("active");
-    body.classList.add("menu-open");
-    body.classList.add("no-scroll");
-  }
-
-  function closeMenu() {
-    sideMenu.classList.remove("active");
-    body.classList.remove("menu-open");
-    body.classList.remove("no-scroll");
-  }
-
-  toggle.addEventListener("click", function (e) {
-    e.stopPropagation();
-    sideMenu.classList.contains("active") ? closeMenu() : openMenu();
-  });
-
-  document.addEventListener("click", function (event) {
-    if (!sideMenu.classList.contains("active")) return;
-
-    const insideMenu = sideMenu.contains(event.target);
-    const onToggle = toggle.contains(event.target);
-    const onLink = event.target.closest("a");
-
-    if (!insideMenu && !onToggle) closeMenu();
-    else if (insideMenu && !onLink && !onToggle) closeMenu();
-  });
-
-  // ======================
-  // SWIPE MOBILE
-  // ======================
-let startX = 0;
-
-  document.addEventListener("touchstart", function (e) {
-    startX = e.touches[0].clientX;
-  }, { passive: true });
-
-  document.addEventListener("touchend", function (e) {
-    const endX = e.changedTouches[0].clientX;
-    const diff = endX - startX;
-
-    // Eliminamos la condición de "diff > 90" (abrir)
-    // Solo mantenemos la de cerrar cuando el menú está ACTIVO
-    if (diff < -90 && sideMenu.classList.contains("active")) {
-      closeMenu();
-    }
-  }, { passive: true });
-
-
-});
-
-// ==============================================
-// CONTEXT MENU DESACTIVADO
-// ==============================================
-document.addEventListener('contextmenu', function(e) {
-  e.preventDefault();
-}, false);
 </script>
 
 </body>
