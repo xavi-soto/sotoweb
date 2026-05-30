@@ -1,0 +1,266 @@
+/* ══════════════════════════════════════════════════════════════
+   tracker-ui.css — soto³ sistema de observación
+   Estilos del botón flotante y el modal de informe.
+   Compatible con el sistema de diseño de sotosotosoto.com.
+
+   Variables heredadas del sitio:
+     --orange, --ink, --bg, --bg2, --dark, --rule, --muted
+   Si en alguna página no están definidas, los fallback las cubren.
+══════════════════════════════════════════════════════════════ */
+
+/* ── Fallbacks por si el CSS del sitio no está cargado ── */
+:root {
+    --orange: #0011ff;
+    --ink:    #0c0c0c;
+    --bg:     #f0ece7;
+    --bg2:    #e8e3dc;
+    --dark:   #141210;
+    --rule:   rgba(12,12,12,0.10);
+    --muted:  rgba(12,12,12,0.42);
+}
+
+/* ════════════════════════════════
+   BOTÓN FLOTANTE
+════════════════════════════════ */
+#soto-tracker-btn {
+    position: fixed;
+    bottom: calc(34px + 16px);   /* 34px = altura del banner del sitio */
+    right: 20px;
+    z-index: 8500;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: var(--dark, #141210);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px 16px 10px 12px;
+    font-family: "Lexend", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+
+    /* Entrada desde abajo */
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+        opacity  0.5s ease 1.2s,
+        transform 0.5s ease 1.2s,
+        background 0.2s;
+}
+/* Aparece 1.2 s después de cargar la página */
+#soto-tracker-btn.soto-btn-ready {
+    opacity: 1;
+    transform: translateY(0);
+}
+#soto-tracker-btn:hover {
+    background: var(--orange, #0011ff);
+}
+
+/* Punto pulsante (indicador de grabación) */
+.soto-btn-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--orange, #0011ff);
+    flex-shrink: 0;
+    animation: soto-pulse 2s ease-in-out infinite;
+}
+#soto-tracker-btn:hover .soto-btn-dot {
+    background: #fff;
+    animation: none;
+}
+@keyframes soto-pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.3; }
+}
+
+/* ════════════════════════════════
+   MODAL OVERLAY
+════════════════════════════════ */
+#soto-informe-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9500;
+    pointer-events: none;
+    visibility: hidden;
+}
+#soto-informe-modal.soto-modal-visible {
+    pointer-events: auto;
+    visibility: visible;
+}
+
+/* Backdrop semitransparente */
+.soto-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(12, 12, 12, 0.72);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+#soto-informe-modal.soto-modal-visible .soto-modal-backdrop {
+    opacity: 1;
+}
+
+/* Panel del informe — desliza desde la derecha */
+.soto-modal-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(520px, 100vw);
+    height: 100%;
+    background: var(--dark, #141210);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    display: flex;
+    flex-direction: column;
+}
+#soto-informe-modal.soto-modal-visible .soto-modal-panel {
+    transform: translateX(0);
+}
+
+/* Header del panel */
+.soto-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px 20px;
+    border-bottom: 1px solid rgba(240,236,231,0.08);
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    background: var(--dark, #141210);
+    z-index: 1;
+}
+.soto-modal-eyebrow {
+    font-family: "Lexend", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--orange, #0011ff);
+}
+.soto-modal-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: "Lexend", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(240,236,231,0.35);
+    transition: color 0.2s;
+    padding: 4px;
+    line-height: 1;
+}
+.soto-modal-close:hover { color: var(--orange, #0011ff); }
+
+/* Cuerpo del panel */
+.soto-modal-body {
+    padding: 40px 32px 60px;
+    flex: 1;
+}
+
+/* Líneas del informe — aparecen con fade+slide secuencial */
+.soto-report-line {
+    font-family: "Lexend", sans-serif;
+    font-size: clamp(14px, 1.5vw, 17px);
+    font-weight: 300;
+    line-height: 1.75;
+    color: #fff;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.soto-report-line.soto-line-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+.soto-report-line strong { font-weight: 700; color: var(--orange, #0011ff); }
+
+/* Última línea (firma) — estilo diferente */
+.soto-report-line:last-child {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: rgba(240,236,231,0.3);
+    margin-top: 16px;
+}
+
+/* ── Tabla de datos de recorrido ── */
+.soto-modal-data {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(240,236,231,0.08);
+}
+.soto-data-label {
+    font-family: "Lexend", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: rgba(240,236,231,0.3);
+    display: block;
+    margin-bottom: 16px;
+}
+.soto-raw-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(240,236,231,0.05);
+    font-family: "Lexend", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(240,236,231,0.4);
+}
+.soto-raw-val {
+    color: rgba(240,236,231,0.65);
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* ── Nota de privacidad ── */
+.soto-privacy-note {
+    font-family: "Lexend", sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    color: rgba(240,236,231,0.2);
+    line-height: 1.7;
+    margin-top: 32px;
+    letter-spacing: 0.01em;
+}
+
+/* ── Bloquea scroll del body cuando el modal está abierto ── */
+body.soto-no-scroll { overflow: hidden; }
+
+/* ════════════════════════════════
+   RESPONSIVE
+════════════════════════════════ */
+@media (max-width: 768px) {
+    /* En móvil el panel sube desde abajo */
+    .soto-modal-panel {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 85vh;
+        border-radius: 16px 16px 0 0;
+        transform: translateY(100%);
+    }
+    #soto-informe-modal.soto-modal-visible .soto-modal-panel {
+        transform: translateY(0);
+    }
+    .soto-modal-body { padding: 32px 24px 48px; }
+    .soto-modal-header { padding: 20px 24px 16px; }
+
+    #soto-tracker-btn {
+        bottom: calc(34px + 12px);
+        right: 14px;
+    }
+}

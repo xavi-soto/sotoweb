@@ -1,0 +1,5 @@
+# Añade estas líneas a tu robots.txt existente
+# para excluir la página /visita/ del índice de Google
+
+User-agent: *
+Disallow: /visita/
