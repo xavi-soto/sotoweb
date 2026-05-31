@@ -36,7 +36,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ── TOPBAR ── */
 .topbar {
     position: fixed; top: 0; left: 0;
     width: 100%; height: var(--top-h);
@@ -59,37 +58,23 @@ body {
     letter-spacing: 0.06em; color: var(--muted);
 }
 
-/* ══════════════════════════════════════════════
-   BIENVENIDA
-   z-index 9100 — por encima de todo, incluido
-   el topbar (8000) y el banner (9000)
-══════════════════════════════════════════════ */
 #bienvenida-overlay {
-    position: fixed;
-    inset: 0;
+    position: fixed; inset: 0;
     background: var(--dark);
     z-index: 9100;
-    display: flex;
-    align-items: center;
+    display: flex; align-items: center;
     justify-content: flex-start;
     padding: 0 var(--pad);
     opacity: 1;
     transition: opacity 0.8s ease;
     pointer-events: auto;
 }
-#bienvenida-overlay.oculto {
-    opacity: 0;
-    pointer-events: none;
-}
-#bienvenida-texto {
-    max-width: 560px;
-}
+#bienvenida-overlay.oculto { opacity: 0; pointer-events: none; }
+#bienvenida-texto { max-width: 560px; }
 #bienvenida-texto p {
     font-size: clamp(16px, 2vw, 22px);
-    font-weight: 300;
-    line-height: 1.75;
-    color: #fff;
-    margin-bottom: 32px;
+    font-weight: 300; line-height: 1.75;
+    color: #fff; margin-bottom: 32px;
 }
 #bienvenida-texto strong { font-weight: 700; color: var(--orange); }
 #btn-continuar {
@@ -98,43 +83,11 @@ body {
     letter-spacing: 0.05em;
     color: rgba(240,236,231,0.4);
     background: none; border: none;
-    cursor: pointer;
-    padding: 0;
+    cursor: pointer; padding: 0;
     transition: color 0.2s;
 }
 #btn-continuar:hover { color: var(--orange); }
 
-/* ══════════════════════════════════════════════
-   MICROTEXTOS
-   Esquina inferior izquierda, por encima del
-   banner pero debajo del modal del tracker
-══════════════════════════════════════════════ */
-#microtexto {
-    position: fixed;
-    bottom: calc(var(--banner-h) + 32px);
-    left: 50%;
-    transform: translateX(-50%) translateY(12px);
-    width: max-content;
-    max-width: min(520px, 90vw);
-    background: var(--dark);
-    padding: 14px 22px;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 1.65;
-    color: rgba(240,236,231,0.85);
-    z-index: 8600;
-    opacity: 0;
-    transition: opacity 0.55s ease, transform 0.55s ease;
-    pointer-events: none;
-    font-style: italic;
-    letter-spacing: 0.01em;
-}
-#microtexto.visible {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-/* ── HÉROE ── */
 .hero {
     padding: 80px var(--pad) 72px;
     border-bottom: 1px solid var(--rule);
@@ -170,7 +123,6 @@ body {
     width: 0%; transition: width 0.4s ease;
 }
 
-/* ── BOTÓN ── */
 .btn-report {
     font-family: "Lexend", sans-serif;
     font-size: 14px; font-weight: 700;
@@ -183,7 +135,6 @@ body {
 .btn-report:hover { background: var(--orange); transform: translateY(-1px); }
 .btn-report:active { transform: translateY(0); }
 
-/* ── SECCIONES ── */
 .list-section {
     padding: 52px var(--pad) 0;
     border-bottom: 1px solid var(--rule);
@@ -195,7 +146,6 @@ body {
     margin-bottom: 22px; display: block;
 }
 
-/* ── FILAS DE PROYECTO ── */
 .proj-row {
     border-top: 1px solid var(--rule);
     cursor: pointer;
@@ -250,7 +200,6 @@ body {
 }
 .proj-link:hover { gap: 16px; }
 
-/* ── SECCIÓN CONTACTO ── */
 .section {
     padding: 72px var(--pad) 68px;
     border-bottom: 1px solid var(--rule);
@@ -261,7 +210,6 @@ body {
     margin-bottom: 30px; display: block;
 }
 
-/* ── ZONA INFORME ── */
 .report-section {
     background: var(--dark);
     padding: 90px var(--pad) 100px;
@@ -287,24 +235,21 @@ body {
 }
 .report-line strong { font-weight: 700; color: var(--orange); }
 .report-cierre-fijo {
-    margin-top: 40px;
-    padding-top: 32px;
+    margin-top: 40px; padding-top: 32px;
     border-top: 1px solid rgba(240,236,231,0.10);
 }
 .report-cierre-fijo p {
     font-size: clamp(13px, 1.4vw, 16px);
     font-weight: 300; line-height: 1.85;
     color: rgba(240,236,231,0.6);
-    margin-bottom: 16px;
-    max-width: 560px;
+    margin-bottom: 16px; max-width: 560px;
 }
 .report-cierre-fijo strong { color: #fff; font-weight: 600; }
 .report-firma {
     font-size: 11px; font-weight: 700;
     letter-spacing: 0.04em;
     color: rgba(240,236,231,0.25);
-    margin-top: 32px;
-    display: block;
+    margin-top: 32px; display: block;
 }
 .ticker-sep {
     overflow: hidden; white-space: nowrap;
@@ -316,7 +261,6 @@ body {
     color: rgba(240,236,231,0.18); letter-spacing: 0.04em;
 }
 
-/* ── FOOTER ── */
 .page-footer {
     background: var(--dark);
     border-top: 1px solid rgba(240,236,231,0.07);
@@ -332,7 +276,6 @@ body {
 }
 .footer-socials a:hover { color: var(--orange); }
 
-/* ── BANNER ── */
 .banner {
     position: fixed; bottom: 0; left: 0;
     width: 100%; height: var(--banner-h);
@@ -355,19 +298,17 @@ body {
     color: #fff; white-space: nowrap;
 }
 
-/* ── ANIMACIONES DE ENTRADA ── */
 .fade-in {
     opacity: 0; transform: translateY(16px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .fade-in.entrada { opacity: 1; transform: translateY(0); }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 900px) { :root { --pad: 40px; } }
 @media (max-width: 768px) {
     :root { --pad: 22px; }
     .proj-type { display: none; }
-    #microtexto-OLD { left: 16px; max-width: 240px; }
+    .topbar-label { display: none; }
 }
 @media (max-width: 480px) {
     .proj-name  { font-size: 18px; }
@@ -378,33 +319,18 @@ body {
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════════════════════════
-     TEXTO DE BIENVENIDA
-     ──────────────────────────────────────────────────────────────
-     Edita el contenido del <p> para cambiar el texto.
-     El overlay se cierra al pulsar el botón o tras AUTO_CIERRE ms.
-     NO se cierra con scroll ni con mousemove — solo con el botón
-     o con el temporizador.
-══════════════════════════════════════════════════════════════ -->
 <div id="bienvenida-overlay">
     <div id="bienvenida-texto">
         <p>
             Hola. Antes de que empieces: <strong>esta página te observa.</strong>
-            No de forma rara — solo mira por dónde te mueves, qué te interesa, qué ignoras.
+            No de forma rara, solo mira por dónde te mueves, qué te interesa, qué ignoras.
             Al final te devuelvo lo que vi. Tú sigue, mira con calma.
-            Soy <strong>soto</strong>, encantado.
+            Soy <strong>Soto</strong>, encantado.
         </p>
         <button id="btn-continuar">Entendido, seguir →</button>
     </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════════════
-     MICROTEXTO — contenedor fijo
-     No edites el HTML. Edita MICROTEXTOS en el script.
-══════════════════════════════════════════════════════════════ -->
-<div id="microtexto" aria-live="polite"></div>
-
-<!-- ── TOPBAR ── -->
 <header class="topbar fade-in">
     <a href="/" class="topbar-logo">
         <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1779265684/soto3logo_hlxcgj.png" alt="soto³">
@@ -412,7 +338,6 @@ body {
     <span class="topbar-label">Modo observación activo</span>
 </header>
 
-<!-- ── HÉROE ── -->
 <section class="hero fade-in" data-section-id="hero" data-section-name="Presentación">
     <div class="progress-bar-wrap">
         <div class="progress-bar-fill" id="scroll-progress"></div>
@@ -429,13 +354,12 @@ body {
     </button>
 </section>
 
-<!-- ── TRABAJOS ── -->
 <section class="list-section fade-in" data-section-id="trabajos" data-section-name="Trabajos de diseño">
     <span class="section-label">Trabajos</span>
     <div class="proj-row" data-section-id="proy-premios">
         <div class="proj-head">
             <span class="proj-name">Premios Deporte y Ciudadanía 2023/2024</span>
-            <div class="proj-right"><span class="proj-type">Identidad / Social / Web</span><span class="proj-year">2024</span><span class="proj-toggle">+</span></div>
+            <div class="proj-right"><span  class="proj-year">2024</span><span class="proj-toggle">+</span></div>
         </div>
         <div class="proj-body"><div class="proj-body-inner">
             <p>Diseño de identidad gráfica / Redes sociales / Merchandising / Mailing / Actualización de sitio web</p>
@@ -445,7 +369,7 @@ body {
     <div class="proj-row" data-section-id="proy-guardabosques">
         <div class="proj-head">
             <span class="proj-name">Guardabosques GDL</span>
-            <div class="proj-right"><span class="proj-type">Logo / Cartelería</span><span class="proj-year">2022</span><span class="proj-toggle">+</span></div>
+            <div class="proj-right"><span class="proj-year">2022</span><span class="proj-toggle">+</span></div>
         </div>
         <div class="proj-body"><div class="proj-body-inner">
             <p>Rediseño de logo / Cartelería</p>
@@ -455,7 +379,7 @@ body {
     <div class="proj-row" data-section-id="proy-monaco">
         <div class="proj-head">
             <span class="proj-name">Mōnaco</span>
-            <div class="proj-right"><span class="proj-type">Identidad / Ecommerce</span><span class="proj-year">2025</span><span class="proj-toggle">+</span></div>
+            <div class="proj-right"><span class="proj-year">2025</span><span class="proj-toggle">+</span></div>
         </div>
         <div class="proj-body"><div class="proj-body-inner">
             <p>Diseño de identidad gráfica / Papelería / Redes sociales / Edición de imagen / Sitio web</p>
@@ -465,7 +389,7 @@ body {
     <div class="proj-row" data-section-id="proy-elhogar">
         <div class="proj-head">
             <span class="proj-name">El hogar</span>
-            <div class="proj-right"><span class="proj-type">Identidad / Redes</span><span class="proj-year">2024</span><span class="proj-toggle">+</span></div>
+            <div class="proj-right"><span class="proj-year">2024</span><span class="proj-toggle">+</span></div>
         </div>
         <div class="proj-body"><div class="proj-body-inner">
             <p>Diseño de identidad gráfica / Papelería / Redes sociales / Merchandising / Edición de imagen</p>
@@ -475,7 +399,7 @@ body {
     <div class="proj-row" data-section-id="proy-habitantes">
         <div class="proj-head">
             <span class="proj-name">Colectivo habitantes</span>
-            <div class="proj-right"><span class="proj-type">Logo</span><span class="proj-year">2022</span><span class="proj-toggle">+</span></div>
+            <div class="proj-right"><span class="proj-year">2022</span><span class="proj-toggle">+</span></div>
         </div>
         <div class="proj-body"><div class="proj-body-inner">
             <p>Creación de logo</p>
@@ -485,7 +409,7 @@ body {
     <div class="proj-row" data-section-id="proy-addy">
         <div class="proj-head">
             <span class="proj-name">ADDY esotérica</span>
-            <div class="proj-right"><span class="proj-type">Identidad / IA / Ecommerce</span><span class="proj-year">2026</span><span class="proj-toggle">+</span></div>
+            <div class="proj-right"><span class="proj-year">2026</span><span class="proj-toggle">+</span></div>
         </div>
         <div class="proj-body"><div class="proj-body-inner">
             <p>Diseño de identidad gráfica / Ecommerce / Edición foto de producto / Optimización con IA</p>
@@ -494,13 +418,12 @@ body {
     </div>
 </section>
 
-<!-- ── ILUSTRACIÓN ── -->
 <section class="list-section fade-in" data-section-id="ilustracion" data-section-name="Ilustración">
     <span class="section-label">Ilustración</span>
     <div class="proj-row" data-section-id="proy-inmenso">
         <div class="proj-head">
             <span class="proj-name">Inmenso</span>
-            <div class="proj-right"><span class="proj-type">Ilustración digital</span><span class="proj-year">2020</span><span class="proj-toggle">+</span></div>
+            <div class="proj-right"><span class="proj-year">2020</span><span class="proj-toggle">+</span></div>
         </div>
         <div class="proj-body"><div class="proj-body-inner">
             <p>Ilustración digital creada en Ps (Photoshop).</p>
@@ -510,7 +433,7 @@ body {
     <div class="proj-row" data-section-id="proy-flores">
         <div class="proj-head">
             <span class="proj-name">Hay flores a domicilio</span>
-            <div class="proj-right"><span class="proj-type">Ilustración digital</span><span class="proj-year">2022</span><span class="proj-toggle">+</span></div>
+            <div class="proj-right"><span class="proj-year">2022</span><span class="proj-toggle">+</span></div>
         </div>
         <div class="proj-body"><div class="proj-body-inner">
             <p>Ilustración digital creada en Ps (Photoshop).</p>
@@ -520,7 +443,7 @@ body {
     <div class="proj-row" data-section-id="proy-objetos">
         <div class="proj-head">
             <span class="proj-name">Estudio de objetos no identificados</span>
-            <div class="proj-right"><span class="proj-type">Modelado 3D</span><span class="proj-year">2018</span><span class="proj-toggle">+</span></div>
+            <div class="proj-right"><span class="proj-year">2018</span><span class="proj-toggle">+</span></div>
         </div>
         <div class="proj-body"><div class="proj-body-inner">
             <p>Modelado 3D creado en Blender.</p>
@@ -529,13 +452,12 @@ body {
     </div>
 </section>
 
-<!-- ── IA Y APPS ── -->
 <section class="list-section fade-in" data-section-id="ia-apps" data-section-name="IA y Apps">
     <span class="section-label">IA y Apps</span>
     <div class="proj-row" data-section-id="proy-soto-ia">
         <div class="proj-head">
             <span class="proj-name">soto artista virtual</span>
-            <div class="proj-right"><span class="proj-type">RAG / Conversacional</span><span class="proj-year">2026</span><span class="proj-toggle">+</span></div>
+            <div class="proj-right"><span class="proj-year">2026</span><span class="proj-toggle">+</span></div>
         </div>
         <div class="proj-body"><div class="proj-body-inner">
             <p>Sistema conversacional construido sobre arquitectura RAG entrenado con el corpus del artista.</p>
@@ -545,7 +467,7 @@ body {
     <div class="proj-row" data-section-id="proy-desoido">
         <div class="proj-head">
             <span class="proj-name">Desoído</span>
-            <div class="proj-right"><span class="proj-type">App móvil / Puzzle</span><span class="proj-year">2024</span><span class="proj-toggle">+</span></div>
+            <div class="proj-right"><span class="proj-year">2024</span><span class="proj-toggle">+</span></div>
         </div>
         <div class="proj-body"><div class="proj-body-inner">
             <p>App móvil con mecánicas de puzzle sobre sonidos en extinción.</p>
@@ -555,7 +477,7 @@ body {
     <div class="proj-row" data-section-id="proy-escuchar">
         <div class="proj-head">
             <span class="proj-name">Por qué nos cuesta escuchar?</span>
-            <div class="proj-right"><span class="proj-type">App / TouchDesigner</span><span class="proj-year">2023</span><span class="proj-toggle">+</span></div>
+            <div class="proj-right"><span class="proj-year">2023</span><span class="proj-toggle">+</span></div>
         </div>
         <div class="proj-body"><div class="proj-body-inner">
             <p>App móvil que funciona con Touch Designer generando imagen y sonido.</p>
@@ -564,7 +486,6 @@ body {
     </div>
 </section>
 
-<!-- ── CONTACTO ── -->
 <section class="section fade-in" data-section-id="contacto" data-section-name="Contacto">
     <span class="eyebrow">Contacto</span>
     <p style="font-size:clamp(13px,1.3vw,14px);font-weight:300;line-height:1.8;color:var(--muted);max-width:480px;margin-bottom:36px;">
@@ -576,7 +497,6 @@ body {
     </button>
 </section>
 
-<!-- ── INFORME FINAL ── -->
 <section class="report-section" data-section-id="informe" data-section-name="Informe">
     <span class="report-eyebrow">Tu informe de visita</span>
     <div id="report-output">
@@ -589,17 +509,15 @@ body {
     </div>
 </section>
 
-<!-- ── FOOTER ── -->
-<footer class="page-footer fade-in">
-    <span class="footer-copy">©2026 soto³</span>
-    <div class="footer-socials">
+<footer class="page-footer">
+    <div class="footer-socials" style="align-items:center;flex-wrap:wrap;">
+        <span class="footer-copy" style="color:#fff;font-size:10px;font-weight:600;">©2026 soto³</span>
         <a href="https://www.instagram.com/sotosolo_" target="_blank">Instagram</a>
         <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">LinkedIn</a>
         <a href="https://www.behance.net/xaviersoto" target="_blank">Behance</a>
     </div>
 </footer>
 
-<!-- ── BANNER ── -->
 <div class="banner">
     <div class="marquee">
         <div class="marquee-track">
@@ -620,20 +538,6 @@ body {
 </div>
 
 <script>
-/* ══════════════════════════════════════════════════════════════════
-
-   ORDEN CORRECTO DE INICIALIZACIÓN:
-   1. sesion         — objeto de datos (debe existir primero)
-   2. tiempoPorSeccion, seccionesVistas — estado para microtextos
-   3. Observer + listeners de scroll/clic
-   4. bienvenida     — overlay
-   5. microtextos    — intervalo (al final, cuando todo existe)
-   6. generarInforme — función principal
-
-══════════════════════════════════════════════════════════════════ */
-
-
-/* ── 1. OBJETO DE SESIÓN — debe declararse primero ── */
 const sesion = {
     inicio:     Date.now(),
     totalClics: 0,
@@ -647,11 +551,9 @@ const sesion = {
     dispositivoTactil: ('ontouchstart' in window) || (navigator.maxTouchPoints > 0),
 };
 
-/* ── 2. ESTADO PARA MICROTEXTOS ── */
 const seccionesVistas  = new Set();
 const tiempoPorSeccion = {};
 
-/* Inicializa todas las secciones */
 document.querySelectorAll('[data-section-id]').forEach(el => {
     const id = el.dataset.sectionId;
     sesion.ignoradas.add(id);
@@ -659,7 +561,6 @@ document.querySelectorAll('[data-section-id]').forEach(el => {
     tiempoPorSeccion[id]  = 0;
 });
 
-/* ── 3a. OBSERVER DE SECCIONES ── */
 const tiemposEntrada = {};
 const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -679,7 +580,6 @@ const sectionObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 document.querySelectorAll('[data-section-id]').forEach(el => sectionObserver.observe(el));
 
-/* Guarda tiempo al cerrar */
 window.addEventListener('beforeunload', () => {
     const ahora = Date.now();
     Object.keys(tiemposEntrada).forEach(id => {
@@ -687,7 +587,6 @@ window.addEventListener('beforeunload', () => {
     });
 });
 
-/* ── 3b. TRACKING DE SCROLL ── */
 const progressBar = document.getElementById('scroll-progress');
 window.addEventListener('scroll', () => {
     const scrollY   = window.scrollY;
@@ -707,13 +606,11 @@ window.addEventListener('scroll', () => {
     }
 }, { passive: true });
 
-/* ── 3c. TRACKING DE CLICS ── */
 document.addEventListener('click', (e) => {
     if (e.target.closest('.btn-report') || e.target.closest('#btn-continuar')) return;
     sesion.totalClics++;
 });
 
-/* ── 3d. DESPLEGABLE DE PROYECTOS ── */
 document.querySelectorAll('.proj-row').forEach(row => {
     row.addEventListener('click', (e) => {
         if (e.target.closest('.proj-link')) return;
@@ -722,26 +619,15 @@ document.querySelectorAll('.proj-row').forEach(row => {
         if (!isOpen) row.classList.add('open');
     });
 });
-/* Nota: el disparo de microtexto al abrir desplegable
-   está en el motor de microtextos más abajo */
 
-/* ── 3e. ANIMACIONES DE ENTRADA ── */
 window.addEventListener('load', () => {
     document.querySelectorAll('.fade-in').forEach((el, i) => {
         setTimeout(() => el.classList.add('entrada'), 200 + i * 120);
     });
 });
 
-
-/* ══════════════════════════════════════════════════════════════════
-   4. BIENVENIDA
-   ──────────────────────────────────────────────────────────────────
-   FIX: solo se cierra con el botón o con el temporizador.
-   Eliminado el cierre por scroll y mousemove que lo cerraba al instante.
-   Cambia AUTO_CIERRE para ajustar el tiempo de espera.
-══════════════════════════════════════════════════════════════════ */
-const AUTO_CIERRE = 12000; // ms antes de cerrarse solo (12 s)
-
+/* ── BIENVENIDA ── */
+const AUTO_CIERRE = 12000;
 const overlay      = document.getElementById('bienvenida-overlay');
 const btnContinuar = document.getElementById('btn-continuar');
 let bienvenidaCerrada = false;
@@ -751,214 +637,10 @@ function cerrarBienvenida() {
     bienvenidaCerrada = true;
     overlay.classList.add('oculto');
 }
-
-/* Solo estas dos formas cierran la bienvenida */
 btnContinuar.addEventListener('click', cerrarBienvenida);
 setTimeout(cerrarBienvenida, AUTO_CIERRE);
 
-
-/* ══════════════════════════════════════════════════════════════════
-   5. MICROTEXTOS EN TIEMPO REAL
-   ──────────────────────────────────────────────────────────────────
-   FIX: declarados DESPUÉS de sesion y tiempoPorSeccion para que
-   las condiciones puedan acceder a esos objetos sin error.
-
-   TIEMPO_VISIBLE: ms que permanece visible el microtexto.
-   COMPROBACION:   ms entre cada evaluación de condiciones.
-══════════════════════════════════════════════════════════════════ */
-const TIEMPO_VISIBLE = 8000; // 8 s visible
-const COMPROBACION   = 5000; // evalúa cada 5 s
-
-/* Registra movimiento e inactividad */
-let ultimoMovimiento = Date.now();
-let ultimoScrollT    = Date.now();
-let scrollBajoAntes  = false;   // si alguna vez bajó el scroll
-let scrollSubiendo   = false;   // si el scroll está subiendo ahora
-let ultimoScrollY2   = window.scrollY; // para detectar dirección
-
-document.addEventListener('mousemove', () => { ultimoMovimiento = Date.now(); }, { passive: true });
-document.addEventListener('scroll', () => {
-    ultimoScrollT    = Date.now();
-    ultimoMovimiento = Date.now();
-    const currentY   = window.scrollY;
-    scrollSubiendo   = currentY < ultimoScrollY2 && sesion.scrollMax > 20;
-    if (currentY > ultimoScrollY2) scrollBajoAntes = true;
-    ultimoScrollY2   = currentY;
-}, { passive: true });
-
-/* ──────────────────────────────────────────────────────────────────
-   LISTA DE MICROTEXTOS
-   ──────────────────────────────────────────────────────────────────
-   Edita "texto" para cambiar el mensaje.
-   Edita "condicion" o sus umbrales para cambiar cuándo se dispara.
-   El orden importa: se muestra el primero cuya condición sea true.
-────────────────────────────────────────────────────────────────── */
-const TEXTOS_DESPLEGABLE = [
-    "Curioso. Eso no lo hace todo el mundo.",
-    "Bien. Los detalles importan.",
-    "Eso tiene más dentro de lo que parece.",
-];
-
-const MICROTEXTOS = [
-
-    {
-        /* INACTIVIDAD CORTA — 8 s sin moverse ni scrollear */
-        texto: "Sé que sigues ahí. Tómate tu tiempo.",
-        umbralMs: 8000,
-        condicion() {
-            return bienvenidaCerrada
-                && (Date.now() - ultimoMovimiento) > this.umbralMs
-                && (Date.now() - ultimoScrollT)    > this.umbralMs;
-        },
-        disparado: false,
-    },
-
-    {
-        /* INACTIVIDAD LARGA — 20 s sin moverse */
-        texto: "¿Pensando? Bien. Es la respuesta correcta.",
-        umbralMs: 20000,
-        condicion() {
-            return bienvenidaCerrada
-                && (Date.now() - ultimoMovimiento) > this.umbralMs
-                && (Date.now() - ultimoScrollT)    > this.umbralMs;
-        },
-        disparado: false,
-    },
-
-    {
-        /* SCROLL INVERSO — volvió hacia arriba después de bajar
-           Alterna entre dos textos cada vez que ocurre */
-        _veces: 0,
-        condicion() {
-            return scrollBajoAntes && scrollSubiendo && sesion.scrollMax > 20;
-        },
-        repetible: true,
-        disparado: false,
-        getTexto() {
-            this._veces++;
-            return this._veces % 2 === 1
-                ? "Volviste. Algo te quedó pendiente."
-                : "Segunda mirada. Las mejores decisiones se toman así.";
-        },
-    },
-
-    {
-        /* CAMBIO DE SECCIÓN — vio trabajos y luego ilustración o IA */
-        texto: "Cambiaste de registro. Interesante.",
-        condicion() {
-            return seccionesVistas.has('trabajos')
-                && (seccionesVistas.has('ilustracion') || seccionesVistas.has('ia-apps'));
-        },
-        disparado: false,
-    },
-
-    {
-        /* 2 MINUTOS EN LA PÁGINA */
-        texto: "Llevas un rato. Eso significa algo.",
-        umbralMs: 120000,
-        condicion() {
-            return bienvenidaCerrada
-                && (Date.now() - sesion.inicio) > this.umbralMs;
-        },
-        disparado: false,
-    },
-
-    {
-        /* 4 MINUTOS EN LA PÁGINA */
-        texto: "Sigues aquí. Ya somos amigos.",
-        umbralMs: 240000,
-        condicion() {
-            return bienvenidaCerrada
-                && (Date.now() - sesion.inicio) > this.umbralMs;
-        },
-        disparado: false,
-    },
-
-    {
-        /* MUCHO TIEMPO EN UN PROYECTO — 10 s en la misma fila */
-        texto: "Esa te gustó. A mí también.",
-        umbralSeg: 10,
-        condicion() {
-            const ids = Object.keys(tiempoPorSeccion).filter(id => id.startsWith('proy-'));
-            return ids.some(id => tiempoPorSeccion[id] > this.umbralSeg);
-        },
-        disparado: false,
-    },
-
-    {
-        /* LLEGÓ AL FINAL — scroll > 90% */
-        texto: "Llegaste hasta abajo. Eso ya dice mucho de ti.",
-        condicion() { return sesion.scrollMax >= 90; },
-        disparado: false,
-    },
-
-    {
-        /* FUE DIRECTO A CONTACTO sin ver trabajos ni ilustración */
-        texto: "Veo que fuiste directo al grano. Me gusta la gente decidida.",
-        condicion() {
-            return seccionesVistas.has('contacto')
-                && !seccionesVistas.has('trabajos')
-                && !seccionesVistas.has('ilustracion')
-                && !seccionesVistas.has('ia-apps');
-        },
-        disparado: false,
-    },
-]
-
-/* Motor — evalúa y muestra */
-const elMicrotexto  = document.getElementById('microtexto');
-let microtextoActivo = false;
-
-function mostrarMicrotexto(texto) {
-    if (!texto) return;
-    microtextoActivo = true;
-    elMicrotexto.textContent = texto;
-    elMicrotexto.classList.add('visible');
-    setTimeout(() => {
-        elMicrotexto.classList.remove('visible');
-        setTimeout(() => { microtextoActivo = false; }, 700);
-    }, TIEMPO_VISIBLE);
-}
-
-function evaluarMicrotextos() {
-    if (microtextoActivo || !bienvenidaCerrada) return;
-    for (const m of MICROTEXTOS) {
-        // repetible: se puede volver a disparar si la condición vuelve a ser true
-        const listo = m.repetible ? !microtextoActivo : !m.disparado;
-        if (listo && m.condicion()) {
-            if (!m.repetible) m.disparado = true;
-            // getTexto() para mensajes con variantes, texto para los fijos
-            const txt = m.getTexto ? m.getTexto() : m.texto;
-            mostrarMicrotexto(txt);
-            break;
-        }
-    }
-}
-
-/* Disparo por abrir desplegable — usa TEXTOS_DESPLEGABLE rotativos */
-let indiceDespl = 0;
-document.querySelectorAll('.proj-row').forEach(row => {
-    row.addEventListener('click', (e) => {
-        if (e.target.closest('.proj-link')) return;
-        // Solo dispara si el proyecto se está abriendo (no cerrando)
-        if (!row.classList.contains('open') && !microtextoActivo && bienvenidaCerrada) {
-            const txt = TEXTOS_DESPLEGABLE[indiceDespl % TEXTOS_DESPLEGABLE.length];
-            indiceDespl++;
-            // Pequeño delay para que coincida con la apertura del panel
-            setTimeout(() => mostrarMicrotexto(txt), 400);
-        }
-    });
-});
-
-/* Intervalo principal — arranca 4 s después de cargar */
-setTimeout(() => {
-    setInterval(evaluarMicrotextos, COMPROBACION);
-}, 4000);
-
-
-/* ══════════════════════════════════════════════════════════════════
-   HELPERS
-══════════════════════════════════════════════════════════════════ */
+/* ── HELPERS ── */
 function tiempoTotal() { return (Date.now() - sesion.inicio) / 1000; }
 function velocidadMedia() {
     if (!sesion.velocidad.length) return 0;
@@ -976,61 +658,37 @@ function seccionMasVista() {
     return ids.reduce((a, b) => sesion.secciones[a] > sesion.secciones[b] ? a : b);
 }
 
-
-/* ══════════════════════════════════════════════════════════════════
-   REGLAS DE INTERPRETACIÓN
-   ──────────────────────────────────────────────────────────────────
-   Edita los umbrales numéricos para ajustar la sensibilidad.
-══════════════════════════════════════════════════════════════════ */
+/* ── REGLAS ── */
 const REGLAS = {
-    /* REGLA 1: menos de 45 s → tiene prisa */
     tienePrisa:     () => tiempoTotal() < 45,
-    /* REGLA 2: más de 3 min → contemplativo */
     esContemplatvo: () => tiempoTotal() > 180,
-    /* REGLA 3: más tiempo en IA/Apps */
     perfilTecnico: () => {
         const tIa = sesion.secciones['ia-apps'] || 0;
-        return tIa > (sesion.secciones['trabajos']    || 0)
-            || tIa > (sesion.secciones['ilustracion'] || 0);
+        return tIa > (sesion.secciones['trabajos'] || 0) || tIa > (sesion.secciones['ilustracion'] || 0);
     },
-    /* REGLA 4: más tiempo en diseño e ilustración */
     perfilVisual: () => {
         const tIa  = sesion.secciones['ia-apps'] || 0;
         const tVis = (sesion.secciones['trabajos'] || 0) + (sesion.secciones['ilustracion'] || 0);
         return tVis > tIa * 1.5;
     },
-    /* REGLA 5: scroll > 90% */
     llegoAlFinal:  () => sesion.scrollMax >= 90,
-    /* REGLA 6: scroll < 40% */
     superficial:   () => sesion.scrollMax < 40,
-    /* REGLA 7: más de 5 clics */
     clickerActivo: () => sesion.totalClics > 5,
-    /* REGLA 8: 0 o 1 clics */
     soloMiro:      () => sesion.totalClics <= 1,
-    /* REGLA 9: scroll rápido */
     scrollFurioso: () => velocidadMedia() > 800,
-    /* REGLA 10: scroll lento */
     scrollPausado: () => velocidadMedia() < 200 && velocidadMedia() > 0,
-    /* REGLA 11: dispositivo táctil */
     esTactil:      () => sesion.dispositivoTactil,
 };
 
-
 /* ══════════════════════════════════════════════════════════════════
-   TEXTOS DEL INFORME FINAL
-   ──────────────────────────────────────────────────────────────────
-   Edita cada bloque libremente.
-   Las partes en ${variables} se rellenan automáticamente.
+   TEXTOS DEL INFORME — edita aquí
 ══════════════════════════════════════════════════════════════════ */
-
-/* Cómo se nombra cada sección en el informe */
 const NOMBRES_SECCION = {
     'trabajos':    'los proyectos de identidad y branding',
     'ilustracion': 'la ilustración',
     'ia-apps':     'las aplicaciones e inteligencia artificial',
 };
 
-/* Conclusión según sección más vista */
 const CONCLUSIONES = {
     'trabajos':    'con criterio visual fuerte y necesidad de comunicar una identidad clara',
     'ilustracion': 'con sensibilidad artística, que valora el trabajo hecho a mano aunque sea digital',
@@ -1038,43 +696,28 @@ const CONCLUSIONES = {
     'default':     'con curiosidad amplia, sin una sola dirección — lo cual también es un perfil',
 };
 
-/* Frase de comportamiento de navegación */
 const COMPORTAMIENTO = {
-    furioso:      'Scrolleaste a toda velocidad. Lees en diagonal.',
-    rapido:       'Fuiste rápido — visita de diagnóstico, no de contemplación.',
-    contemplativo:'Te tomaste tu tiempo. Más de lo habitual.',
-    pausado:      'Fuiste despacio, parando en cada cosa.',
-    normal:       'Navegaste a un ritmo equilibrado, ni con prisa ni sin ella.',
+    furioso:      'Pasaste por aquí a toda velocidad. Te recomiendo volver y hacer clic en algo.',
+    rapido:       'Visita rápida. Si tienes un minuto más, vale la pena detenerse.',
+    contemplativo:'Te tomaste tu tiempo. Se nota que lees de verdad.',
+    pausado:      'Fuiste despacio. Eso es raro y bueno.',
+    normal:       'Ritmo normal. Ni en modo turista ni en modo investigador.',
 };
 
-/* Cierre según cómo se generó el informe */
 const CIERRE = {
-    auto:   'Llegaste al final de la página. No todo el mundo llega.',
-    manual: 'Pediste el informe antes de llegar al final. No eres de los que esperan.',
+    auto:   'Llegaste hasta el final. Eso ya dice algo de ti.',
+    manual: 'No esperaste al final para pedirlo. Eres de los que se adelantan.',
 };
 
-/* ──────────────────────────────────────────────────────────────────
-   BLOQUE FIJO — siempre aparece al final
-   Edita este texto libremente, acepta HTML.
-────────────────────────────────────────────────────────────────── */
 const BLOQUE_FIJO = `
     <p>
-        Una cosa más. Lo que acabas de hacer — ser observado, dejar un rastro,
-        recibir de vuelta una versión de ti hecha de datos — es también parte de mi trabajo
-        como artista. <strong>Acabas de ser, sin saberlo, parte de una pieza.</strong>
-        Gracias por eso.
+        No es magia, es observación. Es lo que hago al diseñar: mirar, entender, responder.
+        <strong>Acabas de verlo funcionar.</strong>
     </p>
-    <p>
-        Si te interesa esa faceta, está en <strong>xsoto.com</strong>.
-        Y si te interesa la de diseño, hablamos cuando quieras.
-    </p>
-    <p><strong>soto.</strong></p>
+
 `;
 
-
-/* ══════════════════════════════════════════════════════════════════
-   6. GENERAR INFORME
-══════════════════════════════════════════════════════════════════ */
+/* ── GENERAR INFORME ── */
 function generarInforme() {
     if (sesion.infoGenerado) {
         document.querySelector('.report-section').scrollIntoView({ behavior: 'smooth' });
@@ -1082,43 +725,33 @@ function generarInforme() {
     }
     sesion.infoGenerado = true;
 
-    /* Congela tiempos de secciones aún visibles */
     const ahora = Date.now();
     Object.keys(tiemposEntrada).forEach(id => {
         sesion.secciones[id] += (ahora - tiemposEntrada[id]) / 1000;
     });
 
-    /* Determina sección y conclusión */
     const seccion = seccionMasVista();
     const nomSec  = NOMBRES_SECCION[seccion] || 'tu recorrido general';
     const concSec = CONCLUSIONES[seccion]    || CONCLUSIONES['default'];
 
-    /* Determina comportamiento */
     let comp = COMPORTAMIENTO.normal;
-    if      (REGLAS.tienePrisa()    && REGLAS.scrollFurioso())  comp = COMPORTAMIENTO.furioso;
-    else if (REGLAS.tienePrisa())                                comp = COMPORTAMIENTO.rapido;
-    else if (REGLAS.esContemplatvo() && REGLAS.scrollPausado()) comp = COMPORTAMIENTO.contemplativo;
-    else if (REGLAS.scrollPausado())                             comp = COMPORTAMIENTO.pausado;
+    if      (REGLAS.tienePrisa()     && REGLAS.scrollFurioso())  comp = COMPORTAMIENTO.furioso;
+    else if (REGLAS.tienePrisa())                                 comp = COMPORTAMIENTO.rapido;
+    else if (REGLAS.esContemplatvo() && REGLAS.scrollPausado())  comp = COMPORTAMIENTO.contemplativo;
+    else if (REGLAS.scrollPausado())                              comp = COMPORTAMIENTO.pausado;
 
-    /* Ensambla */
-    const parteVariable = `
-        <p class="report-line">Esto es lo que vi de ti:</p>
-        <p class="report-line">
-            Pasaste más tiempo en <strong>${nomSec}</strong> que en el resto.
-            Si tuviera que adivinar, buscas a alguien <strong>${concSec}</strong>.
-        </p>
-        <p class="report-line">
-            ${comp} Eso me dice algo de cómo lees.
-        </p>
-        <p class="report-line">
-            Resumen: si buscas a alguien así, soy yo.
-            Y acabas de comprobar que no solo lo digo — lo construí.
-            <strong>Esta página entera es la prueba.</strong>
-        </p>
-        <p class="report-line">
-            ${sesion.generadoAuto ? CIERRE.auto : CIERRE.manual}
-        </p>
-    `;
+const parteVariable = `
+    <p class="report-line">
+        ${comp}
+    </p>
+    <p class="report-line">
+        La gente que solo scrollea rara vez vuelve.
+        <strong>La que hace clic, sí.</strong>
+    </p>
+    <p class="report-line">
+        ${sesion.generadoAuto ? CIERRE.auto : CIERRE.manual}
+    </p>
+`;
 
     const output = document.getElementById('report-output');
     output.innerHTML = parteVariable

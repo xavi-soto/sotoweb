@@ -1,14 +1,8 @@
 /* ══════════════════════════════════════════════════════════════
    tracker-ui.css — soto³ sistema de observación
-   Estilos del botón flotante y el modal de informe.
    Compatible con el sistema de diseño de sotosotosoto.com.
-
-   Variables heredadas del sitio:
-     --orange, --ink, --bg, --bg2, --dark, --rule, --muted
-   Si en alguna página no están definidas, los fallback las cubren.
 ══════════════════════════════════════════════════════════════ */
 
-/* ── Fallbacks por si el CSS del sitio no está cargado ── */
 :root {
     --orange: #0011ff;
     --ink:    #0c0c0c;
@@ -24,14 +18,12 @@
 ════════════════════════════════ */
 #soto-tracker-btn {
     position: fixed;
-    bottom: calc(34px + 16px);   /* 34px = altura del banner del sitio */
+    bottom: calc(34px + 16px);
     right: 20px;
     z-index: 8500;
-
     display: flex;
     align-items: center;
     gap: 8px;
-
     background: var(--dark, #141210);
     color: #fff;
     border: none;
@@ -41,16 +33,13 @@
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.05em;
-
-    /* Entrada desde abajo */
     opacity: 0;
     transform: translateY(10px);
     transition:
-        opacity  0.5s ease 1.2s,
+        opacity   0.5s ease 1.2s,
         transform 0.5s ease 1.2s,
         background 0.2s;
 }
-/* Aparece 1.2 s después de cargar la página */
 #soto-tracker-btn.soto-btn-ready {
     opacity: 1;
     transform: translateY(0);
@@ -59,7 +48,6 @@
     background: var(--orange, #0011ff);
 }
 
-/* Punto pulsante (indicador de grabación) */
 .soto-btn-dot {
     width: 6px;
     height: 6px;
@@ -78,6 +66,18 @@
 }
 
 /* ════════════════════════════════
+   LABEL DEL TOPBAR
+   "Modo observación activo"
+   Se oculta en móvil para no chocar con el logo
+════════════════════════════════ */
+.topbar-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--muted, rgba(12,12,12,0.42));
+}
+
+/* ════════════════════════════════
    MODAL OVERLAY
 ════════════════════════════════ */
 #soto-informe-modal {
@@ -92,7 +92,6 @@
     visibility: visible;
 }
 
-/* Backdrop semitransparente */
 .soto-modal-backdrop {
     position: absolute;
     inset: 0;
@@ -106,7 +105,7 @@
     opacity: 1;
 }
 
-/* Panel del informe — desliza desde la derecha */
+/* Panel — desliza desde la derecha en desktop */
 .soto-modal-panel {
     position: absolute;
     top: 0;
@@ -125,7 +124,6 @@
     transform: translateX(0);
 }
 
-/* Header del panel */
 .soto-modal-header {
     display: flex;
     justify-content: space-between;
@@ -159,13 +157,11 @@
 }
 .soto-modal-close:hover { color: var(--orange, #0011ff); }
 
-/* Cuerpo del panel */
 .soto-modal-body {
     padding: 40px 32px 60px;
     flex: 1;
 }
 
-/* Líneas del informe — aparecen con fade+slide secuencial */
 .soto-report-line {
     font-family: "Lexend", sans-serif;
     font-size: clamp(14px, 1.5vw, 17px);
@@ -182,8 +178,6 @@
     transform: translateY(0);
 }
 .soto-report-line strong { font-weight: 700; color: var(--orange, #0011ff); }
-
-/* Última línea (firma) — estilo diferente */
 .soto-report-line:last-child {
     font-size: 11px;
     font-weight: 600;
@@ -192,7 +186,6 @@
     margin-top: 16px;
 }
 
-/* ── Tabla de datos de recorrido ── */
 .soto-modal-data {
     margin-top: 48px;
     padding-top: 32px;
@@ -225,7 +218,6 @@
     flex-shrink: 0;
 }
 
-/* ── Nota de privacidad ── */
 .soto-privacy-note {
     font-family: "Lexend", sans-serif;
     font-size: 10px;
@@ -236,14 +228,32 @@
     letter-spacing: 0.01em;
 }
 
-/* ── Bloquea scroll del body cuando el modal está abierto ── */
 body.soto-no-scroll { overflow: hidden; }
 
 /* ════════════════════════════════
-   RESPONSIVE
+   RESPONSIVE MÓVIL
 ════════════════════════════════ */
 @media (max-width: 768px) {
-    /* En móvil el panel sube desde abajo */
+
+    /* Oculta el label del topbar en móvil */
+    .topbar-label {
+        display: none;
+    }
+
+    /* Botón más pequeño en móvil */
+  #soto-tracker-btn {
+    bottom: calc(34px + 14px);
+        right: 12px;
+        padding: 7px 11px 7px 9px;
+        font-size: 9px;
+        gap: 6px;
+    }
+    .soto-btn-dot {
+        width: 5px;
+        height: 5px;
+    }
+
+    /* Panel sube desde abajo en móvil */
     .soto-modal-panel {
         top: auto;
         bottom: 0;
@@ -256,11 +266,6 @@ body.soto-no-scroll { overflow: hidden; }
     #soto-informe-modal.soto-modal-visible .soto-modal-panel {
         transform: translateY(0);
     }
-    .soto-modal-body { padding: 32px 24px 48px; }
+    .soto-modal-body   { padding: 32px 24px 48px; }
     .soto-modal-header { padding: 20px 24px 16px; }
-
-    #soto-tracker-btn {
-        bottom: calc(34px + 12px);
-        right: 14px;
-    }
 }

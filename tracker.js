@@ -1,40 +1,17 @@
 /* ═══════════════════════════════════════════════════════════════════
    tracker.js — soto³ sistema de observación de visita
-   ───────────────────────────────────────────────────────────────────
-   Cómo funciona:
-   · Solo se activa si la URL contiene ?visita
-   · Una vez activo, persiste entre páginas usando sessionStorage
-   · Registra: páginas vistas, tiempo por página, scroll, clics
-   · Microtextos contextuales durante la navegación
-   · Al pulsar el botón flotante, abre un modal con el informe
-
-   Para editar las reglas    → busca REGLAS DE INTERPRETACIÓN
-   Para editar los textos    → busca TEXTOS DEL INFORME
-   Para editar microtextos   → busca MICROTEXTOS_GLOBAL
-   Para añadir páginas       → busca MAPA DE PÁGINAS
 ═══════════════════════════════════════════════════════════════════ */
 
 (function () {
     'use strict';
 
-    /* ─────────────────────────────────────────────────────────────────
-       ACTIVACIÓN POR URL SECRETA
-       Solo funciona si la URL contiene ?visita,
-       o si la sesión ya fue activada en una página anterior.
-    ──────────────────────────────────────────────────────────────────── */
     const SESION_ACTIVA_KEY = 'soto_visita_activa';
-
     if (window.location.search.includes('visita')) {
         sessionStorage.setItem(SESION_ACTIVA_KEY, '1');
     } else if (!sessionStorage.getItem(SESION_ACTIVA_KEY)) {
         return;
     }
 
-    /* ─────────────────────────────────────────────────────────────────
-       MAPA DE PÁGINAS
-       Añade aquí cualquier URL nueva del sitio.
-       Categorías: 'inicio' | 'diseno' | 'ilustracion' | 'tecnico' | 'info'
-    ──────────────────────────────────────────────────────────────────── */
     const MAPA_PAGINAS = {
         '/':                                      { nombre: 'Inicio',                      categoria: 'inicio'      },
         '/trabajos/':                             { nombre: 'Trabajos',                    categoria: 'inicio'      },
@@ -54,9 +31,6 @@
         '/contacto/':                             { nombre: 'Contacto',                    categoria: 'info'        },
     };
 
-    /* ─────────────────────────────────────────────────────────────────
-       SESIÓN — carga o inicializa
-    ──────────────────────────────────────────────────────────────────── */
     const STORE_KEY = 'soto_visita_v1';
 
     function cargarSesion() {
@@ -65,11 +39,11 @@
             if (raw) return JSON.parse(raw);
         } catch (e) {}
         return {
-            inicio:           Date.now(),
-            paginas:          [],
-            totalClics:       0,
+            inicio:            Date.now(),
+            paginas:           [],
+            totalClics:        0,
             dispositivoTactil: ('ontouchstart' in window) || (navigator.maxTouchPoints > 0),
-            informeGenerado:  false,
+            informeGenerado:   false,
         };
     }
 
@@ -81,27 +55,22 @@
     const metaPagina = MAPA_PAGINAS[urlActual] || { nombre: document.title || urlActual, categoria: 'otro' };
 
     let estado = cargarSesion();
-
-    /* Timestamp de entrada A ESTA PÁGINA — independiente del inicio de sesión */
     const entradaEstaPagina = Date.now();
 
     const registroPagina = {
-        url:        urlActual,
-        nombre:     metaPagina.nombre,
-        categoria:  metaPagina.categoria,
-        entrada:    entradaEstaPagina,
-        salida:     null,
-        scrollMax:  0,
-        clics:      0,
+        url:         urlActual,
+        nombre:      metaPagina.nombre,
+        categoria:   metaPagina.categoria,
+        entrada:     entradaEstaPagina,
+        salida:      null,
+        scrollMax:   0,
+        clics:       0,
         velocidades: [],
     };
 
     estado.paginas.push(registroPagina);
     guardarSesion(estado);
 
-    /* ─────────────────────────────────────────────────────────────────
-       TRACKING DE SCROLL
-    ──────────────────────────────────────────────────────────────────── */
     let ultimoScrollY = window.scrollY;
     let ultimoScrollT = Date.now();
 
@@ -120,9 +89,6 @@
         guardarSesion(estado);
     }, { passive: true });
 
-    /* ─────────────────────────────────────────────────────────────────
-       TRACKING DE CLICS
-    ──────────────────────────────────────────────────────────────────── */
     document.addEventListener('click', (e) => {
         if (e.target.closest('#soto-informe-modal')) return;
         registroPagina.clics++;
@@ -130,9 +96,6 @@
         guardarSesion(estado);
     });
 
-    /* ─────────────────────────────────────────────────────────────────
-       GUARDA AL SALIR
-    ──────────────────────────────────────────────────────────────────── */
     function alSalir() {
         registroPagina.salida = Date.now();
         guardarSesion(estado);
@@ -140,11 +103,8 @@
     window.addEventListener('beforeunload', alSalir);
     document.addEventListener('visibilitychange', () => { if (document.hidden) alSalir(); });
 
-    /* ─────────────────────────────────────────────────────────────────
-       HELPERS
-    ──────────────────────────────────────────────────────────────────── */
-    function tiempoTotalSeg()     { return (Date.now() - estado.inicio) / 1000; }
-    function tiempoEnPaginaSeg()  { return (Date.now() - entradaEstaPagina) / 1000; }
+    function tiempoTotalSeg()    { return (Date.now() - estado.inicio) / 1000; }
+    function tiempoEnPaginaSeg() { return (Date.now() - entradaEstaPagina) / 1000; }
 
     function tiempoEnCategoria(cat) {
         return estado.paginas
@@ -169,10 +129,6 @@
         return m > 0 ? `${m} min ${s} s` : `${s} s`;
     }
 
-    /* ═══════════════════════════════════════════════════════════════
-       REGLAS DE INTERPRETACIÓN
-       Edita los umbrales numéricos para ajustar la sensibilidad.
-    ═══════════════════════════════════════════════════════════════ */
     const REGLAS = {
         tienePrisa:     () => tiempoTotalSeg() < 60,
         esContemplatvo: () => tiempoTotalSeg() > 300,
@@ -199,8 +155,7 @@
     };
 
     /* ═══════════════════════════════════════════════════════════════
-       TEXTOS DEL INFORME
-       Edita los strings libremente. <strong> = énfasis en azul.
+       TEXTOS DEL INFORME — edita aquí
     ═══════════════════════════════════════════════════════════════ */
     const TEXTOS = {
         apertura: () => {
@@ -208,35 +163,80 @@
             const t = fmtTiempo(tiempoTotalSeg());
             return `<strong>${n} página${n !== 1 ? 's' : ''}</strong> en <strong>${t}</strong>.`;
         },
-        ritmo_rapido:        `Visita de reconocimiento. Entraste, escaneaste, sacaste conclusión. <strong>Ya sabías lo que buscabas antes de llegar.</strong>`,
-        ritmo_contemplativo: `Te tomaste tu tiempo — más de lo habitual. Eso puede significar que algo aquí te retuvo genuinamente, o que eres alguien que <strong>no decide sin leer hasta el final.</strong>`,
-        ritmo_normal:        `Velocidad de crucero. Ni prisa ni parsimonia. Una visita <strong>deliberada.</strong>`,
-        perfil_tecnico:      `Pasaste más tiempo donde el proceso importa tanto como el resultado: las apps, los sistemas, la IA. <strong>Lo que te atrae aquí no es solo la forma — es cómo funciona por dentro.</strong>`,
-        perfil_visual:       `Tu recorrido gravitó hacia los proyectos de identidad e ilustración. <strong>Piensas primero en imágenes.</strong>`,
-        perfil_mixto:        `Distribuiste la atención entre lo técnico y lo visual sin una inclinación clara. <strong>No tienes perfil fácil de etiquetar</strong> — probablemente eso sea tu rasgo más útil.`,
-        explorador:          (n) => `Entraste en <strong>${n} páginas</strong>. Eso es curiosidad sistemática, no curiosidad casual.`,
-        puntual:             `Fuiste directo. Una o dos páginas y ya tenías suficiente. <strong>Eficiencia, o indiferencia.</strong> Difícil saberlo desde aquí.`,
-        lector:              `Scrolleaste hasta el fondo en casi todo lo que viste. <strong>Eres de los que leen los créditos.</strong>`,
-        escaner:             `Tu scroll fue rápido. Lees en diagonal, capturas lo esencial y sigues. <strong>Conoces ese modo — lo usas con propósito.</strong>`,
-        scroll_pausado:      `Fuiste despacio. Paraste en las cosas. <strong>Atención, no impaciencia.</strong>`,
-        clicker:             `Hiciste bastantes clics exploratorios. <strong>Tocas para entender.</strong>`,
-        solo_miro:           `Casi no tocaste nada. Visitante de galería: observas desde la distancia antes de decidir si algo merece más.`,
-        vio_cv:              `Revisaste el CV. Alguien está <strong>evaluando si merece la pena continuar la conversación.</strong>`,
-        vio_contacto:        `Llegaste a la página de contacto. <strong>Eso no es accidente.</strong>`,
-        entro_directo:       `Llegaste directo a un proyecto, sin pasar por el inicio. Alguien te mandó aquí, o sabías exactamente adónde ir.`,
-        ilustracion:         `Dedicaste tiempo a la ilustración. La parte más personal del trabajo — la menos encargada, la más propia.`,
+
+        ritmo_rapido:
+            `Visita rápida. Scrolleaste, echaste un vistazo, seguiste.
+            <strong>Te recomiendo volver y hacer clic en algo — hay más de lo que parece.</strong>`,
+
+        ritmo_contemplativo:
+            `Te tomaste tu tiempo. Eso dice que algo aquí te retuvo de verdad.
+            <strong>Si algo te llamó, ya sabes dónde está el clic.</strong>`,
+
+        ritmo_normal:
+            `Visita equilibrada. Pero todavía sin hacer clic en nada.
+            <strong>El siguiente paso cuesta un segundo.</strong>`,
+
+        perfil_tecnico:
+            `Pasaste más tiempo en la parte técnica: apps, sistemas, IA.
+            <strong>Si eso es lo que buscas, haz clic en alguno — tienen más dentro.</strong>`,
+
+        perfil_visual:
+            `Tu recorrido fue hacia los proyectos de identidad e ilustración.
+            <strong>Abre uno. La imagen de portada no cuenta la mitad.</strong>`,
+
+        perfil_mixto:
+            `No te inclinaste por una sola cosa. Curiosidad amplia.
+            <strong>Con eso es suficiente para empezar — haz clic en lo que más te llame.</strong>`,
+
+        explorador:
+            (n) => `Entraste en <strong>${n} páginas</strong>. Eso ya es curiosidad de verdad, no curiosidad de escaparate.`,
+
+        puntual:
+            `Una o dos páginas y ya. Visita de diagnóstico.
+            <strong>Si algo te interesó, merece más de un vistazo.</strong>`,
+
+        lector:
+            `Scrolleaste hasta el fondo en casi todo lo que viste.
+            <strong>Eres de los que leen los créditos. Eso me gusta.</strong>`,
+
+        escaner:
+            `Scroll rápido. Lees en diagonal, capturas lo esencial.
+            <strong>Cuando algo te detenga, hazle clic — eso es lo que vale.</strong>`,
+
+        scroll_pausado:
+            `Fuiste despacio. Paraste en las cosas.
+            <strong>Atención, no impaciencia. El siguiente paso es abrirlo.</strong>`,
+
+        clicker:
+            `Hiciste bastantes clics. <strong>Tocas para entender — esa es la forma correcta.</strong>`,
+
+        solo_miro:
+            `Casi no tocaste nada. Solo miraste.
+            <strong>Visita rápida — te recomiendo hacer clic en algo antes de irte.</strong>`,
+
+        vio_cv:
+            `Revisaste el CV. Alguien está <strong>evaluando si merece la pena continuar la conversación.</strong>`,
+
+        vio_contacto:
+            `Llegaste a la página de contacto. <strong>Eso no es accidente.</strong>`,
+
+        entro_directo:
+            `Llegaste directo a un proyecto sin pasar por el inicio.
+            Alguien te mandó aquí, o sabías exactamente adónde ir.`,
+
+        ilustracion:
+            `Dedicaste tiempo a la ilustración. La parte más personal — la menos encargada, la más propia.`,
+
         cierre: () => {
             const hora = new Date(estado.inicio);
             const h = hora.getHours().toString().padStart(2, '0');
             const m = hora.getMinutes().toString().padStart(2, '0');
             return `Llegaste a las ${h}:${m}. Todo lo de arriba ocurrió en tu navegador. <strong>Nada salió de aquí.</strong>`;
         },
+
         firma: `— soto³`,
     };
 
-    /* ─────────────────────────────────────────────────────────────────
-       GENERAR INFORME
-    ──────────────────────────────────────────────────────────────────── */
     function generarInforme() {
         registroPagina.salida = Date.now();
         guardarSesion(estado);
@@ -244,9 +244,9 @@
         const frags = [];
         frags.push(TEXTOS.apertura());
 
-        if      (REGLAS.tienePrisa())          frags.push(TEXTOS.ritmo_rapido);
-        else if (REGLAS.esContemplatvo())       frags.push(TEXTOS.ritmo_contemplativo);
-        else                                    frags.push(TEXTOS.ritmo_normal);
+        if      (REGLAS.tienePrisa())     frags.push(TEXTOS.ritmo_rapido);
+        else if (REGLAS.esContemplatvo()) frags.push(TEXTOS.ritmo_contemplativo);
+        else                              frags.push(TEXTOS.ritmo_normal);
 
         if      (REGLAS.perfilTecnico() && !REGLAS.perfilVisual())  frags.push(TEXTOS.perfil_tecnico);
         else if (REGLAS.perfilVisual()  && !REGLAS.perfilTecnico()) frags.push(TEXTOS.perfil_visual);
@@ -286,62 +286,33 @@
 
     /* ═══════════════════════════════════════════════════════════════
        MICROTEXTOS EN TIEMPO REAL
-       ───────────────────────────────────────────────────────────────
-       Mensajes contextuales que aparecen durante la navegación.
-       Todas las condiciones usan tiempoEnPaginaSeg() — tiempo desde
-       que entró A ESTA PÁGINA, no al sitio completo. Así los mensajes
-       de tiempo son siempre coherentes con lo que el visitante siente.
-
-       MICRO_TIEMPO_VISIBLE  — ms que permanece visible cada mensaje
-       MICRO_COMPROBACION    — ms entre evaluaciones de condiciones
-       MICRO_DELAY_INICIO    — ms antes de empezar a evaluar
     ═══════════════════════════════════════════════════════════════ */
+    const MICRO_TIEMPO_VISIBLE = 5000;
+    const MICRO_COMPROBACION   = 2000;
+    const MICRO_DELAY_INICIO   = 5000;
 
-    /* ── Configuración de tiempos ── */
-    const MICRO_TIEMPO_VISIBLE = 5000;   // 5 s visible
-    const MICRO_COMPROBACION   = 2000;   // evalúa cada 2 s
-    const MICRO_DELAY_INICIO   = 5000;   // espera 5 s antes de activarse
+    let microActivo           = false;
+    let microUltimoMov        = Date.now();
+    let microUltimoScroll     = Date.now();
+    let microScrollBajo       = false;
+    let microScrollInverso    = false;
+    let microScrollY          = window.scrollY;
+    let microIndiceDespl      = 0;
+    let microPaginasVisitadas = estado.paginas.length;
 
-    /* ── Variables de estado ── */
-    let microActivo            = false;
-    let microUltimoMov         = Date.now();
-    let microUltimoScroll      = Date.now();
-    let microScrollBajo        = false;
-    let microScrollInverso     = false;  // true durante 3s tras detectar scroll inverso real
-    let microScrollY           = window.scrollY;
-    let microIndiceDespl       = 0;
-    let microPaginasVisitadas  = estado.paginas.length; // páginas al entrar a esta
-
-    /* ──────────────────────────────────────────────────────────────
-       TEXTOS ROTATIVOS PARA DESPLEGABLES
-       Se muestra uno diferente cada vez que abre un proyecto.
-       Edita los strings del array para cambiarlos.
-    ────────────────────────────────────────────────────────────── */
     const TEXTOS_DESPLEGABLE = [
         "Curioso. Eso no lo hace todo el mundo.",
         "Bien. Los detalles importan.",
         "Eso tiene más dentro de lo que parece.",
     ];
 
-    /* ──────────────────────────────────────────────────────────────
-       MICROTEXTOS_GLOBAL
-       ──────────────────────────────────────────────────────────────
-       Cada entrada:
-         texto      — string que aparece
-         condicion  — función → true cuando debe mostrarse
-         disparado  — flag interno, no tocar
-         repetible  — si true, puede dispararse más de una vez
-
-       IMPORTANTE: todas las condiciones de tiempo usan
-       tiempoEnPaginaSeg() para medir tiempo EN ESTA PÁGINA,
-       no en toda la sesión.
-    ────────────────────────────────────────────────────────────── */
+    /* ═══════════════════════════════════════════════════════════════
+       MICROTEXTOS_GLOBAL — edita los textos aquí
+    ═══════════════════════════════════════════════════════════════ */
     const MICROTEXTOS_GLOBAL = [
 
         {
-            /* INACTIVIDAD CORTA
-               15 s sin moverse ni scrollear en esta página */
-            texto: "Sé que sigues ahí. Tómate tu tiempo.",
+            texto: "Visita rápida. Te recomiendo hacer clic en algo antes de irte.",
             condicion() {
                 const inactivo = Date.now() - microUltimoMov    > 15000
                               && Date.now() - microUltimoScroll > 15000;
@@ -351,9 +322,7 @@
         },
 
         {
-            /* INACTIVIDAD LARGA
-               35 s sin moverse en esta página */
-            texto: "¿Pensando? Bien. Es la respuesta correcta.",
+            texto: "¿Ves algo que te llame? Haz clic. Vale la pena.",
             condicion() {
                 return Date.now() - microUltimoMov    > 35000
                     && Date.now() - microUltimoScroll > 35000
@@ -363,8 +332,6 @@
         },
 
         {
-            /* SCROLL INVERSO INTENCIONAL
-               Subió más de 200px de golpe después de haber bajado */
             _veces: 0,
             condicion() { return microScrollInverso; },
             repetible: true,
@@ -373,14 +340,12 @@
                 this._veces++;
                 return this._veces % 2 === 1
                     ? "Volviste. Algo te quedó pendiente."
-                    : "Segunda mirada. Las mejores decisiones se toman así.";
+                    : "Segunda mirada. Bien.";
             },
         },
 
         {
-            /* LLEVA 45 S EN ESTA PÁGINA
-               Tiempo real en la página actual, no en el sitio */
-            texto: "Llevas un rato aquí. Eso significa algo.",
+            texto: "Llevas un rato. Si algo te interesa, el clic está ahí.",
             condicion() {
                 return tiempoEnPaginaSeg() > 45
                     && metaPagina.categoria !== 'inicio';
@@ -389,8 +354,7 @@
         },
 
         {
-            /* LLEVA 2 MIN EN ESTA PÁGINA */
-            texto: "Sigues aquí. Ya somos amigos.",
+            texto: "Ya somos amigos. Abre algo, no muerde.",
             condicion() {
                 return tiempoEnPaginaSeg() > 120
                     && metaPagina.categoria !== 'inicio';
@@ -399,8 +363,7 @@
         },
 
         {
-            /* LLEGÓ AL FINAL — scroll > 88% en esta página */
-            texto: "Llegaste hasta abajo. Eso ya dice mucho de ti.",
+            texto: "Llegaste hasta abajo. Eso ya dice mucho.",
             condicion() {
                 const docH = document.documentElement.scrollHeight - window.innerHeight;
                 const pct  = docH > 0 ? (window.scrollY / docH) * 100 : 0;
@@ -410,34 +373,48 @@
         },
 
         {
-            /* SEGUNDA PÁGINA O MÁS — está navegando el sitio */
-            texto: "Ya vas por varias páginas. Bien.",
+            texto: "Varias páginas ya. Ahora haz clic en algo que te llame.",
             condicion() {
                 return estado.paginas.length > microPaginasVisitadas + 1
                     && estado.paginas.length >= 3;
             },
             disparado: false,
         },
+
     ];
 
-    /* ── Motor de microtextos ── */
-    function mostrarMicro(texto) {
-        if (!texto) return;
+    const microCola = [];
+    let microProcesando = false;
+
+    function procesarCola() {
+        if (microProcesando || microCola.length === 0) return;
+        const texto = microCola.shift();
         const el = document.getElementById('soto-microtexto');
         if (!el) return;
-        microActivo = true;
-        el.textContent = texto;
+        microActivo     = true;
+        microProcesando = true;
+        el.textContent  = texto;
         el.classList.add('soto-micro-visible');
         setTimeout(() => {
             el.classList.remove('soto-micro-visible');
-            setTimeout(() => { microActivo = false; }, 700);
+            setTimeout(() => {
+                microActivo     = false;
+                microProcesando = false;
+                if (microCola.length > 0) setTimeout(procesarCola, 1000);
+            }, 600);
         }, MICRO_TIEMPO_VISIBLE);
+    }
+
+    function mostrarMicro(texto) {
+        if (!texto) return;
+        if (!microCola.includes(texto)) microCola.push(texto);
+        procesarCola();
     }
 
     function evaluarMicros() {
         if (microActivo) return;
         for (const m of MICROTEXTOS_GLOBAL) {
-            const listo = m.repetible ? !microActivo : !m.disparado;
+            const listo = m.repetible ? true : !m.disparado;
             if (listo && m.condicion()) {
                 if (!m.repetible) m.disparado = true;
                 mostrarMicro(m.getTexto ? m.getTexto() : m.texto);
@@ -446,7 +423,6 @@
         }
     }
 
-    /* ── Inyección de estilos y contenedor ── */
     function inyectarEstilosMicrotexto() {
         if (document.getElementById('soto-micro-styles')) return;
         const style = document.createElement('style');
@@ -458,7 +434,8 @@
                 left: 50%;
                 transform: translateX(-50%) translateY(14px);
                 width: max-content;
-                max-width: min(480px, 88vw);
+                max-width: min(480px, 55vw);
+                white-space: normal;
                 background: #141210;
                 padding: 13px 20px;
                 font-family: "Lexend", sans-serif;
@@ -466,7 +443,7 @@
                 font-weight: 500;
                 line-height: 1.65;
                 color: rgba(240,236,231,0.82);
-                z-index: 8600;
+                z-index: 8400;
                 opacity: 0;
                 transition: opacity 0.5s ease, transform 0.5s ease;
                 pointer-events: none;
@@ -479,9 +456,18 @@
             }
             @media (max-width: 768px) {
                 #soto-microtexto {
-                    max-width: 86vw;
+                    bottom: calc(34px + 14px);
+                    left: 12px;
+                    transform: translateY(14px);
+                    width: calc(100vw - 110px);
+                    max-width: calc(100vw - 110px);
+                    white-space: normal;
                     font-size: 10px;
-                    padding: 11px 16px;
+                    padding: 8px 12px;
+                    line-height: 1.5;
+                }
+                #soto-microtexto.soto-micro-visible {
+                    transform: translateY(0);
                 }
             }
             .soto-modal-obra {
@@ -515,11 +501,9 @@
                 margin-top: 4px;
                 margin-bottom: 20px;
                 letter-spacing: 0.01em;
-                transition: gap 0.2s, opacity 0.2s;
+                transition: opacity 0.2s;
             }
-            .soto-obra-cta:hover {
-                opacity: 0.75;
-            }
+            .soto-obra-cta:hover { opacity: 0.75; }
             .soto-obra-firma {
                 font-family: "Lexend", sans-serif;
                 font-size: 11px !important;
@@ -541,7 +525,6 @@
         document.body.appendChild(el);
     }
 
-    /* ── Listeners de microtextos ── */
     function iniciarListenersMicro() {
         document.addEventListener('mousemove',  () => { microUltimoMov = Date.now(); }, { passive: true });
         document.addEventListener('touchstart', () => { microUltimoMov = Date.now(); }, { passive: true });
@@ -549,33 +532,29 @@
         document.addEventListener('scroll', () => {
             const y   = window.scrollY;
             const dif = microScrollY - y;
-
-            /* Scroll inverso real: sube más de 200px de golpe */
             if (dif > 200 && microScrollBajo && !microScrollInverso) {
                 microScrollInverso = true;
                 setTimeout(() => { microScrollInverso = false; }, 3000);
             }
-
             if (y > microScrollY) microScrollBajo = true;
             microScrollY      = y;
             microUltimoScroll = Date.now();
             microUltimoMov    = Date.now();
         }, { passive: true });
 
-        /* Desplegables — texto rotativo al abrir */
         document.querySelectorAll('.proj-row, [data-expandable]').forEach(row => {
             row.addEventListener('click', (e) => {
                 if (e.target.closest('a')) return;
-                /* Solo dispara al ABRIR, no al cerrar */
                 if (!row.classList.contains('open') && !microActivo) {
                     const txt = TEXTOS_DESPLEGABLE[microIndiceDespl % TEXTOS_DESPLEGABLE.length];
                     microIndiceDespl++;
-                    setTimeout(() => mostrarMicro(txt), 350);
+                    setTimeout(() => {
+                        if (!microActivo) mostrarMicro(txt);
+                    }, 350);
                 }
             });
         });
 
-        /* Intervalo principal — arranca tras MICRO_DELAY_INICIO */
         setTimeout(() => {
             setInterval(evaluarMicros, MICRO_COMPROBACION);
         }, MICRO_DELAY_INICIO);
@@ -587,9 +566,6 @@
         iniciarListenersMicro();
     }
 
-    /* ─────────────────────────────────────────────────────────────────
-       UI: BOTÓN FLOTANTE Y MODAL
-    ──────────────────────────────────────────────────────────────────── */
     function inyectarUI() {
         const btn = document.createElement('button');
         btn.id = 'soto-tracker-btn';
@@ -622,7 +598,7 @@
                         <p>Acabas de dejarme ver cómo piensas, qué te detiene, qué ignoras. Eso me dice más que cualquier briefing. Y lo que vi me dice que sé exactamente lo que buscas.</p>
                         <p>No hace falta que me lo expliques. <strong>Ya lo sé.</strong></p>
                         <a href="/contacto/" class="soto-obra-cta">Hablamos. →</a>
-                        <p class="soto-obra-firma">soto.</p>
+                        <p class="soto-obra-firma">Soto.</p>
                     </div>
                     <p class="soto-privacy-note">
                         Todo el procesamiento ocurrió en tu navegador.
@@ -662,9 +638,6 @@
         document.body.classList.remove('soto-no-scroll');
     }
 
-    /* ─────────────────────────────────────────────────────────────────
-       INIT
-    ──────────────────────────────────────────────────────────────────── */
     function init() {
         inyectarUI();
         iniciarMicrotextos();
