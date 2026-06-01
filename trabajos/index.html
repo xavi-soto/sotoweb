@@ -17,7 +17,7 @@
   <style>
 *,*::before,*::after{box-sizing:border-box;}
 :root{--orange:#0011ff;--ink:#0c0c0c;--bg:#f0ece7;--dark:#141210;--rule:rgba(12,12,12,0.10);--muted:rgba(12,12,12,0.42);--banner-h:34px;--top-h:78px;--pad:60px;}
-body{margin:0;padding-top:var(--top-h);padding-bottom:var(--banner-h);font-family:"Lexend",sans-serif;background-color:var(--bg);display:flex;flex-direction:column;align-items:center;-webkit-user-select:none;user-select:none;opacity:0;animation:fadeIn 1s ease-in-out forwards;}
+body{margin:0;padding-top:var(--top-h);padding-bottom:var(--banner-h);font-family:"Lexend",sans-serif;background-color:var(--bg);display:flex;flex-direction:column;align-items:center;-webkit-user-select:none;user-select:none;opacity:0;animation:fadeIn 0.4s ease forwards;}
 @keyframes fadeIn{to{opacity:1;}}
 
 /* ─── TOPBAR ── */
@@ -101,7 +101,7 @@ body{margin:0;padding-top:var(--top-h);padding-bottom:var(--banner-h);font-famil
 *{-webkit-tap-highlight-color:transparent;}
 a,button{outline:none;}
 .no-scroll{overflow:hidden;}
-.fade-in-scroll{opacity:0;transition:opacity 0.8s ease;}
+.fade-in-scroll{opacity:0;transition:opacity 0.4s ease;}
 .fade-in-scroll.visible{opacity:1;}
 *{-webkit-tap-highlight-color:transparent;outline:none;}
 html{scrollbar-gutter:stable;}.no-scroll{overflow:hidden;}
