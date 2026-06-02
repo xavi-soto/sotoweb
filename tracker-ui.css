@@ -1,6 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
    tracker-ui.css — soto³ sistema de observación
-   Compatible con el sistema de diseño de sotosotosoto.com.
 ══════════════════════════════════════════════════════════════ */
 
 :root {
@@ -66,9 +65,15 @@
 }
 
 /* ════════════════════════════════
+   MICROTEXTO — desktop
+   Misma altura que el botón (calc(34px + 16px))
+════════════════════════════════ */
+#soto-microtexto {
+    bottom: calc(34px + 16px) !important;
+}
+
+/* ════════════════════════════════
    LABEL DEL TOPBAR
-   "Modo observación activo"
-   Se oculta en móvil para no chocar con el logo
 ════════════════════════════════ */
 .topbar-label {
     font-size: 10px;
@@ -105,7 +110,6 @@
     opacity: 1;
 }
 
-/* Panel — desliza desde la derecha en desktop */
 .soto-modal-panel {
     position: absolute;
     top: 0;
@@ -235,25 +239,28 @@ body.soto-no-scroll { overflow: hidden; }
 ════════════════════════════════ */
 @media (max-width: 768px) {
 
-    /* Oculta el label del topbar en móvil */
     .topbar-label {
         display: none;
     }
 
-    /* Botón más pequeño en móvil */
-  #soto-tracker-btn {
-    bottom: calc(34px + 14px);
+    #soto-tracker-btn {
+        bottom: calc(34px + 70px);
         right: 12px;
         padding: 7px 11px 7px 9px;
         font-size: 9px;
         gap: 6px;
     }
+
+    /* Misma altura que el botón en móvil */
+    #soto-microtexto {
+        bottom: calc(34px + 70px) !important;
+    }
+
     .soto-btn-dot {
         width: 5px;
         height: 5px;
     }
 
-    /* Panel sube desde abajo en móvil */
     .soto-modal-panel {
         top: auto;
         bottom: 0;

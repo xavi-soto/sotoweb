@@ -85,10 +85,60 @@ body{font-family:"Lexend",sans-serif;background:var(--bg);color:var(--ink);paddi
 @media(max-width:900px){:root{--pad:40px;}}
 @media(max-width:768px){:root{--pad:22px;}.proj-type{display:none;}.topbar-label{display:none;}}
 @media(max-width:480px){.proj-name{font-size:18px;}.hero-title{font-size:30px;}.proj-year{display:none;}}
+
+
+
+
+
+
+
+.m-toggle{display:none;background:none;border:none;cursor:pointer;font-family:"Lexend",sans-serif;font-size:11px;font-weight:700;color:var(--ink);padding-right:4px;}
+#mobile-menu{position:fixed;inset:0;background:var(--dark);z-index:10000;transform:translateY(-100%);transition:transform 0.75s cubic-bezier(0.76,0,0.24,1);display:flex;flex-direction:column;overflow:hidden;}
+#mobile-menu.active{transform:translateY(0);}
+#mobile-menu::before{content:'';display:block;width:100%;height:4px;background:var(--orange);flex-shrink:0;}
+.mm-header{display:flex;justify-content:flex-end;padding:20px 22px 0;flex-shrink:0;}
+.mm-close{background:none;border:none;cursor:pointer;font-family:"Lexend",sans-serif;font-size:11px;font-weight:700;color:rgba(240,236,231,0.5);letter-spacing:0.04em;transition:color 0.2s;padding:4px 0;}
+.mm-close:hover{color:var(--orange);}
+.mm-inner{flex:1;display:flex;flex-direction:column;padding:30px 36px 30px;overflow-y:auto;justify-content:center;}
+#mobile-menu a.mm-link{font-family:"Lexend",sans-serif;font-size:clamp(28px,7vw,48px);font-weight:600;line-height:1.2;color:rgba(240,236,231,0.88);text-decoration:none;display:inline-block;transition:color 0.18s,transform 0.18s;transform-origin:left center;letter-spacing:-0.01em;margin-bottom:22px;}
+#mobile-menu a.mm-link:hover{color:var(--orange);transform:translateX(10px);}
+.mm-foot{padding:22px 36px calc(var(--banner-h) + 16px);border-top:1px solid rgba(240,231,231,0.08);display:flex;gap:24px;flex-wrap:wrap;}
+.mm-foot a{font-family:"Lexend",sans-serif;color:rgba(240,236,231,0.3);text-decoration:none;font-size:10px;font-weight:600;transition:color 0.2s;}
+.mm-foot a:hover{color:var(--orange);}
+@media(max-width:768px){.m-toggle{display:block;}.topbar-label{display:none;}}
+
+.topbar-nav{display:flex;gap:36px;align-items:center;}
+.topbar-nav a{font-family:"Lexend",sans-serif;font-size:11px;font-weight:600;letter-spacing:0.04em;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.topbar-nav a:hover{color:var(--orange);}
+@media(max-width:768px){.topbar-nav{display:none;}}
+
+body.no-scroll {
+    overflow: hidden;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+}
+
+* { -webkit-tap-highlight-color: transparent; }
     </style>
 </head>
-<body>
 
+<nav id="mobile-menu" aria-hidden="true">
+    <div class="mm-header">
+        <button class="mm-close" id="mmClose">Cerrar ✕</button>
+    </div>
+    <div class="mm-inner">
+        <a href="/trabajos/" class="mm-link">Trabajos</a>
+        <a href="/acerca-de-soto/" class="mm-link">Cv</a>
+        <a href="/contacto/" class="mm-link">Contacto</a>
+    </div>
+    <div class="mm-foot">
+        <a href="https://www.instagram.com/sotosolo_" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">LinkedIn</a>
+        <a href="https://www.behance.net/xaviersoto" target="_blank">Behance</a>
+    </div>
+</nav>
+<body class="no-scroll">
 <div id="bienvenida-overlay">
     <div id="bienvenida-texto">
         <p>
@@ -105,7 +155,12 @@ body{font-family:"Lexend",sans-serif;background:var(--bg);color:var(--ink);paddi
     <a href="/" class="topbar-logo">
         <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1779265684/soto3logo_hlxcgj.png" alt="soto³">
     </a>
-    <span class="topbar-label">Modo observación activo</span>
+    <nav class="topbar-nav">
+        <a href="/trabajos/">Trabajos</a>
+        <a href="/acerca-de-soto/">Cv</a>
+        <a href="/contacto/">Contacto</a>
+    </nav>
+    <button class="m-toggle" id="mToggle">Menú</button>
 </header>
 
 <section class="hero fade-in" data-section-id="hero" data-section-name="Presentación">
@@ -144,7 +199,7 @@ body{font-family:"Lexend",sans-serif;background:var(--bg);color:var(--ink);paddi
         </div>
         <div class="proj-body"><div class="proj-body-inner">
             <p>Rediseño de logo / Cartelería</p>
-            <a href="/guardabosques-gdl/" class="proj-link">Ver proyecto →</a>
+            <a href="/guardabosques-GDL/" class="proj-link">Ver proyecto →</a>
         </div></div>
     </div>
     <div class="proj-row" data-section-id="proy-monaco">
@@ -398,7 +453,7 @@ window.addEventListener('load', () => {
 });
 
 /* ── BIENVENIDA ── */
-const AUTO_CIERRE = 12000;
+const AUTO_CIERRE = 18000;
 const overlay      = document.getElementById('bienvenida-overlay');
 const btnContinuar = document.getElementById('btn-continuar');
 let bienvenidaCerrada = false;
@@ -407,6 +462,7 @@ function cerrarBienvenida() {
     if (bienvenidaCerrada) return;
     bienvenidaCerrada = true;
     overlay.classList.add('oculto');
+    document.body.classList.remove('no-scroll');
 }
 btnContinuar.addEventListener('click', cerrarBienvenida);
 setTimeout(cerrarBienvenida, AUTO_CIERRE);
@@ -515,7 +571,23 @@ function generarInforme() {
         document.querySelector('.report-section').scrollIntoView({ behavior: 'smooth' });
     }, 200);
 }
+
+
+
+// Menú móvil
+const mToggle = document.getElementById('mToggle');
+const mmClose = document.getElementById('mmClose');
+const mobileMenu = document.getElementById('mobile-menu');
+if (mToggle) {
+    const openMM  = () => { mobileMenu.classList.add('active'); mobileMenu.setAttribute('aria-hidden','false'); document.body.classList.add('no-scroll'); };
+    const closeMM = () => { mobileMenu.classList.remove('active'); mobileMenu.setAttribute('aria-hidden','true'); document.body.classList.remove('no-scroll'); };
+    mToggle.addEventListener('click', e => { e.stopPropagation(); mobileMenu.classList.contains('active') ? closeMM() : openMM(); });
+    mmClose.addEventListener('click', closeMM);
+    document.addEventListener('click', e => { if (!mobileMenu.contains(e.target) && !mToggle.contains(e.target)) closeMM(); });
+}
 </script>
+
+
 
 </body>
 </html>
