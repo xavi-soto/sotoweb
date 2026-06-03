@@ -239,28 +239,33 @@ body.soto-no-scroll { overflow: hidden; }
 ════════════════════════════════ */
 @media (max-width: 768px) {
 
-    .topbar-label {
-        display: none;
-    }
+    .topbar-label { display: none; }
 
-    #soto-tracker-btn {
-        bottom: calc(34px + 70px);
-        right: 12px;
-        padding: 7px 11px 7px 9px;
-        font-size: 9px;
-        gap: 6px;
-    }
-
-    /* Misma altura que el botón en móvil */
-    #soto-microtexto {
-        bottom: calc(34px + 70px) !important;
-    }
+    /* ── BOTÓN "TU VISITA" — tab derecho ── */
+#soto-tracker-btn {
+    bottom: auto; top: 90px;
+    right: 16px;
+    border-radius: 4px;
+    padding: 7px 12px;
+    font-size: 9px;
+}
+#soto-microtexto {
+    bottom: auto !important; top: 136px !important;
+    right: 16px !important; left: auto !important;
+    width: 140px !important; max-width: 140px !important;
+    border-radius: 4px !important;
+    transform: translateY(-6px) !important;
+}
+#soto-microtexto.soto-micro-visible {
+    transform: translateY(0) !important; opacity: 1 !important;
+}
 
     .soto-btn-dot {
         width: 5px;
         height: 5px;
     }
 
+    /* ── MODAL — sube desde abajo ── */
     .soto-modal-panel {
         top: auto;
         bottom: 0;
