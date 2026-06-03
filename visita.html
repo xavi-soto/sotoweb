@@ -120,6 +120,50 @@ body.no-scroll {
 }
 
 * { -webkit-tap-highlight-color: transparent; }
+
+
+
+
+#cookie-notice {
+    position: fixed;
+    bottom: calc(var(--banner-h) + 12px);
+    left: 20px;
+    z-index: 8400;
+    background: var(--dark);
+    color: rgba(240,236,231,0.6);
+    font-family: "Lexend", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.6;
+    padding: 12px 16px;
+    max-width: 280px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+#cookie-notice.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+#cookie-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: "Lexend", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+    padding: 0;
+    transition: color 0.2s;
+    flex-shrink: 0;
+}
+#cookie-btn:hover { color: var(--orange); }
     </style>
 </head>
 
@@ -139,6 +183,11 @@ body.no-scroll {
     </div>
 </nav>
 <body class="no-scroll">
+
+     <div id="cookie-notice">
+    <span>Este sitio usa cookies básicas de funcionamiento.</span>
+    <button id="cookie-btn">Entendido</button>
+</div>
 <div id="bienvenida-overlay">
     <div id="bienvenida-texto">
         <p>
@@ -447,6 +496,9 @@ document.querySelectorAll('.proj-row').forEach(row => {
 });
 
 window.addEventListener('load', () => {
+
+
+
     document.querySelectorAll('.fade-in').forEach((el, i) => {
         setTimeout(() => el.classList.add('entrada'), 200 + i * 120);
     });
@@ -463,6 +515,18 @@ function cerrarBienvenida() {
     bienvenidaCerrada = true;
     overlay.classList.add('oculto');
     document.body.classList.remove('no-scroll');
+
+      // Mostrar cookie notice después de cerrar bienvenida
+    if (!localStorage.getItem('cookies-ok')) {
+        setTimeout(() => {
+            const notice = document.getElementById('cookie-notice');
+            notice.classList.add('visible');
+            document.getElementById('cookie-btn').addEventListener('click', () => {
+                notice.classList.remove('visible');
+                localStorage.setItem('cookies-ok', '1');
+            });
+        }, 800);
+}
 }
 btnContinuar.addEventListener('click', cerrarBienvenida);
 setTimeout(cerrarBienvenida, AUTO_CIERRE);

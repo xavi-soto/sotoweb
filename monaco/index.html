@@ -125,6 +125,49 @@ html{scrollbar-gutter:stable;}.no-scroll{overflow:hidden;}
 a, a img, button, .mm-close, .m-toggle, .proj-pill-btn {
   -webkit-tap-highlight-color: transparent;
 }
+
+
+
+.bloque-texto-centrado {
+    margin: 60px 100px;
+    padding: 0 54px clamp(20px,3vw,40px) 70px;
+    font-family: "Lexend", sans-serif;
+    font-size: clamp(13px,1.2vw,15px);
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--ink);
+    text-align: left;
+}
+@media(max-width:768px){
+    .bloque-texto-centrado {
+        margin: 0 auto;
+        padding: 0 22px clamp(20px,3vw,40px);
+    }
+}
+.bloque-texto-centrado h2,
+.bloque-texto-centrado h3 {
+    font-size: clamp(15px,1.4vw,17px);
+    font-weight: 700;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    color: var(--ink);
+}
+.bloque-texto-centrado p {
+    margin-bottom: 1em;
+}
+
+.bloque-texto-imagen {
+    padding-bottom: 0;
+}
+
+@media(max-width:1024px){
+    .only-mobile{ display:flex !important; }
+    .only-desktop{ display:none !important; }
+}
+@media(min-width:1025px){
+    .only-mobile{ display:none !important; }
+    .only-desktop{ display:flex !important; }
+}
   </style>
 </head>
 
@@ -182,6 +225,18 @@ a, a img, button, .mm-close, .m-toggle, .proj-pill-btn {
             <p><i><strong>Diseño de identidad gráfica / Papelería / Redes sociales / Edición de imagen / Sitio web</strong></i></p>
         </div>
     </div>
+    <div class="bloque-texto-centrado">
+    <h4>El encargo</h4>
+    <p>
+Crear desde cero la identidad visual de una marca dedicada a la reventa de artículos de lujo importados. El reto: transmitir elegancia y confianza en un mercado donde el cliente necesita creer en la autenticidad del producto antes de comprarlo.</p>
+     <h4>Las decisiones</h4>
+     <p>El nombre ya contenía una decisión. La Ō con macrón no es un recurso decorativo: el macrón es una marca lingüística que alarga el sonido vocálico, haciendo que "Mōnaco" suene más firme y resonante. Una letra que ya carga significado antes de que el ojo termine de leerla. El tagline "es lo tuyo" refuerza esa idea: pertenencia, no aspiración.</p>
+      <p>El sistema de logo se desarrolló en seis versiones para cubrir todos los contextos de uso: principal horizontal, secundario vertical para etiquetas y banners, versión icónica para redes y marca de agua. Una identidad que funciona en cualquier formato sin perder coherencia.</p>
+      <p>Para los productos, se combinó fotografía editada con generación por IA para representar los artículos con precisión cuando la fotografía directa no era viable. El resultado fue un catálogo visual coherente con el nivel de la marca.</p>
+      <h4>Lo entregado</h4>
+       <p>
+Identidad visual completa con sistema de logo, papelería, redes sociales, sitio web catálogo y producción de imagen de producto.</p>
+</div>
 
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751541113/monacoportada-01_fhru3s.png" alt="proyecto de diseño monaco, trabajo soto" class="full-image only-desktop" srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751541113/monacoportada-01_fhru3s.png 800w, https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751541113/monacoportada-01_fhru3s.png 1200w, https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751541113/monacoportada-01_fhru3s.png 1600w, https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751541113/monacoportada-01_fhru3s.png 2000w" sizes="(max-width:1024px) 90vw, 1400px"/>
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751541192/monaco_movil-01_nqaopa.png" alt="proyecto de diseño monaco, trabajo soto" class="full-image only-mobile" srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751541192/monaco_movil-01_nqaopa.png 400w, https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751541192/monaco_movil-01_nqaopa.png 800w, https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751541192/monaco_movil-01_nqaopa.png 1200w" sizes="(max-width:600px) 100vw, 90vw"/>
@@ -212,22 +267,32 @@ a, a img, button, .mm-close, .m-toggle, .proj-pill-btn {
 </footer>
 
 
-    <div class="banner" data-nosnippet>
-        <div class="marquee">
-            <div class="marquee-track">
-                <div style="display:flex;">
-                    <span class="ticker-item">Amplía con tus dedos para ver los detalles</span>
-                    <span class="ticker-item">Amplía con tus dedos para ver los detalles</span>
-                    <span class="ticker-item">Amplía con tus dedos para ver los detalles</span>
-                </div>
-                <div style="display:flex;" aria-hidden="true">
-                    <span class="ticker-item">Amplía con tus dedos para ver los detalles</span>
-                    <span class="ticker-item">Amplía con tus dedos para ver los detalles</span>
-                    <span class="ticker-item">Amplía con tus dedos para ver los detalles</span>
-                </div>
+  <div class="banner" data-nosnippet>
+    <div class="marquee">
+        <div class="marquee-track">
+            <div style="display:flex;" class="only-desktop">
+                <span class="ticker-item">Diseño gráfico, desarrollo web y código. Entre Valencia y Guadalajara.</span>
+                <span class="ticker-item">Diseño gráfico, desarrollo web y código. Entre Valencia y Guadalajara.</span>
+                <span class="ticker-item">Diseño gráfico, desarrollo web y código. Entre Valencia y Guadalajara.</span>
+            </div>
+            <div style="display:flex;" class="only-desktop" aria-hidden="true">
+                <span class="ticker-item">Diseño gráfico, desarrollo web y código. Entre Valencia y Guadalajara.</span>
+                <span class="ticker-item">Diseño gráfico, desarrollo web y código. Entre Valencia y Guadalajara.</span>
+                <span class="ticker-item">Diseño gráfico, desarrollo web y código. Entre Valencia y Guadalajara.</span>
+            </div>
+            <div style="display:flex;" class="only-mobile">
+                <span class="ticker-item">Amplía con tus dedos para ver los detalles</span>
+                <span class="ticker-item">Amplía con tus dedos para ver los detalles</span>
+                <span class="ticker-item">Amplía con tus dedos para ver los detalles</span>
+            </div>
+            <div style="display:flex;" class="only-mobile" aria-hidden="true">
+                <span class="ticker-item">Amplía con tus dedos para ver los detalles</span>
+                <span class="ticker-item">Amplía con tus dedos para ver los detalles</span>
+                <span class="ticker-item">Amplía con tus dedos para ver los detalles</span>
             </div>
         </div>
     </div>
+</div>
 </a>
 
 <script>
