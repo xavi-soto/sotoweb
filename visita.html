@@ -150,6 +150,22 @@ body.no-scroll {
     transform: translateY(0);
     pointer-events: auto;
 }
+
+/* Solo desktop — centrado y más pequeño */
+@media(min-width:769px){
+    #cookie-notice {
+        left: 50%;
+        transform: translateX(-50%) translateY(8px);
+        max-width: 330px;
+        font-size: 9px;
+        padding: 8px 12px;
+        gap: 10px;
+    }
+    #cookie-notice.visible {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
 #cookie-btn {
     background: none;
     border: none;
@@ -164,19 +180,6 @@ body.no-scroll {
     flex-shrink: 0;
 }
 #cookie-btn:hover { color: var(--orange); }
-
-@media(max-width:768px){
-    .ticker-sep{white-space:normal;}
-    .ticker-sep span{font-size:9px;line-height:1.6;}
-}
-
-
-@media(min-width:769px){
-    #cookie-notice {
-        left: auto;
-        right: 20px;
-    }
-}
     </style>
 </head>
 

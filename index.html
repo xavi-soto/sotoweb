@@ -166,6 +166,22 @@ a,button{outline:none;}
     transform: translateY(0);
     pointer-events: auto;
 }
+
+/* Solo desktop — centrado y más pequeño */
+@media(min-width:769px){
+    #cookie-notice {
+        left: 50%;
+        transform: translateX(-50%) translateY(8px);
+        max-width: 330px;
+        font-size: 9px;
+        padding: 8px 12px;
+        gap: 10px;
+    }
+    #cookie-notice.visible {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
 #cookie-btn {
     background: none;
     border: none;
@@ -180,13 +196,6 @@ a,button{outline:none;}
     flex-shrink: 0;
 }
 #cookie-btn:hover { color: var(--orange); }
-
-@media(min-width:769px){
-    #cookie-notice {
-        left: auto;
-        right: 20px;
-    }
-}
     </style>
     <script>document.addEventListener("contextmenu",e=>e.preventDefault());</script>
 </head>
