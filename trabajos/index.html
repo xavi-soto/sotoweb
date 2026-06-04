@@ -256,6 +256,15 @@ html{scrollbar-gutter:stable;}.no-scroll{overflow:hidden;}
 <script>
 window.addEventListener('load', () => {
 
+
+// Precarga imágenes hover para que el primer hover sea instantáneo
+document.querySelectorAll('.gallery img[data-hover]').forEach(img => {
+    const pre = new Image();
+    pre.src = img.dataset.hover;
+});
+
+
+
     /* ENTRADA */
     const seq = (selector, delay) => {
         setTimeout(() => {
