@@ -344,6 +344,26 @@ const sesion = {
     dispositivoTactil: ('ontouchstart' in window) || (navigator.maxTouchPoints > 0),
 };
 
+// Personalización por estudio
+const params = new URLSearchParams(window.location.search);
+const estudioParam = params.get('estudio');
+const nombreEstudio = estudioParam 
+    ? estudioParam.charAt(0).toUpperCase() + estudioParam.slice(1)
+    : null;
+
+if (nombreEstudio) {
+    document.addEventListener('DOMContentLoaded', () => {
+        const btnContinuar = document.getElementById('btn-continuar');
+        if (btnContinuar) {
+            btnContinuar.textContent = `Entrar — preparado para ${nombreEstudio}`;
+        }
+        const bienvenidaP = document.querySelector('#bienvenida-texto p');
+        if (bienvenidaP) {
+            bienvenidaP.innerHTML = `Hola, <strong>${nombreEstudio}</strong>. Antes de que empieces: <strong>esta página te observa.</strong> No de forma rara, solo mira por dónde te mueves, qué te interesa, qué ignoras. Al final te devuelvo lo que vi. Tú sigue, mira con calma. Soy <strong>Soto</strong>, encantado.`;
+        }
+    });
+}
+
 const seccionesVistas  = new Set();
 const tiempoPorSeccion = {};
 
