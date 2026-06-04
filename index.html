@@ -142,7 +142,7 @@ a,button{outline:none;}
 
 #cookie-notice {
     position: fixed;
-    bottom: calc(var(--banner-h) + 12px);
+    bottom: calc(var(--banner-h) + 6px);
     left: 20px;
     z-index: 8400;
     background: var(--dark);
@@ -167,18 +167,18 @@ a,button{outline:none;}
     pointer-events: auto;
 }
 
-/* Solo desktop — centrado y más pequeño */
 @media(min-width:769px){
     #cookie-notice {
-        left: 50%;
-        transform: translateX(-50%) translateY(8px);
-        max-width: 330px;
-        font-size: 9px;
-        padding: 8px 12px;
-        gap: 10px;
+        left: 0;
+        bottom: var(--banner-h);
+        width: 100%;
+        max-width: 100%;
+        padding: 10px var(--pad);
+         justify-content: flex-start;
+        transform: translateY(8px);
     }
     #cookie-notice.visible {
-        transform: translateX(-50%) translateY(0);
+        transform: translateY(0);
     }
 }
 
@@ -219,8 +219,7 @@ a,button{outline:none;}
 <body>
 
     <div id="cookie-notice">
-    <span>Este sitio usa cookies básicas de funcionamiento.</span>
-    <button id="cookie-btn">Entendido</button>
+    <span>Este sitio usa cookies básicas de funcionamiento. Si sigues navegando, aceptas su uso.</span>
 </div>
 
 <img id="proj-preview" src="" alt="" aria-hidden="true">
@@ -323,7 +322,6 @@ a,button{outline:none;}
     </div>
 </footer>
 
-<a href="https://www.instagram.com/sotosolo_?igsh=MXJha3o2dmVpNHRodA==" target="_blank" style="text-decoration:none;">
     <div class="banner" data-nosnippet>
         <div class="marquee">
             <div class="marquee-track">
@@ -409,10 +407,10 @@ if (!localStorage.getItem('cookies-ok')) {
     setTimeout(() => {
         const notice = document.getElementById('cookie-notice');
         notice.classList.add('visible');
-        document.getElementById('cookie-btn').addEventListener('click', () => {
+        setTimeout(() => {
             notice.classList.remove('visible');
             localStorage.setItem('cookies-ok', '1');
-        });
+        }, 12000);
     }, 2000);
 }
 

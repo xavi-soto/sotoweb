@@ -27,7 +27,7 @@ body{font-family:"Lexend",sans-serif;background:var(--bg);color:var(--ink);paddi
 #bienvenida-texto strong{font-weight:700;color:var(--orange);}
 #btn-continuar{font-family:"Lexend",sans-serif;font-size:11px;font-weight:700;letter-spacing:0.05em;color:rgba(240,236,231,0.4);background:none;border:none;cursor:pointer;padding:0;transition:color 0.2s;}
 #btn-continuar:hover{color:var(--orange);}
-.hero{padding:80px var(--pad) 72px;border-bottom:1px solid var(--rule);min-height:60vh;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero{padding:90px var(--pad) 72px;border-bottom:1px solid var(--rule);min-height:60vh;display:flex;flex-direction:column;justify-content:flex-end;}
 .hero-kicker{font-size:10px;font-weight:700;letter-spacing:0.08em;color:var(--orange);margin-bottom:24px;}
 .hero-title{font-size:clamp(32px,5.5vw,72px);font-weight:600;line-height:1.07;letter-spacing:-0.025em;color:var(--ink);max-width:800px;margin-bottom:28px;}
 .hero-sub{font-size:clamp(13px,1.4vw,15px);font-weight:300;line-height:1.8;color:var(--muted);max-width:540px;margin-bottom:40px;}
@@ -70,6 +70,7 @@ body{font-family:"Lexend",sans-serif;background:var(--bg);color:var(--ink);paddi
 .report-firma{font-size:11px;font-weight:700;letter-spacing:0.04em;color:rgba(240,236,231,0.25);margin-top:32px;display:block;}
 .ticker-sep{overflow:hidden;white-space:nowrap;border-top:1px solid rgba(240,236,231,0.08);padding:20px 0;margin-top:60px;}
 .ticker-sep span{font-size:10px;font-weight:700;color:rgba(240,236,231,0.18);letter-spacing:0.04em;}
+@media(max-width:768px){.ticker-sep{white-space:normal;}.ticker-sep span{font-size:9px;line-height:1.6;}}
 .page-footer{background:var(--dark);border-top:1px solid rgba(240,236,231,0.07);padding:24px var(--pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
 .footer-copy{font-size:10px;font-weight:600;color:#fff;}
 .footer-socials{display:flex;gap:28px;}
@@ -86,11 +87,7 @@ body{font-family:"Lexend",sans-serif;background:var(--bg);color:var(--ink);paddi
 @media(max-width:768px){:root{--pad:22px;}.proj-type{display:none;}.topbar-label{display:none;}}
 @media(max-width:480px){.proj-name{font-size:18px;}.hero-title{font-size:30px;}.proj-year{display:none;}}
 
-
-
-
-
-
+@media(min-width:769px){#btn-top{margin-top:20px;}}
 
 .m-toggle{display:none;background:none;border:none;cursor:pointer;font-family:"Lexend",sans-serif;font-size:11px;font-weight:700;color:var(--ink);padding-right:4px;}
 #mobile-menu{position:fixed;inset:0;background:var(--dark);z-index:10000;transform:translateY(-100%);transition:transform 0.75s cubic-bezier(0.76,0,0.24,1);display:flex;flex-direction:column;overflow:hidden;}
@@ -106,81 +103,58 @@ body{font-family:"Lexend",sans-serif;background:var(--bg);color:var(--ink);paddi
 .mm-foot a{font-family:"Lexend",sans-serif;color:rgba(240,236,231,0.3);text-decoration:none;font-size:10px;font-weight:600;transition:color 0.2s;}
 .mm-foot a:hover{color:var(--orange);}
 @media(max-width:768px){.m-toggle{display:block;}.topbar-label{display:none;}}
-
 .topbar-nav{display:flex;gap:36px;align-items:center;}
 .topbar-nav a{font-family:"Lexend",sans-serif;font-size:11px;font-weight:600;letter-spacing:0.04em;color:var(--muted);text-decoration:none;transition:color 0.2s;}
 .topbar-nav a:hover{color:var(--orange);}
 @media(max-width:768px){.topbar-nav{display:none;}}
+body.no-scroll{overflow:hidden;height:100%;position:fixed;width:100%;}
+*{-webkit-tap-highlight-color:transparent;}
 
-body.no-scroll {
-    overflow: hidden;
-    height: 100%;
-    position: fixed;
-    width: 100%;
+/* ── COOKIE NOTICE ── */
+#cookie-notice{
+    position:fixed;
+    bottom:calc(var(--banner-h) + 6px);
+    left:20px;
+    z-index:8400;
+    background:var(--dark);
+    color:rgba(240,236,231,0.6);
+    font-family:"Lexend",sans-serif;
+    font-size:10px;
+    font-weight:400;
+    line-height:1.6;
+    padding:12px 16px;
+    max-width:280px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    opacity:0;
+    transform:translateY(8px);
+    transition:opacity 0.4s ease,transform 0.4s ease;
+    pointer-events:none;
 }
+#cookie-notice.visible{opacity:1;transform:translateY(0);pointer-events:auto;}
 
-* { -webkit-tap-highlight-color: transparent; }
-
-
-
-
-#cookie-notice {
-    position: fixed;
-    bottom: calc(var(--banner-h) + 12px);
-    left: 20px;
-    z-index: 8400;
-    background: var(--dark);
-    color: rgba(240,236,231,0.6);
-    font-family: "Lexend", sans-serif;
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 1.6;
-    padding: 12px 16px;
-    max-width: 280px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    opacity: 0;
-    transform: translateY(8px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    pointer-events: none;
-}
-#cookie-notice.visible {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-
-/* Solo desktop — centrado y más pequeño */
+/* Desktop — barra completa */
 @media(min-width:769px){
-    #cookie-notice {
-        left: 50%;
-        transform: translateX(-50%) translateY(8px);
-        max-width: 330px;
-        font-size: 9px;
-        padding: 8px 12px;
-        gap: 10px;
+    #cookie-notice{
+        left:0;
+        bottom:var(--banner-h);
+        width:100%;
+        max-width:100%;
+        padding:10px var(--pad);
+        justify-content:flex-start;
+        transform:translateY(8px);
     }
-    #cookie-notice.visible {
-        transform: translateX(-50%) translateY(0);
-    }
+    #cookie-notice.visible{transform:translateY(0);}
 }
-
-#cookie-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: "Lexend", sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    color: #fff;
-    white-space: nowrap;
-    padding: 0;
-    transition: color 0.2s;
-    flex-shrink: 0;
-}
-#cookie-btn:hover { color: var(--orange); }
     </style>
+
+    <!-- Reserva espacio para cookie en desktop antes del primer paint -->
+    <script>
+    if (!localStorage.getItem('cookies-ok') && window.innerWidth >= 769) {
+        document.documentElement.style.setProperty('--extra-pb', '34px');
+    }
+    </script>
 </head>
 
 <nav id="mobile-menu" aria-hidden="true">
@@ -198,12 +172,13 @@ body.no-scroll {
         <a href="https://www.behance.net/xaviersoto" target="_blank">Behance</a>
     </div>
 </nav>
+
 <body class="no-scroll">
 
-     <div id="cookie-notice">
-    <span>Este sitio usa cookies básicas de funcionamiento.</span>
-    <button id="cookie-btn">Entendido</button>
+<div id="cookie-notice">
+    <span>Este sitio usa cookies básicas de funcionamiento. Si sigues navegando, aceptas su uso.</span>
 </div>
+
 <div id="bienvenida-overlay">
     <div id="bienvenida-texto">
         <p>
@@ -239,7 +214,6 @@ body.no-scroll {
         y desaparece cuando cierras la pestaña. Al final, recibirás una lectura
         de tu propia visita.
     </p>
-    <!-- CAMBIO: abre la pantalla de bienvenida en lugar de generar informe -->
     <button class="btn-report" id="btn-top" onclick="reabrirBienvenida()">
         ← Ver pantalla anterior
     </button>
@@ -248,132 +222,60 @@ body.no-scroll {
 <section class="list-section fade-in" data-section-id="trabajos" data-section-name="Trabajos de diseño">
     <span class="section-label">Trabajos</span>
     <div class="proj-row" data-section-id="proy-premios">
-        <div class="proj-head">
-            <span class="proj-name">Premios Deporte y Ciudadanía 2023/2024</span>
-            <div class="proj-right"><span class="proj-year">2024</span><span class="proj-toggle">+</span></div>
-        </div>
-        <div class="proj-body"><div class="proj-body-inner">
-            <p>Diseño de identidad gráfica / Redes sociales / Merchandising / Mailing / Actualización de sitio web</p>
-            <a href="/premios-deporte-y-ciudadania/" class="proj-link">Ver proyecto →</a>
-        </div></div>
+        <div class="proj-head"><span class="proj-name">Premios Deporte y Ciudadanía 2023/2024</span><div class="proj-right"><span class="proj-year">2024</span><span class="proj-toggle">+</span></div></div>
+        <div class="proj-body"><div class="proj-body-inner"><p>Diseño de identidad gráfica / Redes sociales / Merchandising / Mailing / Actualización de sitio web</p><a href="/premios-deporte-y-ciudadania/" class="proj-link">Ver proyecto →</a></div></div>
     </div>
     <div class="proj-row" data-section-id="proy-guardabosques">
-        <div class="proj-head">
-            <span class="proj-name">Guardabosques GDL</span>
-            <div class="proj-right"><span class="proj-year">2022</span><span class="proj-toggle">+</span></div>
-        </div>
-        <div class="proj-body"><div class="proj-body-inner">
-            <p>Rediseño de logo / Cartelería</p>
-            <a href="/guardabosques-GDL/" class="proj-link">Ver proyecto →</a>
-        </div></div>
+        <div class="proj-head"><span class="proj-name">Guardabosques GDL</span><div class="proj-right"><span class="proj-year">2022</span><span class="proj-toggle">+</span></div></div>
+        <div class="proj-body"><div class="proj-body-inner"><p>Rediseño de logo / Cartelería</p><a href="/guardabosques-GDL/" class="proj-link">Ver proyecto →</a></div></div>
     </div>
     <div class="proj-row" data-section-id="proy-monaco">
-        <div class="proj-head">
-            <span class="proj-name">Mōnaco</span>
-            <div class="proj-right"><span class="proj-year">2025</span><span class="proj-toggle">+</span></div>
-        </div>
-        <div class="proj-body"><div class="proj-body-inner">
-            <p>Diseño de identidad gráfica / Papelería / Redes sociales / Edición de imagen / Sitio web</p>
-            <a href="/monaco/" class="proj-link">Ver proyecto →</a>
-        </div></div>
+        <div class="proj-head"><span class="proj-name">Mōnaco</span><div class="proj-right"><span class="proj-year">2025</span><span class="proj-toggle">+</span></div></div>
+        <div class="proj-body"><div class="proj-body-inner"><p>Diseño de identidad gráfica / Papelería / Redes sociales / Edición de imagen / Sitio web</p><a href="/monaco/" class="proj-link">Ver proyecto →</a></div></div>
     </div>
     <div class="proj-row" data-section-id="proy-elhogar">
-        <div class="proj-head">
-            <span class="proj-name">El hogar</span>
-            <div class="proj-right"><span class="proj-year">2024</span><span class="proj-toggle">+</span></div>
-        </div>
-        <div class="proj-body"><div class="proj-body-inner">
-            <p>Diseño de identidad gráfica / Papelería / Redes sociales / Merchandising / Edición de imagen</p>
-            <a href="/el-hogar/" class="proj-link">Ver proyecto →</a>
-        </div></div>
+        <div class="proj-head"><span class="proj-name">El hogar</span><div class="proj-right"><span class="proj-year">2024</span><span class="proj-toggle">+</span></div></div>
+        <div class="proj-body"><div class="proj-body-inner"><p>Diseño de identidad gráfica / Papelería / Redes sociales / Merchandising / Edición de imagen</p><a href="/el-hogar/" class="proj-link">Ver proyecto →</a></div></div>
     </div>
     <div class="proj-row" data-section-id="proy-habitantes">
-        <div class="proj-head">
-            <span class="proj-name">Colectivo habitantes</span>
-            <div class="proj-right"><span class="proj-year">2022</span><span class="proj-toggle">+</span></div>
-        </div>
-        <div class="proj-body"><div class="proj-body-inner">
-            <p>Creación de logo</p>
-            <a href="/colectivo-habitantes/" class="proj-link">Ver proyecto →</a>
-        </div></div>
+        <div class="proj-head"><span class="proj-name">Colectivo habitantes</span><div class="proj-right"><span class="proj-year">2022</span><span class="proj-toggle">+</span></div></div>
+        <div class="proj-body"><div class="proj-body-inner"><p>Creación de logo</p><a href="/colectivo-habitantes/" class="proj-link">Ver proyecto →</a></div></div>
     </div>
     <div class="proj-row" data-section-id="proy-addy">
-        <div class="proj-head">
-            <span class="proj-name">ADDY esotérica</span>
-            <div class="proj-right"><span class="proj-year">2026</span><span class="proj-toggle">+</span></div>
-        </div>
-        <div class="proj-body"><div class="proj-body-inner">
-            <p>Diseño de identidad gráfica / Ecommerce / Edición foto de producto / Optimización con IA</p>
-            <a href="/addy/" class="proj-link">Ver proyecto →</a>
-        </div></div>
+        <div class="proj-head"><span class="proj-name">ADDY esotérica</span><div class="proj-right"><span class="proj-year">2026</span><span class="proj-toggle">+</span></div></div>
+        <div class="proj-body"><div class="proj-body-inner"><p>Diseño de identidad gráfica / Ecommerce / Edición foto de producto / Optimización con IA</p><a href="/addy/" class="proj-link">Ver proyecto →</a></div></div>
     </div>
 </section>
 
 <section class="list-section fade-in" data-section-id="ilustracion" data-section-name="Ilustración">
     <span class="section-label">Ilustración</span>
     <div class="proj-row" data-section-id="proy-inmenso">
-        <div class="proj-head">
-            <span class="proj-name">Inmenso</span>
-            <div class="proj-right"><span class="proj-year">2020</span><span class="proj-toggle">+</span></div>
-        </div>
-        <div class="proj-body"><div class="proj-body-inner">
-            <p>Ilustración digital creada en Ps (Photoshop).</p>
-            <a href="/inmenso/" class="proj-link">Ver proyecto →</a>
-        </div></div>
+        <div class="proj-head"><span class="proj-name">Inmenso</span><div class="proj-right"><span class="proj-year">2020</span><span class="proj-toggle">+</span></div></div>
+        <div class="proj-body"><div class="proj-body-inner"><p>Ilustración digital creada en Ps (Photoshop).</p><a href="/inmenso/" class="proj-link">Ver proyecto →</a></div></div>
     </div>
     <div class="proj-row" data-section-id="proy-flores">
-        <div class="proj-head">
-            <span class="proj-name">Hay flores a domicilio</span>
-            <div class="proj-right"><span class="proj-year">2022</span><span class="proj-toggle">+</span></div>
-        </div>
-        <div class="proj-body"><div class="proj-body-inner">
-            <p>Ilustración digital creada en Ps (Photoshop).</p>
-            <a href="/hay-flores-a-domicilio/" class="proj-link">Ver proyecto →</a>
-        </div></div>
+        <div class="proj-head"><span class="proj-name">Hay flores a domicilio</span><div class="proj-right"><span class="proj-year">2022</span><span class="proj-toggle">+</span></div></div>
+        <div class="proj-body"><div class="proj-body-inner"><p>Ilustración digital creada en Ps (Photoshop).</p><a href="/hay-flores-a-domicilio/" class="proj-link">Ver proyecto →</a></div></div>
     </div>
     <div class="proj-row" data-section-id="proy-objetos">
-        <div class="proj-head">
-            <span class="proj-name">Estudio de objetos no identificados</span>
-            <div class="proj-right"><span class="proj-year">2018</span><span class="proj-toggle">+</span></div>
-        </div>
-        <div class="proj-body"><div class="proj-body-inner">
-            <p>Modelado 3D creado en Blender.</p>
-            <a href="/estudio-de-objetos-no-identificados/" class="proj-link">Ver proyecto →</a>
-        </div></div>
+        <div class="proj-head"><span class="proj-name">Estudio de objetos no identificados</span><div class="proj-right"><span class="proj-year">2018</span><span class="proj-toggle">+</span></div></div>
+        <div class="proj-body"><div class="proj-body-inner"><p>Modelado 3D creado en Blender.</p><a href="/estudio-de-objetos-no-identificados/" class="proj-link">Ver proyecto →</a></div></div>
     </div>
 </section>
 
 <section class="list-section fade-in" data-section-id="ia-apps" data-section-name="IA y Apps">
     <span class="section-label">IA y Apps</span>
     <div class="proj-row" data-section-id="proy-soto-ia">
-        <div class="proj-head">
-            <span class="proj-name">soto artista virtual</span>
-            <div class="proj-right"><span class="proj-year">2026</span><span class="proj-toggle">+</span></div>
-        </div>
-        <div class="proj-body"><div class="proj-body-inner">
-            <p>Sistema conversacional construido sobre arquitectura RAG entrenado con el corpus del artista.</p>
-            <a href="/soto-artista-virtual/" class="proj-link">Ver proyecto →</a>
-        </div></div>
+        <div class="proj-head"><span class="proj-name">soto artista virtual</span><div class="proj-right"><span class="proj-year">2026</span><span class="proj-toggle">+</span></div></div>
+        <div class="proj-body"><div class="proj-body-inner"><p>Sistema conversacional construido sobre arquitectura RAG entrenado con el corpus del artista.</p><a href="/soto-artista-virtual/" class="proj-link">Ver proyecto →</a></div></div>
     </div>
     <div class="proj-row" data-section-id="proy-desoido">
-        <div class="proj-head">
-            <span class="proj-name">Desoído</span>
-            <div class="proj-right"><span class="proj-year">2024</span><span class="proj-toggle">+</span></div>
-        </div>
-        <div class="proj-body"><div class="proj-body-inner">
-            <p>App móvil con mecánicas de puzzle sobre sonidos en extinción.</p>
-            <a href="/desoido/" class="proj-link">Ver proyecto →</a>
-        </div></div>
+        <div class="proj-head"><span class="proj-name">Desoído</span><div class="proj-right"><span class="proj-year">2024</span><span class="proj-toggle">+</span></div></div>
+        <div class="proj-body"><div class="proj-body-inner"><p>App móvil con mecánicas de puzzle sobre sonidos en extinción.</p><a href="/desoido/" class="proj-link">Ver proyecto →</a></div></div>
     </div>
     <div class="proj-row" data-section-id="proy-escuchar">
-        <div class="proj-head">
-            <span class="proj-name">Por qué nos cuesta escuchar?</span>
-            <div class="proj-right"><span class="proj-year">2023</span><span class="proj-toggle">+</span></div>
-        </div>
-        <div class="proj-body"><div class="proj-body-inner">
-            <p>App móvil que funciona con Touch Designer generando imagen y sonido.</p>
-            <a href="/por-que-nos-cuesta-escuchar/" class="proj-link">Ver proyecto →</a>
-        </div></div>
+        <div class="proj-head"><span class="proj-name">Por qué nos cuesta escuchar?</span><div class="proj-right"><span class="proj-year">2023</span><span class="proj-toggle">+</span></div></div>
+        <div class="proj-body"><div class="proj-body-inner"><p>App móvil que funciona con Touch Designer generando imagen y sonido.</p><a href="/por-que-nos-cuesta-escuchar/" class="proj-link">Ver proyecto →</a></div></div>
     </div>
 </section>
 
@@ -512,9 +414,6 @@ document.querySelectorAll('.proj-row').forEach(row => {
 });
 
 window.addEventListener('load', () => {
-
-
-
     document.querySelectorAll('.fade-in').forEach((el, i) => {
         setTimeout(() => el.classList.add('entrada'), 200 + i * 120);
     });
@@ -526,23 +425,23 @@ const overlay      = document.getElementById('bienvenida-overlay');
 const btnContinuar = document.getElementById('btn-continuar');
 let bienvenidaCerrada = false;
 
+function mostrarCookie() {
+    if (localStorage.getItem('cookies-ok')) return;
+    const notice = document.getElementById('cookie-notice');
+    notice.classList.add('visible');
+    /* Se quita sola a los 6 segundos en ambas versiones */
+    setTimeout(() => {
+        notice.classList.remove('visible');
+        localStorage.setItem('cookies-ok', '1');
+    }, 12000);
+}
+
 function cerrarBienvenida() {
     if (bienvenidaCerrada) return;
     bienvenidaCerrada = true;
     overlay.classList.add('oculto');
     document.body.classList.remove('no-scroll');
-
-      // Mostrar cookie notice después de cerrar bienvenida
-    if (!localStorage.getItem('cookies-ok')) {
-        setTimeout(() => {
-            const notice = document.getElementById('cookie-notice');
-            notice.classList.add('visible');
-            document.getElementById('cookie-btn').addEventListener('click', () => {
-                notice.classList.remove('visible');
-                localStorage.setItem('cookies-ok', '1');
-            });
-        }, 800);
-}
+    setTimeout(mostrarCookie, 800);
 }
 btnContinuar.addEventListener('click', cerrarBienvenida);
 setTimeout(cerrarBienvenida, AUTO_CIERRE);
@@ -652,9 +551,7 @@ function generarInforme() {
     }, 200);
 }
 
-
-
-// Menú móvil
+/* ── MENÚ MÓVIL ── */
 const mToggle = document.getElementById('mToggle');
 const mmClose = document.getElementById('mmClose');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -666,8 +563,6 @@ if (mToggle) {
     document.addEventListener('click', e => { if (!mobileMenu.contains(e.target) && !mToggle.contains(e.target)) closeMM(); });
 }
 </script>
-
-
 
 </body>
 </html>
