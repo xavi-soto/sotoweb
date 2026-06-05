@@ -87,7 +87,7 @@ body{font-family:"Lexend",sans-serif;background:var(--bg);color:var(--ink);paddi
 @media(max-width:768px){:root{--pad:22px;}.proj-type{display:none;}.topbar-label{display:none;}}
 @media(max-width:480px){.proj-name{font-size:18px;}.hero-title{font-size:30px;}.proj-year{display:none;}}
 
-@media(min-width:769px){#btn-top{margin-top:10px;}}
+@media(min-width:769px){#btn-top{margin-top:30px;}}
 
 .m-toggle{display:none;background:none;border:none;cursor:pointer;font-family:"Lexend",sans-serif;font-size:11px;font-weight:700;color:var(--ink);padding-right:4px;}
 #mobile-menu{position:fixed;inset:0;background:var(--dark);z-index:10000;transform:translateY(-100%);transition:transform 0.75s cubic-bezier(0.76,0,0.24,1);display:flex;flex-direction:column;overflow:hidden;}
@@ -159,6 +159,13 @@ body.no-scroll{overflow:hidden;height:100%;position:fixed;width:100%;}
     }
     #cookie-notice.visible{transform:translateY(0);}
 }
+
+@media(max-width:768px){
+    .hero-kicker { margin-top: 40px; }
+    .hero-title  { margin-top: 25px; }
+    .hero-sub    { margin-top: 1px; }
+    #btn-top     { margin-top: 20px; }
+}
     </style>
 
     <!-- Reserva espacio para cookie en desktop antes del primer paint -->
@@ -219,7 +226,7 @@ body.no-scroll{overflow:hidden;height:100%;position:fixed;width:100%;}
     </div>
 <section class="hero fade-in" data-section-id="hero" data-section-name="Presentación">
   
-    <span class="hero-kicker">soto³ — experimento de visita</span>
+    <span class="hero-kicker">soto³ — disfruta tu visita</span>
     <h1 class="hero-title">Esta página te observa mientras la navegas.</h1>
     <p class="hero-sub">
         No hay cámaras. No hay cookies de terceros. Todo ocurre en tu navegador
