@@ -495,7 +495,7 @@
                 font-family: "Lexend", sans-serif;
                 font-size: 13px;
                 font-weight: 700;
-                color: #0011ff;
+                color: #ffffff;
                 text-decoration: none;
                 font-style: normal;
                 margin-top: 4px;
@@ -503,7 +503,7 @@
                 letter-spacing: 0.01em;
                 transition: opacity 0.2s;
             }
-            .soto-obra-cta:hover { opacity: 0.75; }
+            .soto-obra-cta:hover { color: #0011ff; }
             .soto-obra-firma {
                 font-family: "Lexend", sans-serif;
                 font-size: 11px !important;
