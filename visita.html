@@ -27,7 +27,7 @@ body{font-family:"Lexend",sans-serif;background:var(--bg);color:var(--ink);paddi
 #bienvenida-texto strong{font-weight:700;color:var(--orange);}
 #btn-continuar{font-family:"Lexend",sans-serif;font-size:11px;font-weight:700;letter-spacing:0.05em;color:rgba(240,236,231,0.4);background:none;border:none;cursor:pointer;padding:0;transition:color 0.2s;}
 #btn-continuar:hover{color:var(--orange);}
-.hero{padding:90px var(--pad) 72px;border-bottom:1px solid var(--rule);min-height:60vh;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero{padding:30px var(--pad)72px;border-bottom:1px solid var(--rule);min-height:60vh;display:flex;flex-direction:column;justify-content:flex-end;}
 .hero-kicker{font-size:10px;font-weight:700;letter-spacing:0.08em;color:var(--orange);margin-bottom:24px;}
 .hero-title{font-size:clamp(32px,5.5vw,72px);font-weight:600;line-height:1.07;letter-spacing:-0.025em;color:var(--ink);max-width:800px;margin-bottom:28px;}
 .hero-sub{font-size:clamp(13px,1.4vw,15px);font-weight:300;line-height:1.8;color:var(--muted);max-width:540px;margin-bottom:40px;}
@@ -87,7 +87,7 @@ body{font-family:"Lexend",sans-serif;background:var(--bg);color:var(--ink);paddi
 @media(max-width:768px){:root{--pad:22px;}.proj-type{display:none;}.topbar-label{display:none;}}
 @media(max-width:480px){.proj-name{font-size:18px;}.hero-title{font-size:30px;}.proj-year{display:none;}}
 
-@media(min-width:769px){#btn-top{margin-top:30px;}}
+@media(min-width:769px){#btn-top{margin-top:10px;}}
 
 .m-toggle{display:none;background:none;border:none;cursor:pointer;font-family:"Lexend",sans-serif;font-size:11px;font-weight:700;color:var(--ink);padding-right:4px;}
 #mobile-menu{position:fixed;inset:0;background:var(--dark);z-index:10000;transform:translateY(-100%);transition:transform 0.75s cubic-bezier(0.76,0,0.24,1);display:flex;flex-direction:column;overflow:hidden;}
@@ -109,6 +109,18 @@ body{font-family:"Lexend",sans-serif;background:var(--bg);color:var(--ink);paddi
 @media(max-width:768px){.topbar-nav{display:none;}}
 body.no-scroll{overflow:hidden;height:100%;position:fixed;width:100%;}
 *{-webkit-tap-highlight-color:transparent;}
+
+.progress-bar-wrap {
+    position: fixed;
+    top: var(--top-h);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--rule);
+    margin: 0;
+    border-radius: 0;
+    z-index: 7999;
+}
 
 /* ── COOKIE NOTICE ── */
 #cookie-notice{
@@ -202,11 +214,11 @@ body.no-scroll{overflow:hidden;height:100%;position:fixed;width:100%;}
     </nav>
     <button class="m-toggle" id="mToggle">Menú</button>
 </header>
-
-<section class="hero fade-in" data-section-id="hero" data-section-name="Presentación">
-    <div class="progress-bar-wrap">
+  <div class="progress-bar-wrap">
         <div class="progress-bar-fill" id="scroll-progress"></div>
     </div>
+<section class="hero fade-in" data-section-id="hero" data-section-name="Presentación">
+  
     <span class="hero-kicker">soto³ — experimento de visita</span>
     <h1 class="hero-title">Esta página te observa mientras la navegas.</h1>
     <p class="hero-sub">
