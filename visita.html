@@ -57,7 +57,7 @@ body{font-family:"Lexend",sans-serif;background:var(--bg);color:var(--ink);paddi
 .proj-link{font-size:15px;font-weight:700;color:var(--orange);text-decoration:none;display:inline-flex;align-items:center;gap:8px;width:fit-content;transition:gap 0.2s;}
 .proj-link:hover{gap:16px;}
 .section{padding:72px var(--pad) 68px;border-bottom:1px solid var(--rule);}
-.eyebrow{font-size:10px;font-weight:700;letter-spacing:0.06em;color:var(--orange);margin-bottom:30px;display:block;}
+.eyebrow{font-size:32px;font-weight:700;letter-spacing:0.06em;color:var(--orange);margin-bottom:30px;display:block;}
 .report-section{background:var(--dark);padding:90px var(--pad) 100px;min-height:50vh;display:flex;flex-direction:column;justify-content:center;}
 .report-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.08em;color:var(--orange);margin-bottom:40px;display:block;}
 #report-output{opacity:0;transform:translateY(20px);transition:opacity 0.8s ease,transform 0.8s ease;max-width:620px;}
@@ -307,21 +307,17 @@ body.no-scroll{overflow:hidden;height:100%;position:fixed;width:100%;}
 </section>
 
 <section class="section fade-in" data-section-id="contacto" data-section-name="Contacto">
-    <span class="eyebrow">Contacto</span>
-    <p style="font-size:clamp(13px,1.3vw,14px);font-weight:300;line-height:1.8;color:var(--muted);max-width:480px;margin-bottom:36px;">
-        Para consultas, colaboraciones o proyectos. El informe de tu visita estará listo
-        cuando llegues abajo, o pulsa el botón cuando quieras.
+    <span class="eyebrow"> <strong>Detente</strong></span>
+    <p style="font-size:clamp(13px,1.3vw,14px);font-weight:600;line-height:1.8;color:var(--muted);max-width:480px;margin-bottom:36px;">
+        El informe de tu visita estará listo al final de la página. Si sigues explorando, puedes consultarlo cuando quieras a través del botón flotante <strong>Tu visita</strong>.
     </p>
-    <button class="btn-report" id="btn-mid" onclick="generarInforme()">
-        Generar mi informe →
-    </button>
 </section>
 
 <section class="report-section" data-section-id="informe" data-section-name="Informe">
     <span class="report-eyebrow">Tu informe de visita</span>
     <div id="report-output">
         <p class="report-line" style="color:rgba(240,236,231,0.3);">
-            Pulsa el botón de arriba o espera a que se genere automáticamente.
+            Espera a que se genere automáticamente.
         </p>
     </div>
     <div class="ticker-sep">
